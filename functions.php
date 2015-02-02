@@ -65,7 +65,7 @@ if (!class_exists('BusinessServicesCustomPostTypes')){
                 'public' => true,
                 'has_archive' => true,
                 'menu_position' => 5,
-                'menu_icon' => 'dashicons-groups',
+                'menu_icon' => 'dashicons-store',
                 'hierarchical' => true,
                 'rewrite' => array(
                     'slug' => 'business',
@@ -89,3 +89,13 @@ if (isset($custom_post_types)){
 
     register_activation_hook( __FILE__, array($custom_post_types, 'rewrite_flush') );
 }
+
+
+
+function remove_medical_press_theme_features() {
+   // remove Movie Custom Post Type
+   remove_action( 'init', 'create_doctor_post_type' );
+   remove_action( 'init', 'create_gallery_post_type' );
+}
+
+add_action( 'after_setup_theme', 'remove_medical_press_theme_features', 10 );
