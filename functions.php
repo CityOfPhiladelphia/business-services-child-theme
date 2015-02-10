@@ -33,6 +33,7 @@ function dynamic_section($sections) {
  *
  * @package business-services-child-theme
  */
+
 /**
  *  Create Custom Post Types
  *
@@ -90,7 +91,9 @@ if (isset($custom_post_types)){
     register_activation_hook( __FILE__, array($custom_post_types, 'rewrite_flush') );
 }
 
-
+/*-----------------------------------------------------------------------------------*/
+/*	Remove unnecessary post types
+/*-----------------------------------------------------------------------------------*/
 
 function remove_medical_press_theme_features() {
    // remove Movie Custom Post Type
@@ -206,3 +209,25 @@ if (!function_exists('theme_breadcrumb')) {
 
     }
 }
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	Register Taxonomy for Media
+/*-----------------------------------------------------------------------------------*/
+function business_register_taxonomy_for_images() {
+    register_taxonomy_for_object_type( 'category', 'attachment' );
+}
+add_action( 'init', 'business_register_taxonomy_for_images' );
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	Add cateogry filter to Media
+/*-----------------------------------------------------------------------------------*/
+function business_add_image_category_filter() {
+    $screen = get_current_screen();
+    if ( 'upload' == $screen->id ) {
+        $dropdown_options = array( 'show_option_all' => __( 'View all categories', 'olab' ), 'hide_empty' => false, 'hierarchical' => true, 'orderby' => 'name', );
+        wp_dropdown_categories( $dropdown_options );
+    }
+}
+add_action( 'restrict_manage_posts', 'business_add_image_category_filter' );
