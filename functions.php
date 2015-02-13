@@ -33,7 +33,6 @@ function dynamic_section($sections) {
  *
  * @package business-services-child-theme
  */
-
 /**
  *  Create Custom Post Types
  *
