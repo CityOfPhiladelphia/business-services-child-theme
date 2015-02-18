@@ -230,3 +230,38 @@ function business_add_image_category_filter() {
     }
 }
 add_action( 'restrict_manage_posts', 'business_add_image_category_filter' );
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Metaboxes
+/*-----------------------------------------------------------------------------------*/
+
+add_filter( 'rwmb_meta_boxes', 'business_register_meta_boxes' );
+
+function business_register_meta_boxes( $meta_boxes )
+{
+    $prefix = 'bsp_';
+
+    // 1st meta box
+    $meta_boxes[] = array(
+        'id'       => 'short_description',
+        'title'    => 'Short Description',
+        'pages'    => array( 'post', 'page', 'business_page' ),
+        'context'  => 'normal',
+        'priority' => 'high',
+
+        'fields' => array(
+            array(
+                'name'  => '',
+                'desc'  => 'A short description about this content.',
+                'id'    => $prefix . 'short_description',
+                'type'  => 'textarea',
+                'std'   => '',
+                'class' => '',
+                'clone' => false,
+            ),
+        )
+    );
+
+    return $meta_boxes;
+}
