@@ -66,7 +66,7 @@ get_template_part('template-parts/banner');
                                         foreach($content_types as $content_type){
                                           echo '<span class="label label-primary">' . $content_type->name . '</span>';
                                         }
-                                        echo  get_post($required_doc->ID)->post_excerpt;
+                                        echo  get_post($maybe_doc->ID)->post_excerpt;
                                         echo '</li>';
                                       }
                                       echo '</ul>';
