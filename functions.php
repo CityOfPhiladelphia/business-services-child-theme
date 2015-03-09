@@ -135,50 +135,6 @@ if (isset($custom_taxonomy)){
     //actions
     add_action( 'init', array($custom_taxonomy, 'create_content_type_tax'), 0);
 }
-
-if (!class_exists('BusinessServicesFunctionalityTaxonomy')){
-    class BusinessServicesFunctionalityTaxonomy{
-      function create_functionality_tax() {
-
-        $labels = array(
-          'name'                       => 'Functionality',
-          'singular_name'              => 'Functionality',
-          'menu_name'                  => 'Functionality',
-          'all_items'                  => 'All Functionality',
-          'parent_item'                => 'Parent Item',
-          'parent_item_colon'          => 'Parent Item:',
-          'new_item_name'              => 'New Content Types',
-          'add_new_item'               => 'Add New Functionality',
-          'edit_item'                  => 'Edit Functionality',
-          'update_item'                => 'Update Functionality',
-          'separate_items_with_commas' => 'Separate items with commas',
-          'search_items'               => 'Search Items',
-          'add_or_remove_items'        => 'Add or remove items',
-          'choose_from_most_used'      => 'Choose from the most used items',
-          'not_found'                  => 'Not Found'
-        );
-        $args = array(
-          'labels'                     => $labels,
-          'hierarchical'               => true,
-          'public'                     => true,
-          'show_ui'                    => true,
-          'show_admin_column'          => true,
-          'show_in_nav_menus'          => true
-        );
-        register_taxonomy( 'functionality', array( 'post' ), $args );
-      }
-    }
-  }//end class
-
-  if (class_exists("BusinessServicesFunctionalityTaxonomy")){
-      $custom_function_tax = new BusinessServicesFunctionalityTaxonomy();
-  }
-  if (isset($custom_function_tax)){
-      //actions
-      add_action( 'init', array($custom_function_tax, 'create_functionality_tax'), 0);
-  }
-
-
 /*-----------------------------------------------------------------------------------*/
 /*	Remove unnecessary post types
 /*-----------------------------------------------------------------------------------*/
