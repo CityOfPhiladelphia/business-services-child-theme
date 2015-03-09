@@ -56,10 +56,8 @@ get_template_part('template-parts/banner');
                                     if($maybe_docs)  {
                                       echo '<ul>';
 
-                                      echo '<li>';
-
                                       foreach($maybe_docs as $maybe_doc){
-
+                                        echo '<li>';
                                         echo '<a href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a>';
 
                                         $content_types =  wp_get_post_terms( $maybe_doc->ID, 'content_type' );
