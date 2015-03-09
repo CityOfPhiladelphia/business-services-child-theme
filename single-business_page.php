@@ -55,9 +55,19 @@ get_template_part('template-parts/banner');
                                   $maybe_docs = get_field('might_need');
                                     if($maybe_docs)  {
                                       echo '<ul>';
+
+                                      echo '<li>';
+
                                       foreach($maybe_docs as $maybe_doc){
-                                        echo '<li>' . '<a href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a></li>';
+
+                                        echo '<a href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a>';
+
+                                        $content_types =  wp_get_post_terms( $maybe_doc->ID, 'content_type' );
+                                        foreach($content_types as $content_type){
+                                          echo '<span class="label label-primary">' . $content_type->name . '</span>';
+                                        }
                                         echo  get_post($required_doc->ID)->post_excerpt;
+                                        echo '</li>';
                                       }
                                       echo '</ul>';
                                     }
