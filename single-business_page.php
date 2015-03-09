@@ -33,10 +33,20 @@ get_template_part('template-parts/banner');
 
                                 echo '<h2>You Must Have</h2>' ;
                                 $required_docs = get_field('required');
+                              //  var_dump($required_docs);
                                   if($required_docs)  {
                                     echo '<ul>';
                                     foreach($required_docs as $required_doc){
-                                      echo '<li>' . '<a href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a></li>';
+                                      echo '<li>';
+                                      $content_types =  wp_get_post_terms( $required_doc->ID, 'content_type' );
+
+                                      echo '<a href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a>';
+                                      foreach($content_types as $content_type){
+                                        echo '<span class="label label-primary">' . $content_type->name . '</span>';
+                                      }
+                                      //pass the post ID to get_post, then extract the excerpt. BOOYAH
+                                      echo  '<p>' . get_post($required_doc->ID)->post_excerpt . '</p>';
+                                      echo '</li>';
                                     }
                                     echo '</ul>';
                                   }
@@ -47,6 +57,7 @@ get_template_part('template-parts/banner');
                                       echo '<ul>';
                                       foreach($maybe_docs as $maybe_doc){
                                         echo '<li>' . '<a href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a></li>';
+                                        echo  get_post($required_doc->ID)->post_excerpt;
                                       }
                                       echo '</ul>';
                                     }
