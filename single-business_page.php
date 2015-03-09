@@ -30,7 +30,31 @@ get_template_part('template-parts/banner');
                                 <?php
                                 /* output page contents */
                                 the_content();
-                                ?>
+
+                                echo '<h2>You Must Have</h2>' ;
+                                $required_docs = get_field('required');
+                                  if($required_docs)  {
+                                    echo '<ul>';
+                                    foreach($required_docs as $required_doc){
+                                      echo '<li>' . '<a href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a></li>';
+                                    }
+                                    echo '</ul>';
+                                  }
+
+                                  echo '<h2>You Might Need</h2>' ;
+                                  $maybe_docs = get_field('might_need');
+                                    if($maybe_docs)  {
+                                      echo '<ul>';
+                                      foreach($maybe_docs as $maybe_doc){
+                                        echo '<li>' . '<a href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a></li>';
+                                      }
+                                      echo '</ul>';
+                                    }
+
+
+
+                            ?>
+
                             </div>
                         </article>
                     <?php
@@ -39,7 +63,7 @@ get_template_part('template-parts/banner');
                 ?>
             </div>
         </div>
-  
+
     </div>
 </div>
 <?php get_footer(); ?>
