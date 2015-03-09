@@ -145,9 +145,14 @@ function remove_medical_press_theme_features() {
    remove_action( 'init', 'create_gallery_post_type' );
    remove_action( 'init', 'create_testimonial_post_type' );
    remove_action( 'init', 'create_service_post_type' );
+
+   //remove theme support for post formats
+   remove_theme_support('post-formats');
 }
 
-add_action( 'after_setup_theme', 'remove_medical_press_theme_features', 10 );
+add_action( 'after_setup_theme', 'remove_medical_press_theme_features', 11 );
+
+
 
 /*-----------------------------------------------------------------------------------*/
 /*	Remove tags
