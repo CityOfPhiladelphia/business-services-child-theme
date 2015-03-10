@@ -51,7 +51,7 @@ get_template_part('template-parts/banner');
                                       echo '<a href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a>';
 
                                       //pass the post ID to get_post, then extract the excerpt. BOOYAH
-                                      echo  '<span class="small">' . get_post($required_doc->ID)->post_excerpt . '</span>';
+                                      echo  '<span>' . get_post($required_doc->ID)->post_excerpt . '</span>';
                                       echo '</div>';
                                     }
                                   }
@@ -78,7 +78,7 @@ get_template_part('template-parts/banner');
 
                                         echo '<a href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a>';
 
-                                        echo '<span class="small">' .  get_post($maybe_doc->ID)->post_excerpt . '</span>';
+                                        echo '<span>' .  get_post($maybe_doc->ID)->post_excerpt . '</span>';
                                         echo '</div>';
                                       }
                                     }
