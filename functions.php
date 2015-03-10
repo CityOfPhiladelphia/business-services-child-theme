@@ -291,3 +291,14 @@ function business_add_image_category_filter() {
     }
 }
 add_action( 'restrict_manage_posts', 'business_add_image_category_filter' );
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	enqueue styles/scripts
+/*-----------------------------------------------------------------------------------*/
+function business_scripts() {
+  wp_enqueue_script( 'custom_js', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '0.1', true );
+}
+
+add_action( 'wp_enqueue_scripts', 'business_scripts' );
