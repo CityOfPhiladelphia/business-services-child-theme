@@ -32,11 +32,11 @@
     background: white;
     padding: 10px;
 }
-
-#must-have p, #might-need p{
-  display:inline-block;
+#must-have a, #might-need a{
+  font-weight:bold;
 }
-#must-have p::before, #might-need p::before{
+
+#must-have span::before, #might-need span::before{
   content: " - ";
 }
 #dom-target {
