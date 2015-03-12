@@ -1,3 +1,4 @@
+
 /* = Child Theme Custom CSS File
 -------------------------------------------------------------- */
 
@@ -21,7 +22,8 @@
   content:"Permits";
 }
 
-[class*="wrapper"] > div, .an-overview{
+
+#must-have [class*="wrapper"] > div, #might-need [class*="wrapper"] > div, .an-overview{
   margin:0 0 0 20px;
   padding: 10px 0;
 }
@@ -42,4 +44,14 @@
 }
 #dom-target {
   display:none;
+}
+
+
+/* = Theme overrides
+-------------------------------------------------------------- */
+.gdlr-item.gdlr-main-content {
+  margin-bottom: 40px;
+}
+.gdlr-item-start-content {
+  padding-top:40px;
 }
