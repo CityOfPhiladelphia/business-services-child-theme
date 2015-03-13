@@ -5,19 +5,16 @@ get_template_part('template-parts/banner');
 ?>
 <?php get_header(); ?>
 
-  <div class="gdlr-content">
-
-    <!-- Above Sidebar Section-->
-    <?php global $gdlr_post_option, $above_sidebar_content, $with_sidebar_content, $below_sidebar_content; ?>
-    <?php if(!empty($above_sidebar_content)){ ?>
-      <div class="above-sidebar-wrapper"><?php gdlr_print_page_builder($above_sidebar_content); ?></div>
-    <?php } ?>
-
-              <?php
-                  get_template_part('single/content', 'page');
-                ?>
-            <div class="container">
-              <div class="gdlr-item gdlr-main-content">
+  <div id ="business-page" class="gdlr-content">
+        <div class="with-sidebar-wrapper">
+          <div class="with-sidebar-container container">
+            <div class="with-sidebar-left eight columns">
+              <div class="with-sidebar-content twelve columns">
+                <div class="gdlr-item gdlr-blog-full gdlr-item-start-content">
+                  <?php
+                    get_template_part('templates/content', 'sidebar');
+                    ?>
+                    <div class="clear"></div>
                 <div id="must-have">
             <?php
               echo '<h2>You Must Have</h2>' ;
@@ -75,14 +72,19 @@ get_template_part('template-parts/banner');
                 ?>
 
               </div><!--#might-need -->
+        </div>
+      </div>
+    </div>
+
+
+          <div class="gdlr-sidebar gdlr-right-sidebar four columns">
+            <div class="gdlr-item-start-content sidebar-right-item">
+            <?php  dynamic_sidebar('sidebar_business'); ?>
             </div>
           </div>
 
-
-    <!-- Below Sidebar Section-->
-    <?php if(!empty($below_sidebar_content)){ ?>
-      <div class="below-sidebar-wrapper"><?php gdlr_print_page_builder($below_sidebar_content); ?></div>
-    <?php } ?>
+        </div>
+      </div>
 
   </div><!-- gdlr-content -->
 <?php get_footer(); ?>

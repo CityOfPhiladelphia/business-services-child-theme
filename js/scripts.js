@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
 
+if ( $( "#business-page" ).length ) {
   /*CONTENT TYPE SORTER*/
   //get the content from the page
   var div = document.getElementById("dom-target");
@@ -14,4 +15,5 @@ jQuery(document).ready(function($) {
       $("#might-need " + content).wrapAll( "<div class='" + content_types[i] + "-wrapper" + "' />");
 
   }
+}
 });

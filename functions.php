@@ -191,3 +191,21 @@ function business_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'business_scripts' );
+
+/*-----------------------------------------------------------------------------------*/
+/*	add business page sidebar
+/*-----------------------------------------------------------------------------------*/
+
+add_action( 'widgets_init', 'business_widgets_init' );
+function business_widgets_init() {
+    register_sidebar( array(
+        'name' => __( 'Business Page Sidebar', 'business' ),
+        'id' => 'sidebar_business',
+        'description' => __( 'Widgets in this area will be shown on Business Type Pages.', 'business' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s gdlr-item gdlr-widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="gdlr-widget-title">',
+        'after_title'   => '</h3><div class="clear"></div>'
+        )
+    );
+}
