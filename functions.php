@@ -164,7 +164,8 @@ add_action('init', 'unregister_taxonomy');
 /*	Register Taxonomy for Media
 /*-----------------------------------------------------------------------------------*/
 function business_register_taxonomy_for_images() {
-    register_taxonomy_for_object_type( 'category', 'attachment' );
+    register_taxonomy_for_object_type( 'category', 'attachment' ); 
+	register_taxonomy_for_object_type( 'content_type', 'attachment' );
 }
 add_action( 'init', 'business_register_taxonomy_for_images' );
 
