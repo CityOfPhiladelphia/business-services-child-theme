@@ -56,7 +56,11 @@
   padding-top:40px;
 }
 
-a[href$='.pdf']::after{
-  padding:0 20px 0 0;
+a[href$='.pdf']::before{
+  padding:0 6px 0 0;
   content: " \f1c1";
+  font-family:"FontAwesome";
+}
+a[href$='.pdf']::after{
+  content:" (PDF)";
 }
