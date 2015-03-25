@@ -55,3 +55,8 @@
 .gdlr-item-start-content {
   padding-top:40px;
 }
+
+a[href$='.pdf']::after{
+  padding:0 20px 0 0;
+  content: " \f1c1";
+}
