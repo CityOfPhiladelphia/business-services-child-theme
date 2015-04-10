@@ -31,7 +31,7 @@ get_template_part('template-parts/banner');
                         echo 'class=' . $content_type->slug . '>';
                         }
                       }else {
-                        echo '<div class="an-overview">';
+                        echo 'class="an-overview">';
                       }
 
                     echo '<a href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a>';
@@ -59,7 +59,7 @@ get_template_part('template-parts/banner');
                           echo 'class=' . $m_content_type->slug . '>';
                           }
                         }else {
-                          echo '<div class="an-overview">';
+                          echo 'class="an-overview">';
                         }
 
                       echo '<a href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a>';
