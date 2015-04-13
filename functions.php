@@ -84,7 +84,6 @@ if (!class_exists('BusinessServicesCustomPostTypes')){
 
 }
 
-
 if (class_exists("BusinessServicesCustomPostTypes")){
     $custom_post_types = new BusinessServicesCustomPostTypes();
 }
@@ -206,6 +205,17 @@ function business_widgets_init() {
         )
     );
 }
+/*-----------------------------------------------------------------------------------*/
+/*	content type checkboses to radios (only allow one)
+/*-----------------------------------------------------------------------------------*/
+
+add_action( 'admin_footer', 'content_type_radios' );
+function content_type_radios(){
+	echo '<script type="text/javascript">';
+	echo 'jQuery("#taxonomy-content_type input[type=checkbox]")';
+	echo '.each(function(){this.type="radio"});</script>';
+}
+
 
 /*-----------------------------------------------------------------------------------*/
 /*	Filter upload size limit
@@ -248,16 +258,23 @@ function business_register_meta_boxes( $meta_boxes )
         )
     );
 
+    // 2nd meta box
+    $meta_boxes[] = array(
+        'id'       => 'sidebar',
+        'title'    => 'Sidebar Contact Information',
+        'pages'    => array( 'post' ),
+        'context'  => 'side',
+        'priority' => 'high',
+
+        'fields' => array(
+            array(
+                'name'  => 'Contact',
+                'desc'  => 'Enter the shortcode for a contact. E.g [text-blocks id="the-title"]',
+                'id'    => $prefix . 'contact',
+                'type'  => 'text'
+            ),
+        )
+    );
+
     return $meta_boxes;
-}
-
-/*-----------------------------------------------------------------------------------*/
-/*	turn categories into options (only allow one)
-/*-----------------------------------------------------------------------------------*/
-
-add_action( 'admin_footer', 'content_type_radios' );
-function content_type_radios(){
-	echo '<script type="text/javascript">';
-	echo 'jQuery("#taxonomy-content_type input[type=checkbox]")';
-	echo '.each(function(){this.type="radio"});</script>';
 }
