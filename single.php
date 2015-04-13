@@ -107,12 +107,12 @@
 			</div>
 			<div class="gdlr-sidebar gdlr-right-sidebar four columns">
 				<div class="gdlr-item-start-content sidebar-right-item">
-			<?php
-							$contact = rwmb_meta( 'business_contact' );
-							echo do_shortcode($contact);
- 						?>
-						</div>
-					</div>
+					<?php
+						$contact = rwmb_meta( 'business_contact' );
+						echo do_shortcode($contact);
+ 					?>
+				</div>
+			</div>
 			<div class="clear"></div>
 		</div>
 	</div>
