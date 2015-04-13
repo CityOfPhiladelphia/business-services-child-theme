@@ -171,7 +171,7 @@ add_action('init', 'unregister_taxonomy');
 /*	Register Taxonomy for Media
 /*-----------------------------------------------------------------------------------*/
 function business_register_taxonomy_for_images() {
-    register_taxonomy_for_object_type( 'category', 'attachment' ); 
+    register_taxonomy_for_object_type( 'category', 'attachment' );
 	register_taxonomy_for_object_type( 'content_type', 'attachment' );
 }
 add_action( 'init', 'business_register_taxonomy_for_images' );
@@ -212,7 +212,41 @@ function business_widgets_init() {
 /*-----------------------------------------------------------------------------------*/
 function filter_site_upload_size_limit( $size ) {
   $size = 1024 * 64000;
-  return $size; 
+  return $size;
 }
- 
+
 add_filter( 'upload_size_limit', 'filter_site_upload_size_limit', 20 );
+
+
+add_filter( 'rwmb_meta_boxes', 'business_register_meta_boxes' );
+
+function business_register_meta_boxes( $meta_boxes )
+{
+    $prefix = 'business_';
+
+    // 1st meta box
+    $meta_boxes[] = array(
+        'id'       => 'files',
+        'title'    => 'PDF and Link locations',
+        'pages'    => array( 'post' ),
+        'context'  => 'normal',
+        'priority' => 'high',
+
+        'fields' => array(
+            array(
+                'name'  => 'Associated PDF',
+                'desc'  => 'Choose a PDF from the media library or upload a new one.',
+                'id'    => $prefix . 'pdf',
+                'type'  => 'file_input'
+            ),
+            array(
+                'name'  => 'Online Application or Service',
+                'desc'  => 'If there is an online application, or a service enter it here.',
+                'id'    => $prefix . 'link',
+                'type'  => 'text'
+            ),
+        )
+    );
+
+    return $meta_boxes;
+}
