@@ -250,3 +250,14 @@ function business_register_meta_boxes( $meta_boxes )
 
     return $meta_boxes;
 }
+
+/*-----------------------------------------------------------------------------------*/
+/*	turn categories into options (only allow one)
+/*-----------------------------------------------------------------------------------*/
+
+add_action( 'admin_footer', 'content_type_radios' );
+function content_type_radios(){
+	echo '<script type="text/javascript">';
+	echo 'jQuery("#taxonomy-content_type input[type=checkbox]")';
+	echo '.each(function(){this.type="radio"});</script>';
+}
