@@ -21,6 +21,16 @@
  *
  */
 
+
+ /*-----------------------------------------------------------------------------------*/
+ /*	enqueue styles
+ /*-----------------------------------------------------------------------------------*/
+
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
+
+
  /*-----------------------------------------------------------------------------------*/
  /*	enqueue styles
  /*-----------------------------------------------------------------------------------*/
@@ -135,18 +145,15 @@ if (isset($custom_taxonomy)){
 /*	Remove unnecessary post types
 /*-----------------------------------------------------------------------------------*/
 
-function remove_medical_press_theme_features() {
-   // remove Movie Custom Post Type
-//   remove_action( 'init', 'create_doctor_post_type' );
-//   remove_action( 'init', 'create_gallery_post_type' );
-//   remove_action( 'init', 'create_testimonial_post_type' );
-//   remove_action( 'init', 'create_service_post_type' );
+function remove_parent_features() {
+ 	remove_action( 'init', 'gdlr_register_portfolio_admin_option' );
+//remove_action('gdlr_admin_option', 'gdlr_register_portfolio_admin_option');
 
    //remove theme support for post formats
    remove_theme_support('post-formats');
 }
 
-add_action( 'after_setup_theme', 'remove_medical_press_theme_features', 11 );
+add_action( 'after_setup_theme', 'remove_parent_features', 11 );
 
 
 
@@ -170,17 +177,6 @@ function business_register_taxonomy_for_images() {
 add_action( 'init', 'business_register_taxonomy_for_images' );
 
 
-/*-----------------------------------------------------------------------------------*/
-/*	Add cateogry filter to Media
-/*-----------------------------------------------------------------------------------*/
-function business_add_image_category_filter() {
-    $screen = get_current_screen();
-    if ( 'upload' == $screen->id ) {
-        $dropdown_options = array( 'show_option_all' => __( 'View all categories', 'olab' ), 'hide_empty' => false, 'hierarchical' => true, 'orderby' => 'name', );
-        wp_dropdown_categories( $dropdown_options );
-    }
-}
-add_action( 'restrict_manage_posts', 'business_add_image_category_filter' );
 
 
 
@@ -210,3 +206,13 @@ function business_widgets_init() {
         )
     );
 }
+
+/*-----------------------------------------------------------------------------------*/
+/*	Filter upload size limit
+/*-----------------------------------------------------------------------------------*/
+function filter_site_upload_size_limit( $size ) {
+  $size = 1024 * 64000;
+  return $size; 
+}
+ 
+add_filter( 'upload_size_limit', 'filter_site_upload_size_limit', 20 );
