@@ -17,7 +17,7 @@ get_template_part('template-parts/banner');
                     <div class="clear"></div>
                 <div id="must-have">
             <?php
-              echo '<h2>You Must Have</h2>' ;
+              echo '<h2>Required</h2>' ;
               $required_docs = get_field('required');
 
                 if($required_docs)  {
@@ -26,6 +26,7 @@ get_template_part('template-parts/banner');
 
                     if (! $content_types == ''){
                       $content_types =  wp_get_post_terms( $required_doc->ID, 'content_type' );
+                      $pdf =  rwmb_meta( 'business_pdf', $args = array(), $required_doc->ID );
                       echo '<div ';
                       foreach($content_types as $content_type){
                         echo 'class=' . $content_type->slug . '>';
@@ -37,8 +38,11 @@ get_template_part('template-parts/banner');
                     echo '<a href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a>';
 
                     //pass the post ID to get_post, then extract the excerpt. BOOYAH
-                    echo  '<span>' . get_post($required_doc->ID)->post_excerpt . '</span>';
+                    echo  '<p>' . get_post($required_doc->ID)->post_excerpt . '</p>';
+                    echo $pdf;
+
                     echo '</div>';
+
                   }
                 }
                 ?>
