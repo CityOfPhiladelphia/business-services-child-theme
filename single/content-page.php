@@ -5,7 +5,7 @@
 			?>
 			<div class="main-content-container container gdlr-item-start-content">
 				<div class="gdlr-item gdlr-main-content">
-					<?php 
+					<?php
           echo $content;
             $menus = get_field('page_menu');
   				     if( $menus ):
