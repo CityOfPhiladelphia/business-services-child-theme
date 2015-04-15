@@ -27,6 +27,8 @@ get_template_part('template-parts/banner');
                     if (! $content_types == ''){
                       $content_types =  wp_get_post_terms( $required_doc->ID, 'content_type' );
                       $pdf =  rwmb_meta( 'business_pdf', $args = array(), $required_doc->ID );
+                      $link =  rwmb_meta( 'business_link', $args = array(), $required_doc->ID );
+
                       echo '<div ';
                       foreach($content_types as $content_type){
                         echo 'class=' . $content_type->slug . '>';
@@ -39,7 +41,13 @@ get_template_part('template-parts/banner');
 
                     //pass the post ID to get_post, then extract the excerpt. BOOYAH
                     echo  '<p>' . get_post($required_doc->ID)->post_excerpt . '</p>';
-                    echo $pdf;
+                    if(!$pdf == ''){
+                        echo '<a href="' . $pdf . '" class="fa-2x"></i></a>';
+
+                      }
+                      if(!$link == ''){
+                        echo '<a href="' . $link . '"><i class="fa fa-link fa-2x"></i></a>';
+                      }
 
                     echo '</div>';
 
@@ -58,6 +66,8 @@ get_template_part('template-parts/banner');
 
                       if (! $m_content_types == ''){
                         $m_content_types =  wp_get_post_terms( $maybe_doc->ID, 'content_type' );
+                        $pdf =  rwmb_meta( 'business_pdf', $args = array(), $required_doc->ID );
+                        $link =  rwmb_meta( 'business_link', $args = array(), $required_doc->ID );
                         echo '<div ';
                         foreach($m_content_types as $m_content_type){
                           echo 'class=' . $m_content_type->slug . '>';
@@ -67,6 +77,13 @@ get_template_part('template-parts/banner');
                         }
 
                       echo '<a href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a>';
+                      if(!$pdf == ''){
+                          echo '<a href="' . $pdf . '"></a>';
+                          echo $pdf;
+                        }
+                        if(!$link == ''){
+                          echo '<a href="' . $link . '"><i class="fa fa-link fa-2x"></i></a>';
+                        }
 
                       echo '<span>' .  get_post($maybe_doc->ID)->post_excerpt . '</span>';
                       echo '</div>';
