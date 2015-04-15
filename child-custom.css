@@ -1,6 +1,10 @@
 
 /* = Child Theme Custom CSS File
 -------------------------------------------------------------- */
+
+
+/* = Business Type
+-------------------------------------------------------------- */
 #document-section {
   background:#f2f2f2;
 }
@@ -9,18 +13,25 @@
   margin:0;
 }
 
-#document-section .ten{
+#document-section .list{
   background:#f2f2f2;
   padding:10px;
-  width: 81.334%;
+  width: 73%;
   margin-bottom:20px;
 }
-#document-section .ten p {
+#document-section .list p {
   margin:0;
   padding:0;
 }
-#document-section .one {
+#document-section .pdf, #document-section .link{
   text-align:center;
+}
+#document-section .pdf .button, #document-section .link .button{
+    width:50px;
+}
+
+#document-section .fa-stack {
+  color:#e46c53;
 }
 
 #document-section a[href$='.pdf']::after, #document-section a[href$='.pdf']::before{
@@ -80,7 +91,26 @@
 .zoning-wrapper,
 .permit-wrapper {
   clear:both;
+  position:relative;
 }
+
+/* = General
+-------------------------------------------------------------- */
+.button {
+  display:inline-block;
+  padding:10px;
+  background:#4079AB;
+  color:#fff;
+}
+.red {
+  background:#E46C53;
+  color:#fff;
+}
+
+.full {
+  width:100%;
+}
+
 
 /* = Theme overrides
 -------------------------------------------------------------- */

@@ -45,29 +45,26 @@ get_template_part('template-parts/banner');
 
                     foreach ( $content_types as $content_type ){
                       echo '<div class=' . $content_type->slug . '>';
-                        echo '<div class="ten columns">';
+                        echo '<div class="list nine columns">';
                           echo '<a href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a>';
                           //pass the post ID to get_post, then extract the excerpt. BOOYAH
                           echo  '<p>' . get_post($required_doc->ID)->post_excerpt . '</p>';
                         echo '</div>';// ten
 
-                      echo '<div class="one columns">';
+                        echo '<div class="more one columns">' . '<a href="' . $required_doc->guid .'" class="button full"><i class="fa fa-arrow-circle-right"></i>' . 'Read More' . '</a></div>';
+
+                      echo '<div class="pdf one columns">';
                         if ( !$pdf == '' ){
-                            echo '<a href="' . $pdf . '">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa fa-stop fa-stack-2x"></i>
-                                <i class="fa fa-file-pdf-o fa-stack-1x fa-inverse"></i>
-                              </span></a>';
+                            echo '<a href="' . $pdf . '" class="button red">
+                            <i class="fa fa-file-pdf-o fa-inverse"></i>
+                            </a>';
                         }
                       echo '</div>';//one
 
-                     echo '<div class="one columns">';
+                     echo '<div class="link one columns">';
                         if ( !$link == '' ){
-                          echo '<a href="' . $link . '">
-                            <span class="fa-stack fa-2x">
-                              <i class="fa fa-stop fa-stack-2x"></i>
-                              <i class="fa fa-link fa-stack-1x fa-inverse"></i>
-                            </span>
+                          echo '<a href="' . $link . '" class="button red">
+                            <i class="fa fa-link fa-inverse"></i>
                         </a>';
                         }
                       echo '</div>';//one
