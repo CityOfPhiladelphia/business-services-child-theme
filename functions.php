@@ -32,20 +32,6 @@
 
 
  /*-----------------------------------------------------------------------------------*/
- /*	enqueue styles
- /*-----------------------------------------------------------------------------------*/
-
-
- add_action( 'init', 'theme_enqueue_styles' );
- function theme_enqueue_styles() {
- if(!is_admin()){
-     wp_dequeue_style('pkt-style');
-     wp_enqueue_style( 'pkt-style', get_template_directory_uri() . '/style.css');
-     wp_enqueue_style( 'child-style', get_stylesheet_uri(), array('pkt-style'));
- }
- }
-
- /*-----------------------------------------------------------------------------------*/
  /*	Custom Post Types
  /*-----------------------------------------------------------------------------------*/
 
@@ -184,6 +170,11 @@ add_action( 'init', 'business_register_taxonomy_for_images' );
 /*-----------------------------------------------------------------------------------*/
 function business_scripts() {
   wp_enqueue_script( 'custom_js', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '0.1', true );
+  wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+  wp_enqueue_style( 'child-style',
+      get_stylesheet_directory_uri() . '/child-custom.css',
+      array('parent-style')
+  );
 }
 
 add_action( 'wp_enqueue_scripts', 'business_scripts' );
@@ -196,7 +187,7 @@ add_action( 'widgets_init', 'business_widgets_init' );
 function business_widgets_init() {
     register_sidebar( array(
         'name' => __( 'Business Page Sidebar', 'business' ),
-        'id' => 'sidebar_business',
+        'id' => 'sidebarbusiness',
         'description' => __( 'Widgets in this area will be shown on Business Type Pages.', 'business' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s gdlr-item gdlr-widget">',
         'after_widget'  => '</div>',

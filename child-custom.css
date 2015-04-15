@@ -1,12 +1,53 @@
 
 /* = Child Theme Custom CSS File
 -------------------------------------------------------------- */
+#document-section {
+  background:#f2f2f2;
+}
+#document-section h2 {
+  padding:18px 0;
+  margin:0;
+}
+
+#document-section .ten{
+  background:#f2f2f2;
+  padding:10px;
+  width: 81.334%;
+  margin-bottom:20px;
+}
+#document-section .ten p {
+  margin:0;
+  padding:0;
+}
+#document-section .one {
+  text-align:center;
+}
+
+#document-section a[href$='.pdf']::after, #document-section a[href$='.pdf']::before{
+  content:'';
+}
+.inner {
+  background:#fff;
+  padding: 20px 20px 85px 20px;
+}
+#must-have [class*="wrapper"]::before, #might-need [class*="wrapper"]::before{
+    display: block;
+    width: 100%;
+    font-size: 20px;
+}
+#must-have a, #might-need a{
+  font-weight:bold;
+}
+
+#dom-target {
+  display:none;
+}
 
 .overview-wrapper::before {
   content:"Overview";
 }
 
-.state-and-federal-filings-wrapper::before {
+.state-wrapper::before {
   content:"State and Federal Filings";
 }
 
@@ -26,30 +67,20 @@
   content:"Permits";
 }
 
-
-#must-have [class*="wrapper"] > div, #might-need [class*="wrapper"] > div, .an-overview{
-  margin:0 0 0 20px;
-  padding: 10px 0;
+.permit,
+.zoning,
+.taxes,
+.license,
+.state,
+.overview,
+.overview-wrapper,
+.state-wrapper,
+.license-wrapper,
+.taxes-wrapper,
+.zoning-wrapper,
+.permit-wrapper {
+  clear:both;
 }
-
-#must-have [class*="wrapper"]::before, #might-need [class*="wrapper"]::before{
-    display: block;
-    width: 100%;
-    font-size: 20px;
-    background: #E4E4E4;
-    padding: 10px;
-}
-#must-have a, #might-need a{
-  font-weight:bold;
-}
-
-#must-have span::before, #might-need span::before{
-  content: " - ";
-}
-#dom-target {
-  display:none;
-}
-
 
 /* = Theme overrides
 -------------------------------------------------------------- */
