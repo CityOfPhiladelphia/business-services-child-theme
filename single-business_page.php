@@ -77,15 +77,14 @@ get_template_part('template-parts/banner');
                         }
 
                       echo '<a href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a>';
+
+                      echo '<span>' .  get_post($maybe_doc->ID)->post_excerpt . '</span>';
                       if(!$pdf == ''){
                           echo '<a href="' . $pdf . '" class="fa-2x"></a>';
-                          echo $pdf;
                         }
                         if(!$link == ''){
                           echo '<a href="' . $link . '"><i class="fa fa-link fa-2x"></i></a>';
                         }
-
-                      echo '<span>' .  get_post($maybe_doc->ID)->post_excerpt . '</span>';
                       echo '</div>';
                     }
                   }
