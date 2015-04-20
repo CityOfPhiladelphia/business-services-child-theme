@@ -51,12 +51,13 @@
 #document-section .button{
   padding: 10px 0;
 }
-
+/*
 #document-section .more, #document-section .pdf, #document-section .link, #document-section .list {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
+*/
 
 #document-section a[href$='.pdf']::after, #document-section a[href$='.pdf']::before{
   content:'';
@@ -72,6 +73,9 @@
     width: 100%;
     font-size: 20px;
     font-weight: bold;
+}
+#must-have [class*="wrapper"]:first-child{
+	height:70px;
 }
 #must-have a, #might-need a{
   font-weight:bold;
@@ -120,7 +124,7 @@
   clear:both;
   position:relative;
 }
-
+/*
 .permit,
 .zoning,
 .taxes,
@@ -129,7 +133,7 @@
 .overview{
   top:50px;
 }
-
+*/
 /* = General
 -------------------------------------------------------------- */
 .button {
