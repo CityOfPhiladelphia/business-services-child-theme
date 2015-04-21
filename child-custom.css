@@ -124,6 +124,7 @@
   clear:both;
   position:relative;
 }
+
 /*
 .permit,
 .zoning,
@@ -158,7 +159,13 @@
   display:table;
   clear:both;
 }
+.right {
+    float:right;
+}
 
+.label {
+    text-align: center;
+}
 
 /* = Theme overrides
 -------------------------------------------------------------- */
