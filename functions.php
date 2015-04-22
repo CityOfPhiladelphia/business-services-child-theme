@@ -116,12 +116,12 @@ if (isset($custom_taxonomy)){
     add_action( 'init', array($custom_taxonomy, 'create_content_type_tax'), 0);
 }
 /*-----------------------------------------------------------------------------------*/
-/*	Remove unnecessary post types
+/*	Remove unnecessary theme options
 /*-----------------------------------------------------------------------------------*/
 
 function remove_parent_features() {
  	remove_action( 'init', 'gdlr_register_portfolio_admin_option' );
-//remove_action('gdlr_admin_option', 'gdlr_register_portfolio_admin_option');
+    remove_action('init', 'gdlr_init_page_feature');
 
    //remove theme support for post formats
    remove_theme_support('post-formats');
