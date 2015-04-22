@@ -21,16 +21,6 @@
  *
  */
 
-
- /*-----------------------------------------------------------------------------------*/
- /*	enqueue styles
- /*-----------------------------------------------------------------------------------*/
-
-@ini_set( 'upload_max_size' , '64M' );
-@ini_set( 'post_max_size', '64M');
-@ini_set( 'max_execution_time', '300' );
-
-
  /*-----------------------------------------------------------------------------------*/
  /*	Custom Post Types
  /*-----------------------------------------------------------------------------------*/
@@ -53,7 +43,6 @@ if (!class_exists('BusinessServicesCustomPostTypes')){
                     'not_found'   => __('Business Type Page Not Found'),
                     'not_found_in_trash'   => __('Business Type Page not found in trash'),
               ),
-                'taxonomies' => array('category'),
                 'public' => true,
                 'has_archive' => true,
                 'menu_position' => 5,
