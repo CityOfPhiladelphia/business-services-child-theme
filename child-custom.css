@@ -14,6 +14,14 @@
   cursor:pointer;
 }
 
+.home .gdlr-box-with-icon-item a,  .home .gdlr-box-with-icon-item a:link, .home .gdlr-box-with-icon-item a:visited{
+  color: #929292;
+}
+.home .gdlr-box-with-icon-item a:hover, .home .gdlr-box-with-icon-item a:active
+.home .gdlr-box-with-icon-item:hover a, .home .gdlr-box-with-icon-item:active a{
+  color:#F5F5F5;
+}
+
 .home .gdlr-box-with-icon-item:hover {
   background:#3d506d;
   color:#F5F5F5;
