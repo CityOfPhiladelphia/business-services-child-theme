@@ -26,7 +26,7 @@
   color: #929292;
 }
 .home .gdlr-box-with-icon-item a:hover, .home .gdlr-box-with-icon-item a:active
-.home .gdlr-box-with-icon-item:hover a:link, .home .gdlr-box-with-icon-item:active a:link{
+.home .gdlr-box-with-icon-item:hover a, .home .gdlr-box-with-icon-item:active a{
   color:#F5F5F5;
 }
 
