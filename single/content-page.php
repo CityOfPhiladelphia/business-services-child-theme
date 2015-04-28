@@ -5,25 +5,34 @@
 			?>
 			<div class="main-content-container container gdlr-item-start-content">
 				<div class="gdlr-item gdlr-main-content">
-					<?php
-          echo $content;
-            $menus = get_field('page_menu');
+                   <div id="document-section">
+                       <div class="container">
+                           <div class="inner">
+				<?php
+                    echo $content;
+                    $menus = get_field('page_menu');
   				     if( $menus ):
-  						?>	<ul>
+  						?>	
+                          
   							<?php foreach( $menus as $menu ): ?>
-  								<li>
+  								<div class="list nine columns">
   									<a href="<?php echo get_permalink( $menu->ID ); ?>">
-  										<?php echo get_the_title( $menu->ID ); ?>
+  										<?php echo get_the_title( $menu->ID );
+                                        ?>
   									</a>
-  								</li>
+                                    <?php echo  '<p>' . get_post($menu->ID)->post_excerpt . '</p>';?>
+  								</div>
   							<?php endforeach; ?>
-  							</ul>
+                           
   						<?php endif; ?>
 
-					<div class="clear"></div>
+				
+                       </div>
+                  </div>
 				</div>
-			</div>
-			<?php
+			 </div>
+           </div>
+        <?php
 		}
 	}
 ?>

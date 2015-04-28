@@ -1,6 +1,13 @@
 
 /* = Child Theme Custom CSS File
 -------------------------------------------------------------- */
+/* = Homepage
+-------------------------------------------------------------- */
+#business-status h4 {
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#3d506d;
+}
 
 
 /* = Business Type
