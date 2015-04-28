@@ -252,6 +252,7 @@ function business_register_meta_boxes( $meta_boxes )
                 'desc'  => 'Enter the shortcode for a contact. E.g [text-blocks id="the-title"]',
                 'id'    => $prefix . 'contact',
                 'type'  => 'text'
+			//	'clone' => true
             ),
         )
     );
