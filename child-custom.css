@@ -14,11 +14,19 @@
   cursor:pointer;
 }
 
+.home .gdlr-box-with-icon-item a{
+  transition: none;
+  -moz-transition:none;
+  -o-transition: none;
+  -webkit-transition: none;
+}
+
+}
 .home .gdlr-box-with-icon-item a,  .home .gdlr-box-with-icon-item a:link, .home .gdlr-box-with-icon-item a:visited{
   color: #929292;
 }
 .home .gdlr-box-with-icon-item a:hover, .home .gdlr-box-with-icon-item a:active
-.home .gdlr-box-with-icon-item:hover a, .home .gdlr-box-with-icon-item:active a{
+.home .gdlr-box-with-icon-item:hover a:link, .home .gdlr-box-with-icon-item:active a:link{
   color:#F5F5F5;
 }
 
