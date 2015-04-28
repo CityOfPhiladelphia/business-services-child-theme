@@ -46,16 +46,16 @@ get_template_part('template-parts/banner');
                     $link =  rwmb_meta( 'business_link', $args = array(), $required_doc->ID );
 
                     foreach ( $content_types as $content_type ){
-                       
+
                       echo '<div class="' . $content_type->slug . ' group">';
                         echo '<div class="list nine columns">';
                           echo '<a href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a>';
-                     
+
                           //pass the post ID to get_post, then extract the excerpt. BOOYAH
                           echo  '<p>' . get_post($required_doc->ID)->post_excerpt . '</p>';
-                        
+
                             $categories = get_the_category($required_doc->ID);
-                            var_dump($categories);
+                        
                         echo '</div>';// ten
 
                         echo '<div class="more one columns">' . '<a href="' . $required_doc->guid .'" class="button full"><i class="fa fa-arrow-circle-right"></i>' . 'Read More' . '</a></div>';
