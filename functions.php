@@ -25,7 +25,6 @@
  /*	Custom Post Types
  /*-----------------------------------------------------------------------------------*/
 
-
 if (!class_exists('BusinessServicesCustomPostTypes')){
     class BusinessServicesCustomPostTypes{
         function create_business_post_type() {
