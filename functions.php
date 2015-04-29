@@ -158,7 +158,7 @@ add_action( 'init', 'business_register_taxonomy_for_images' );
 /*	enqueue styles/scripts
 /*-----------------------------------------------------------------------------------*/
 function business_scripts() {
-  wp_enqueue_script( 'custom_js', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '0.1', true );
+  wp_enqueue_script( 'custom_js', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery'), '0.1', true );
   wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
   wp_enqueue_style( 'child-style',
       get_stylesheet_directory_uri() . '/child-custom.css',
