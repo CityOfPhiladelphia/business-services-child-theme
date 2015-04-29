@@ -21,12 +21,13 @@
 
 								// The Loop
 								if ( $the_query->have_posts() ) {
-									echo '<ul>';
 									while ( $the_query->have_posts() ) {
 										$the_query->the_post();
-										echo '<li>' . get_the_title() . '</li>';
+										echo '<div class="business-type">';
+											echo '<h3>' . get_the_title() . '</h3>';
+											echo '<p>' . get_the_excerpt() . '</p>';
+										echo '</div>';
 									}
-									echo '</ul>';
 								} else {
 									// no posts found
 								}
@@ -38,6 +39,6 @@
 					</div>
 			 	</div>
        </div>
-        <?php
+      <?php
 		}//end while
 ?>
