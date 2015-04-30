@@ -35,15 +35,10 @@ get_template_part('template-parts/banner');
 
             $business_page_category = get_the_category();
             $business_page_cat_id = $business_page_category[0]->cat_ID;
-            var_dump(  $business_page_cat_id );
 
               if( $required_docs )  {
 
                 foreach( $required_docs as $required_doc ){
-
-                  $content_types =  wp_get_post_terms( $required_doc->ID, 'content_type' );
-
-                  if ( !$content_types == '' ){
 
                     $content_types =  wp_get_post_terms( $required_doc->ID, 'content_type' );
                     $pdf =  rwmb_meta( 'business_pdf', $args = array(), $required_doc->ID );
@@ -51,46 +46,34 @@ get_template_part('template-parts/banner');
 
                     foreach ( $content_types as $content_type ){
 
-                      echo '<div class="' . $content_type->slug . ' group">';
-                        echo '<div class="list nine columns">';
-                          echo '<a href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a>';
+                      echo '<div class="document-row group">
+                              <div class="list nine columns">';
+                          $cat_child_args = array(
+                            'type'                     => 'post',
+                            'child_of'                 => $business_page_cat_id,
+                            'orderby'                  => 'name',
+                            'taxonomy'                 => 'category',
+                            'pad_counts'               => false
+
+                          );
+                        $category_children = get_categories( $cat_child_args );
+
+                        $categories = get_the_category($required_doc->ID);
+                        echo '<div class="business-flag">';
+                          foreach ( $categories as $category ) {
+                            foreach ( $category_children as $child ) {
+
+                              if ( $category->term_id == $child->term_id ){
+
+                                echo '<span>' . $category->name . '</span>';
+                              }
+                            }
+                          }
+                          echo '</div>';
+                          echo '<a class="h3" href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a>';
 
                           //pass the post ID to get_post, then extract the excerpt. BOOYAH
                           echo  '<p>' . get_post($required_doc->ID)->post_excerpt . '</p>';
-
-
-                          $args = array(
-                          	'type'                     => 'post',
-                          	'child_of'                 => $business_page_cat_id,
-                          	'parent'                   => '',
-                          	'orderby'                  => 'name',
-                          	'order'                    => 'ASC',
-                          	'hide_empty'               => 1,
-                          	'hierarchical'             => 1,
-                          	'exclude'                  => '',
-                          	'include'                  => '',
-                          	'number'                   => '',
-                          	'taxonomy'                 => 'category',
-                          	'pad_counts'               => false
-
-                          );
-                          $category_children = get_categories( $args );
-
-                          //get_the_category($required_doc->ID);
-                          //var_dump($category_children);
-
-                          $categories = get_the_category($required_doc->ID);
-
-                          foreach ( $categories as $category ) {
-                            foreach ($category_children as $child){
-
-                              if ($category->term_id == $child->term_id){
-
-                                echo '<div class="impt-flag">' . $category->name . ' Only' . '</div>';
-                              }
-                            }
-
-                          }
 
                         echo '</div>';// ten
 
@@ -118,7 +101,7 @@ get_template_part('template-parts/banner');
                       }
                     }
                 }//end foreach
-              }//end if
+
           ?>
               </div><!--inner-->
             </div><!--.container-->
@@ -132,20 +115,39 @@ get_template_part('template-parts/banner');
               <h2>You Might Need</h2>
               <div class="inner">
                 <?php
-                  foreach( $maybe_docs as $maybe_doc ){
+                foreach( $maybe_docs as $maybe_doc ){
 
-                    $m_content_types =  wp_get_post_terms( $maybe_doc->ID, 'content_type' );
+                    $content_types =  wp_get_post_terms( $maybe_doc->ID, 'content_type' );
+                    $pdf =  rwmb_meta( 'business_pdf', $args = array(), $maybe_doc->ID );
+                    $link =  rwmb_meta( 'business_link', $args = array(), $maybe_doc->ID );
 
-                    if ( !$m_content_types == '' ){
-                      $m_content_types =  wp_get_post_terms( $maybe_doc->ID, 'content_type' );
-                      $pdf =  rwmb_meta( 'business_pdf', $args = array(), $maybe_doc->ID );
-                      $link =  rwmb_meta( 'business_link', $args = array(), $maybe_doc->ID );
+                    foreach ( $content_types as $content_type ){
 
+                      echo '<div class="document-row group">
+                              <div class="list nine columns">';
+                          $cat_child_args = array(
+                            'type'                     => 'post',
+                            'child_of'                 => $business_page_cat_id,
+                            'orderby'                  => 'name',
+                            'taxonomy'                 => 'category',
+                            'pad_counts'               => false
 
-                      foreach ( $m_content_types as $m_content_type ){
-                        echo '<div class="' . $m_content_type->slug . ' group">';
-                          echo '<div class="list nine columns">';
-                            echo '<a href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a>';
+                          );
+                        $category_children = get_categories( $cat_child_args );
+
+                        $categories = get_the_category($maybe_doc->ID);
+                        echo '<div class="business-flag">';
+                          foreach ( $categories as $category ) {
+                            foreach ( $category_children as $child ) {
+
+                              if ( $category->term_id == $child->term_id ){
+
+                                echo '<span>' . $category->name . '</span>';
+                              }
+                            }
+                          }
+                          echo '</div>';
+                          echo '<a class="h3" href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a>';
                             //pass the post ID to get_post, then extract the excerpt. BOOYAH
                             echo  '<p>' . get_post($maybe_doc->ID)->post_excerpt . '</p>';
                           echo '</div>';// ten
@@ -172,7 +174,6 @@ get_template_part('template-parts/banner');
                         }
                         echo '</div>';//one
                       echo '</div>';
-                        }
                       }
                   }//end foreach
                 ?>

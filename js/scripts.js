@@ -1,5 +1,7 @@
 jQuery(document).ready(function($) {
 
+  $('.business-flag:empty').hide();
+
   /*
   if ( $( "#business-page" ).length ) {
     /*CONTENT TYPE SORTER*/
