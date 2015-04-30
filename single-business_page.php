@@ -5,7 +5,7 @@ get_template_part('template-parts/banner');
 ?>
 <?php get_header(); ?>
 
-  <div id ="business-page" class="gdlr-content">
+  <div id="business-page" class="gdlr-content">
     <div class="with-sidebar-container container">
         <div class="with-sidebar-left eight columns">
           <div class="with-sidebar-content twelve columns">
