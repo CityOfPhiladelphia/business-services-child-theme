@@ -4,29 +4,30 @@
 			?>
 			<div class="main-content-container container gdlr-item-start-content">
 				<div class="gdlr-item gdlr-main-content">
-          <div id="document-section">
-            <div class="container">
-              <div class="inner">
+          <div class="container">
+            <div class="inner">
 							<?php
 							if(!empty($content)){
 		              echo $content;
 								}
-								$args = array(
+								$category_args = array(
 									'post_type' => 'business_page',
 									'nopaging'	=> 'true',
 									'order'	=> 'asc'
-
 								);
-								$the_query = new WP_Query( $args );
+								$category_query = new WP_Query( $category_args );
 
 								// The Loop
-								if ( $the_query->have_posts() ) {
-									while ( $the_query->have_posts() ) {
-										$the_query->the_post();
-										echo '<div class="business-type">';
-											echo '<h3>' . get_the_title() . '</h3>';
-											echo '<p>' . get_the_excerpt() . '</p>';
-										echo '</div>';
+								if ( $category_query->have_posts() ) {
+									while ( $category_query->have_posts() ) {
+										$category_query->the_post();
+										?>
+										<a href="<?php the_permalink(); ?>" class="box-list twelve columns" title="<?php echo get_the_title() ?>">
+
+											 	<h3><?php echo get_the_title() ?></h3>
+												<p><?php echo get_the_excerpt() ?></p>
+
+										</a><?php
 									}
 								} else {
 									// no posts found
@@ -37,7 +38,6 @@
               </div>
             </div>
 					</div>
-			 	</div>
        </div>
       <?php
 		}//end while
