@@ -1,8 +1,10 @@
 jQuery(document).ready(function($) {
 
+  /*
   if ( $( "#business-page" ).length ) {
     /*CONTENT TYPE SORTER*/
     //get the content from the page
+    /*
     var div = document.getElementById("dom-target");
     var text_data = div.textContent;
     var content_types = text_data.split(" ");
@@ -16,6 +18,7 @@ jQuery(document).ready(function($) {
 
     }
   }
+  */
 
   $(".home .gdlr-box-with-icon-item").click(function() {
     window.location = $('this').find("a").attr("href");

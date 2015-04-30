@@ -55,7 +55,7 @@ get_template_part('template-parts/banner');
                           echo  '<p>' . get_post($required_doc->ID)->post_excerpt . '</p>';
 
                             $categories = get_the_category($required_doc->ID);
-                            //var_dump($categories);
+                            var_dump($categories);
                         echo '</div>';// ten
 
                         echo '<div class="more one columns">' . '<a href="' . $required_doc->guid .'" class="button full"><i class="fa fa-arrow-circle-right"></i>' . 'Read More' . '</a></div>';
@@ -88,14 +88,14 @@ get_template_part('template-parts/banner');
             </div><!--.container-->
           </div><!--#must-have-->
           <div class="clear"></div>
+    <?php
+      $maybe_docs = get_field('might_need');
+        if( !$maybe_docs == '') {?>
           <div id="might-need">
             <div class="container">
               <h2>You Might Need</h2>
               <div class="inner">
-            <?php
-              $maybe_docs = get_field('might_need');
-                if( $maybe_docs ) {
-
+                <?php
                   foreach( $maybe_docs as $maybe_doc ){
 
                     $m_content_types =  wp_get_post_terms( $maybe_doc->ID, 'content_type' );
@@ -139,12 +139,13 @@ get_template_part('template-parts/banner');
                         }
                       }
                   }//end foreach
-                }//end if
                 ?>
+              </div><!--.inner -->
+            </div><!--.container-->
+          </div><!-- #might-need -->
 
-      </div><!--.inner -->
-    </div><!--.container-->
-  </div><!-- #might-need -->
+              <?php  }//end if ?>
+
 </div><!-- gdlr-content -->
 <?php get_footer(); ?>
 
