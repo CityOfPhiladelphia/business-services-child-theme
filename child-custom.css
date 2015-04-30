@@ -252,6 +252,7 @@ a{
 }
 /* = Media Queries
 -------------------------------------------------------------- */
+@media only screen and (max-width: 64em) {
   #document-section .label{
     display:none;
   }
