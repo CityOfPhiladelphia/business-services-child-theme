@@ -34,7 +34,7 @@ get_header(); ?>
 									gdlr_print_page_builder($with_sidebar_content, false);
 								}
 								if( !empty($gdlr_post_option['show-content']) && $gdlr_post_option['show-content'] != 'disable' ){
-									get_template_part('single/content', 'page');
+									get_template_part('single/content', 'mutiple-menus');
 								}
 							?>
 						</div>
@@ -53,7 +53,7 @@ get_header(); ?>
 					echo '</div>';
 				}
 				if( empty($gdlr_post_option['show-content']) || $gdlr_post_option['show-content'] != 'disable' ){
-					get_template_part('single/content', 'page');
+					get_template_part('single/content', 'mutiple-menus');
 				}
 			}
 		?>
