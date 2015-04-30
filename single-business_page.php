@@ -33,6 +33,10 @@ get_template_part('template-parts/banner');
           <?php
             $required_docs = get_field('required');
 
+            $business_page_category = get_the_category();
+            $business_page_cat_id = $business_page_category[0]->cat_ID;
+            var_dump(  $business_page_cat_id );
+
               if( $required_docs )  {
 
                 foreach( $required_docs as $required_doc ){
@@ -54,8 +58,40 @@ get_template_part('template-parts/banner');
                           //pass the post ID to get_post, then extract the excerpt. BOOYAH
                           echo  '<p>' . get_post($required_doc->ID)->post_excerpt . '</p>';
 
-                            $categories = get_the_category($required_doc->ID);
-                            var_dump($categories);
+
+                          $args = array(
+                          	'type'                     => 'post',
+                          	'child_of'                 => $business_page_cat_id,
+                          	'parent'                   => '',
+                          	'orderby'                  => 'name',
+                          	'order'                    => 'ASC',
+                          	'hide_empty'               => 1,
+                          	'hierarchical'             => 1,
+                          	'exclude'                  => '',
+                          	'include'                  => '',
+                          	'number'                   => '',
+                          	'taxonomy'                 => 'category',
+                          	'pad_counts'               => false
+
+                          );
+                          $category_children = get_categories( $args );
+
+                          //get_the_category($required_doc->ID);
+                          //var_dump($category_children);
+
+                          $categories = get_the_category($required_doc->ID);
+
+                          foreach ( $categories as $category ) {
+                            foreach ($category_children as $child){
+
+                              if ($category->term_id == $child->term_id){
+
+                                echo '<div class="impt-flag">' . $category->name . ' Only' . '</div>';
+                              }
+                            }
+
+                          }
+
                         echo '</div>';// ten
 
                         echo '<div class="more one columns">' . '<a href="' . $required_doc->guid .'" class="button full"><i class="fa fa-arrow-circle-right"></i>' . 'Read More' . '</a></div>';
