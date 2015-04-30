@@ -24,19 +24,19 @@ jQuery(document).ready(function($) {
 
   // Open in new window
   $(".home #plan").click(function () {
-    window.open($(this).find("a:first").attr("href"));
+    window.location = $(this).find("a:first").attr("href");
     return false;
   });
   $(".home #maintain").click(function () {
-    window.open($(this).find("a:first").attr("href"));
+    window.location = $(this).find("a:first").attr("href");
     return false;
   });
   $(".home #launch").click(function () {
-    window.open($(this).find("a:first").attr("href"));
+    window.location = $(this).find("a:first").attr("href");
     return false;
   });
   $(".home #close").click(function () {
-    window.open($(this).find("a:first").attr("href"));
+    window.location = $(this).find("a:first").attr("href");
     return false;
   });
 
