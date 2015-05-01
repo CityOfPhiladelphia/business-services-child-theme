@@ -47,7 +47,7 @@ if (!class_exists('BusinessServicesCustomPostTypes')){
                 'menu_position' => 5,
                 'menu_icon' => 'dashicons-store',
                 'hierarchical' => true,
-                'supports' => array('title', 'excerpt', 'editor', 'thumbnail'),
+                'supports' => array('title', 'excerpt', 'editor', 'thumbnail', 'page-attributes'),
                 'taxonomies' => array('category'),
                 'rewrite' => array(
                     'slug' => 'business',
