@@ -13,7 +13,8 @@
 								$category_args = array(
 									'post_type' => 'business_page',
 									'nopaging'	=> 'true',
-									'order'	=> 'asc'
+									'order'	=> 'asc',
+									'post_parent' => 0
 								);
 								$category_query = new WP_Query( $category_args );
 
