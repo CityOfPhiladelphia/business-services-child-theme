@@ -261,10 +261,10 @@ function business_register_meta_boxes( $meta_boxes )
     return $meta_boxes;
 }
 
-
+//i dont think we need this anymore
 function businessType(){
   $args = array( 'sort_column' => 'menu_order', 'parent' => 0, 'post_type' => 'business_page' );
- wp_list_pages( $args );
+  wp_list_pages( $args );
 }
 
 add_shortcode( 'list-businesses', 'businessType' );
