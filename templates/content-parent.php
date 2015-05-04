@@ -16,7 +16,6 @@
 
         $current_child_ID = $child->ID;
         $required_docs = get_field('required', $current_child_ID);
-        $maybe_docs = get_field('might_need', $current_child_ID);
 
     if( $required_docs )  {
       ?><div class="container">
@@ -77,19 +76,34 @@
 <?php
         $business_page_category = get_the_category();
         $business_page_cat_id = $business_page_category[0]->cat_ID;
-            if( !$maybe_docs == '') {?>
-              <div id="might-need">
-                <div class="container">
-                  <h2>Documents You May Need</h2>
-                  <div class="inner">
-                    <?php
-                    foreach( $maybe_docs as $maybe_doc ){
 
-                        $content_types =  wp_get_post_terms( $maybe_doc->ID, 'content_type' );
-                        $pdf =  rwmb_meta( 'business_pdf', $args = array(), $maybe_doc->ID );
-                        $link =  rwmb_meta( 'business_link', $args = array(), $maybe_doc->ID );
+        // Set up the objects needed
+        $my_wp_query = new WP_Query();
+        $all_wp_pages = $my_wp_query->query(array('post_type' => 'business_page', 'posts_per_page' => -1));
+        $current_id = get_the_ID();
 
-                        foreach ( $content_types as $content_type ){
+        // Filter through all pages and find this pages's children
+        $children = get_page_children( $current_id, $all_wp_pages );
+        ?>
+        <div id="might-need">
+          <div class="container">
+            <h2>Documents You May Need</h2>
+              <div class="inner">
+
+          <?php
+        foreach($children as $child) {
+
+          $current_child_ID = $child->ID;
+          $maybe_docs = get_field('might_need', $current_child_ID);
+
+            if( !$maybe_docs == '') {
+              foreach( $maybe_docs as $maybe_doc ){
+
+                $content_types =  wp_get_post_terms( $maybe_doc->ID, 'content_type' );
+                $pdf =  rwmb_meta( 'business_pdf', $args = array(), $maybe_doc->ID );
+                $link =  rwmb_meta( 'business_link', $args = array(), $maybe_doc->ID );
+
+                  foreach ( $content_types as $content_type ){
 
                           echo '<div class="document-row group">
                                   <div class="list nine columns">';
@@ -142,12 +156,12 @@
                             }
                             echo '</div>';//one
                           echo '</div>';
+
                           }
                       }//end foreach
-                    ?>
-                  </div><!--.inner -->
-                </div><!--.container-->
-              </div><!-- #might-need -->
+                    }//end if
+                 ?>
 
-                  <?php  }//end if
+           <?php
+                }
                   ?>
