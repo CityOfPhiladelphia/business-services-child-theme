@@ -88,6 +88,10 @@
   margin-bottom:20px;
   height:100%;
 }
+
+.with-sidebar-content #document-section .list.columns{
+  width: 61%;
+}
 #document-section .list.columns p {
   margin:0;
   padding:0;
@@ -235,6 +239,10 @@
   border: 1px solid #3d506d;
   padding: 10px;
   margin: 10px 0;
+}
+
+.with-sidebar-content .filter-content {
+  width: 100%;
 }
 /* = Theme overrides
 -------------------------------------------------------------- */

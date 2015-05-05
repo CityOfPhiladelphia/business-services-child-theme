@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Zoning
+Template Name: Licenses/Permits
 */
 get_header(); ?>
 
@@ -34,6 +34,7 @@ get_header(); ?>
 								}
 								if( !empty($gdlr_post_option['show-content']) && $gdlr_post_option['show-content'] != 'disable' ){
 									get_template_part('single/content', 'full-document-list');
+
 								}
 							?>
 						</div>

@@ -8,6 +8,7 @@
             <div class="container">
               <div class="inner">
 							<?php
+
 							if(!empty($content)){
 		              echo $content;
 								}
@@ -20,7 +21,7 @@
                 		array(
                 			'taxonomy' => 'content_type',
                 			'field'    => 'slug',
-                			'terms'    => 'zoning',
+                			'terms'    => 'license', 'permit',
                 		),
                 	),
 								);
@@ -76,7 +77,6 @@
                   </div>
                 </div>
 
-
                 <?php
                   }//end if
                 }
@@ -90,6 +90,7 @@
        </div>
      </div>
    </div>
+ </div>
       <?php
 		}//end while
 ?>
