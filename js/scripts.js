@@ -11,9 +11,7 @@ jQuery(document).ready(function($) {
         $(this).remove();
     else
         seen[txt] = true;
-});
-
-
+  });
   /*
   if ( $( "#business-page" ).length ) {
     /*CONTENT TYPE SORTER*/
@@ -53,3 +51,9 @@ jQuery(document).ready(function($) {
   });
 
 });
+
+var options = {
+  valueNames: [ 'title']
+};
+
+var docList = new List('document-sort', options);

@@ -27,6 +27,11 @@
 								$full_list_query = new WP_Query( $full_list_args );
 
 								if ( $full_list_query->have_posts()) {
+                  ?>
+                  <div id="document-sort">
+                    <input class="search filter-content" placeholder="Filter list..." />
+                    <div class="list">
+                    <?php
 									while ( $full_list_query->have_posts() ) {
 
 										$full_list_query->the_post();
@@ -37,7 +42,7 @@
 
                     ?><div class="document-row group">
                        <div class="list nine columns">
-                         <a href="<?php the_permalink(); ?>" class="h3" title="<?php echo get_the_title() ?>">
+                         <a href="<?php the_permalink(); ?>" class="h3 title" title="<?php echo get_the_title() ?>">
                            <?php echo get_the_title() ?>
                        </a>
                          <p> <?php the_excerpt(); ?></p>
@@ -70,6 +75,8 @@
                       ?>
                   </div>
                 </div>
+
+
                 <?php
                   }//end if
                 }
@@ -81,6 +88,8 @@
             </div>
 					</div>
        </div>
+     </div>
+   </div>
       <?php
 		}//end while
 ?>
