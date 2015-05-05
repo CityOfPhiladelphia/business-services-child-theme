@@ -5,10 +5,10 @@
 			?>
 			<div class="main-content-container container gdlr-item-start-content">
 				<div class="gdlr-item gdlr-main-content">
-                   <div id="document-section">
-                       <div class="container">
-                           <div class="inner">
-										<?php
+          <div id="document-section">
+             <div class="container">
+               <div class="inner">
+							<?php
               echo $content;
 							$menus = get_field('page_menu');
   				     if( $menus ):
@@ -22,17 +22,14 @@
   									</a>
                     <?php echo  '<p>' . get_post($menu->ID)->post_excerpt . '</p>';?>
   								</div>
-  							<?php endforeach; ?>
-
-  						<?php endif; ?>
-
-
-                       </div>
-                  </div>
-				</div>
-			 </div>
-           </div>
-        <?php
+	  							<?php endforeach; ?>
+	  						<?php endif; ?>
+	             	</div>
+	            </div>
+						</div>
+				 	</div>
+	      </div>
+      <?php
 		}
 	}
 ?>
