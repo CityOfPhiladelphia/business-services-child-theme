@@ -4,6 +4,13 @@
 /* = Homepage
 -------------------------------------------------------------- */
 
+
+
+/* Calendar format on business type pages */
+#document-section .columns {
+  /* margin-right: 10px; */
+}
+
 /*--------------------------------------------New Edits after mock up---------------------------------- */
 /*Change in font color from yello to grey for announcements and events */
 .gdlr-skin-homepage-project h3,.gdlr-skin-homepage-project .gdlr-skin-title{
