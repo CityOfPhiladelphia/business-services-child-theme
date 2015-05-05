@@ -93,20 +93,23 @@
           <?php
         foreach($children as $child) {
 
+
           $current_child_ID = $child->ID;
           $maybe_docs = get_field('might_need', $current_child_ID);
 
-            if( !$maybe_docs == '') {
+            if( !$maybe_docs == '' ) {
+
               foreach( $maybe_docs as $maybe_doc ){
 
                 $content_types =  wp_get_post_terms( $maybe_doc->ID, 'content_type' );
                 $pdf =  rwmb_meta( 'business_pdf', $args = array(), $maybe_doc->ID );
                 $link =  rwmb_meta( 'business_link', $args = array(), $maybe_doc->ID );
+                $unique_id = $maybe_doc->ID;
 
                   foreach ( $content_types as $content_type ){
 
-                          echo '<div class="document-row group">
-                                  <div class="list nine columns">';
+                      echo '<div class="document-row group ' . 'pg-' . $unique_id   . '">
+                              <div class="list nine columns">';
                               $cat_child_args = array(
                                 'type'                     => 'post',
                                 'child_of'                 => $business_page_cat_id,

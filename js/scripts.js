@@ -2,6 +2,18 @@ jQuery(document).ready(function($) {
 
   $('.business-flag:empty').hide();
 
+  var seen = {};
+ /*hide duplicate elements on our "parent" biz type page */
+  $( '.parent #might-need .inner .document-row' ).each(function() {
+
+    var txt = $(this).text();
+    if (seen[txt])
+        $(this).remove();
+    else
+        seen[txt] = true;
+});
+
+
   /*
   if ( $( "#business-page" ).length ) {
     /*CONTENT TYPE SORTER*/

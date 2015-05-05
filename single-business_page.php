@@ -25,9 +25,13 @@ get_template_part('template-parts/banner');
       <div class="clear"></div>
       <div id="document-section">
       <?php if( $post->post_parent !== 0 ) {
+            ?><div class="child"> <?php
             get_template_part('templates/content', 'child');
+            ?></div><?php
         } else {
+          ?><div class="parent"> <?php
             get_template_part('templates/content', 'parent' );
+            ?></div><?php
         }
       ?>
 </div><!-- gdlr-content -->
