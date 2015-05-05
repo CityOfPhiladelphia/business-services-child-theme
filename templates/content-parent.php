@@ -12,16 +12,21 @@
       // Filter through all pages and find this pages's children
       $children = get_page_children( $current_id, $all_wp_pages );
 
+      ?>
+      <div class="container">
+        <h2>Required</h2>
+        <?php
+
       foreach($children as $child) {
 
         $current_child_ID = $child->ID;
         $required_docs = get_field('required', $current_child_ID);
 
     if( $required_docs )  {
-      ?><div class="container">
 
-          <h3><?php echo $child->post_title; ?> </h3>
-            <div class="inner">
+        ?>
+          <div class="inner">
+            <h3><?php echo $child->post_title; ?> </h3>
               <div class="right one columns label">Download PDF</div>
               <div class="right one columns label">Online Service</div>
           <?php
