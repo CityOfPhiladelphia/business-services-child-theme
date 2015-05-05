@@ -86,28 +86,7 @@
 
                           echo '<div class="document-row group">
                                   <div class="list nine columns">';
-                              $cat_child_args = array(
-                                'type'                     => 'post',
-                                'child_of'                 => $business_page_cat_id,
-                                'orderby'                  => 'name',
-                                'taxonomy'                 => 'category',
-                                'pad_counts'               => false
-
-                              );
-                            $category_children = get_categories( $cat_child_args );
-
-                            $categories = get_the_category($maybe_doc->ID);
-                            echo '<div class="business-flag">';
-                              foreach ( $categories as $category ) {
-                                foreach ( $category_children as $child ) {
-
-                                  if ( $category->term_id == $child->term_id ){
-
-                                    echo '<span>' . $category->name . '</span>';
-                                  }
-                                }
-                              }
-                              echo '</div>';
+                      
                               echo '<a class="h3" href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a>';
                                 //pass the post ID to get_post, then extract the excerpt. BOOYAH
                                 echo  '<p>' . get_post($maybe_doc->ID)->post_excerpt . '</p>';
