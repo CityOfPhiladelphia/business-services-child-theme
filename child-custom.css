@@ -209,11 +209,13 @@
   clear:both;
 }
 .right {
-    float:right;
+  float:right;
 }
 
 .label {
-    text-align: center;
+  text-align: center;
+  font-size: small;
+  font-style: italic;
 }
 
 .box-list {
