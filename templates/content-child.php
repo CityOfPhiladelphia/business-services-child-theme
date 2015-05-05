@@ -86,7 +86,7 @@
 
                           echo '<div class="document-row group">
                                   <div class="list nine columns">';
-                      
+
                               echo '<a class="h3" href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a>';
                                 //pass the post ID to get_post, then extract the excerpt. BOOYAH
                                 echo  '<p>' . get_post($maybe_doc->ID)->post_excerpt . '</p>';
