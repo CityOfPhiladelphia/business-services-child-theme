@@ -220,7 +220,7 @@ function business_register_meta_boxes( $meta_boxes )
     // 1st meta box
     $meta_boxes[] = array(
         'id'       => 'files',
-        'title'    => 'PDF and Link locations',
+        'title'    => 'PDF and Online Service Locations',
         'pages'    => array( 'post' ),
         'context'  => 'normal',
         'priority' => 'high',
@@ -233,10 +233,10 @@ function business_register_meta_boxes( $meta_boxes )
                 'type'  => 'file_input'
             ),
             array(
-                'name'  => 'Online Application or Service',
-                'desc'  => 'If there is an online application, or a service enter it here.',
+                'name'  => 'Renewable Online?',
+                'desc'  => 'If this license or permit can be renewed through eClipse, check this box.',
                 'id'    => $prefix . 'link',
-                'type'  => 'text'
+                'type'  => 'checkbox'
             ),
         )
     );
