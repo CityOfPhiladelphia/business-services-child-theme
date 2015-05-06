@@ -12,6 +12,8 @@ jQuery(document).ready(function($) {
     else
         seen[txt] = true;
   });
+
+  
   /*
   if ( $( "#business-page" ).length ) {
     /*CONTENT TYPE SORTER*/
