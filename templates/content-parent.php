@@ -27,7 +27,6 @@
 
           <h3><?php echo $child->post_title; ?> </h3>
             <div class="right one columns label">Download PDF</div>
-              <div class="right one columns label">Online Service</div>
           <?php
               foreach( $required_docs as $required_doc ){
 
@@ -49,15 +48,6 @@
 
                         echo '<div class="more one columns">' . '<a href="' . $required_doc->guid .'" class="button full"><i class="fa fa-arrow-circle-right"></i>' . 'Read More' . '</a></div>';
 
-                     echo '<div class="link one columns">';
-                        if ( !$link == '' ){
-                          echo '<a href="' . $link . '" class="button red">
-                            <i class="fa fa-link fa-inverse"></i>
-                        </a>';
-                      }else {
-                        echo '<span class="button red inactive"><i class="fa fa-link fa-inverse"></i></span>';
-                      }
-                      echo '</div>';//one
                      echo '<div class="pdf one columns">';
                         if ( !$pdf == '' ){
                             echo '<a href="' . $pdf . '" class="button red">

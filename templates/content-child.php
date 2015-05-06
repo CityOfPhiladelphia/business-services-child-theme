@@ -4,19 +4,15 @@
       $business_page_category = get_the_category();
       $business_page_cat_id = $business_page_category[0]->cat_ID;
 
-      // Set up the objects needed
-      //$my_wp_query = new WP_Query();
-      //$all_wp_pages = $my_wp_query->query(array('post_type' => 'business_page', 'posts_per_page' => -1));
       $current_id = get_the_ID();
 
       $required_docs = get_field('required');
 
       if( $required_docs )  {
-      ?><div class="container">
-        <h3>Required</h3>
+      ?>
+        <h2>Required</h2>
             <div class="inner">
               <div class="right one columns label">Download PDF</div>
-              <div class="right one columns label">Online Service</div>
           <?php
                 foreach( $required_docs as $required_doc ){
 
@@ -27,7 +23,7 @@
                     foreach ( $content_types as $content_type ){
 
                       echo '<div class="document-row group">
-                              <div class="list nine columns">';
+                              <div class="list ten columns">';
 
                         echo '<a class="h3" href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a>';
 
@@ -38,15 +34,6 @@
 
                         echo '<div class="more one columns">' . '<a href="' . $required_doc->guid .'" class="button full"><i class="fa fa-arrow-circle-right"></i>' . 'Read More' . '</a></div>';
 
-                     echo '<div class="link one columns">';
-                        if ( !$link == '' ){
-                          echo '<a href="' . $link . '" class="button red">
-                            <i class="fa fa-link fa-inverse"></i>
-                        </a>';
-                      }else {
-                        echo '<span class="button red inactive"><i class="fa fa-link fa-inverse"></i></span>';
-                      }
-                      echo '</div>';//one
                      echo '<div class="pdf one columns">';
                         if ( !$pdf == '' ){
                             echo '<a href="' . $pdf . '" class="button red">
@@ -75,6 +62,7 @@
                 <div class="container">
                   <h2>Documents You May Need</h2>
                   <div class="inner">
+                    <div class="right one columns label">Download PDF</div>
                     <?php
                     foreach( $maybe_docs as $maybe_doc ){
 
@@ -104,21 +92,11 @@
                               }
                             echo '</div>';//one
 
-                           echo '<div class="link one columns">';
-                              if ( !$link == '' ){
-                                echo '<a href="' . $link . '" class="button red">
-                                  <i class="fa fa-link fa-inverse"></i>
-                              </a>';
-                            }else {
-                              echo '<span class="button red inactive"><i class="fa fa-link fa-inverse"></i></span>';
-                            }
-                            echo '</div>';//one
                           echo '</div>';
                           }
                       }//end foreach
                     ?>
                   </div><!--.inner -->
-                </div><!--.container-->
               </div><!-- #might-need -->
 
                   <?php  }//end if

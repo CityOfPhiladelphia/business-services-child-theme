@@ -53,17 +53,6 @@
                       <a href="<?php the_permalink(); ?>" class="button full"><i class="fa fa-arrow-circle-right">
                           </i>Read More</a>
                     </div>
-
-                <div class="link one columns">
-                  <?php
-                    if ( !$link == '' ){
-                        echo '<a href="' . $link . '" class="button red">
-                          <i class="fa fa-link fa-inverse"></i>
-                      </a>';
-                    }else {
-                      echo '<span class="button red inactive"><i class="fa fa-link fa-inverse"></i></span>';
-                    }
-                    ?></div>
                   <div class="pdf one columns">
                     <?php
                       if ( !$pdf == '' ){
