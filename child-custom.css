@@ -270,6 +270,10 @@
 .with-sidebar-content .filter-content {
   width: 100%;
 }
+
+.launch .inner h3, .launch .inner p {
+  margin:0;
+}
 /* = Theme overrides
 -------------------------------------------------------------- */
 .gdlr-item.gdlr-main-content {
