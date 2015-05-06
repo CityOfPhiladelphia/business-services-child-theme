@@ -191,7 +191,12 @@
 
 .may-also-need{
   background:#DCDCDC;
-  padding:20px;
+  padding:10px;
+}
+.may-also-need h6{
+  text-transform:uppercase;
+  font-weight:bold;
+  margin:0;
 }
 /*
 .permit,
