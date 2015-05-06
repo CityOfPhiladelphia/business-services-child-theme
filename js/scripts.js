@@ -1,10 +1,10 @@
 jQuery(document).ready(function($) {
 
-  $('.business-flag:empty').hide();
+  //$('.business-flag:empty').hide();
 
-  var seen = {};
+  //var seen = {};
  /*hide duplicate elements on our "parent" biz type page */
-  $( '.parent #might-need .inner .document-row' ).each(function() {
+ /*  $( '.parent #might-need .inner .document-row' ).each(function() {
 
     var txt = $(this).text();
     if (seen[txt])
@@ -13,8 +13,8 @@ jQuery(document).ready(function($) {
         seen[txt] = true;
   });
 
-  
-  /*
+
+
   if ( $( "#business-page" ).length ) {
     /*CONTENT TYPE SORTER*/
     //get the content from the page

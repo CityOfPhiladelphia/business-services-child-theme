@@ -190,7 +190,7 @@ function business_widgets_init() {
 }
 /*-----------------------------------------------------------------------------------*/
 /*	content type checkboses to radios (only allow one)
-/*-----------------------------------------------------------------------------------*/
+
 
 add_action( 'admin_footer', 'content_type_radios' );
 function content_type_radios(){
@@ -198,7 +198,7 @@ function content_type_radios(){
 	echo 'jQuery("#taxonomy-content_type input[type=checkbox]")';
 	echo '.each(function(){this.type="radio"});</script>';
 }
-
+/*-----------------------------------------------------------------------------------*/
 
 /*-----------------------------------------------------------------------------------*/
 /*	Filter upload size limit
