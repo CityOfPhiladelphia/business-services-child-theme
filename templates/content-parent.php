@@ -6,7 +6,13 @@
 
       // Set up the objects needed
       $my_wp_query = new WP_Query();
-      $all_wp_pages = $my_wp_query->query(array('post_type' => 'business_page', 'posts_per_page' => -1));
+      $all_wp_pages = $my_wp_query->query(array(
+        'post_type' => 'business_page',
+        'posts_per_page' => -1,
+        'order' => 'asc',
+        'orderby' => 'title'
+        )
+      );
       $current_id = get_the_ID();
 
       // Filter through all pages and find this pages's children
