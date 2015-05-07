@@ -31,8 +31,10 @@
     if( $required_docs )  {
         ?>
 
-          <h3><?php echo $child->post_title; ?> </h3>
-            <div class="right one columns label">Download PDF</div>
+
+            <h3><?php echo $child->post_title; ?> </h3>
+          <div class="right one columns label">Download PDF</div>
+          <div class="clear"></div>
           <?php
               foreach( $required_docs as $required_doc ){
 
