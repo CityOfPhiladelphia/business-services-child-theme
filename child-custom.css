@@ -51,7 +51,7 @@ h3.gdlr-blog-title::before{
   content:" »";
 }
 
-.gdlr-blog-grid:last-of-type, .gce-feed:last-of-type{
+.gdlr-blog-grid .gdlr-blog-title:last-of-type, .gec-event-day > .gce-feed:last-of-type{
   border-bottom:none;
 }
 /*------------------------------------------------------------------------------ */
