@@ -28,8 +28,8 @@
       $current_child_ID = $child->ID;
       $required_docs = get_field('required', $current_child_ID);
 
-    if( $required_docs )  {
-        ?>
+      if( $required_docs )  {
+          ?>
 
 
             <h3><?php echo $child->post_title; ?> </h3>

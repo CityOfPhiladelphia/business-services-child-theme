@@ -5,14 +5,14 @@
 			?>
 			<div class="main-content-container container gdlr-item-start-content">
 				<div class="gdlr-item gdlr-main-content">
-          <div id="document-section">
-							<?php
-              echo $content;
-							$menus = get_field('page_menu');
-  				     if( $menus ):
-  						?>
+					<?php
+						echo $content;?>
 
-  							<?php foreach( $menus as $menu ): ?>
+          <div id="document-section">
+					<?php
+							$menus = get_field('page_menu');
+							if( $menus ):
+								foreach( $menus as $menu ): ?>
   								<div class="list nine columns">
   									<a href="<?php echo get_permalink( $menu->ID ); ?>">
   										<?php echo get_the_title( $menu->ID );

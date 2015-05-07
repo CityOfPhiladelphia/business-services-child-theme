@@ -4,13 +4,15 @@
 			?>
 			<div class="main-content-container container gdlr-item-start-content">
 				<div class="gdlr-item gdlr-main-content">
+					<?php
+					if(!empty($content)){
+							echo $content;
+						}
+						?>
           <div id="document-section">
               <div class="inner">
 							<?php
 
-							if(!empty($content)){
-		              echo $content;
-								}
 								$full_list_args = array(
 									'post_type' => 'post',
 									'nopaging'	=> 'true',
