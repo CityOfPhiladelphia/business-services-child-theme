@@ -1,5 +1,5 @@
-<div id="must-have">
-  <div class="container">
+<div class="main-content-container container gdlr-item-start-content">
+  <div id="must-have">
     <?php
       $business_page_category = get_the_category();
       $business_page_cat_id = $business_page_category[0]->cat_ID;
@@ -52,18 +52,16 @@
 
           ?>
         </div>
-          </div><!--.container-->
-        </div><!--#must-have-->
 <?php
         $business_page_category = get_the_category();
         $business_page_cat_id = $business_page_category[0]->cat_ID;
           $maybe_docs = get_field('might_need');
             if( !$maybe_docs == '') {?>
               <div id="might-need">
-                <div class="container">
                   <h2>Documents You May Need</h2>
                   <div class="inner">
                     <div class="right one columns label">Download PDF</div>
+                    <div class="clear"></div>
                     <?php
                     foreach( $maybe_docs as $maybe_doc ){
 
@@ -98,7 +96,5 @@
                       }//end foreach
                     ?>
                   </div><!--.inner -->
-              </div><!-- #might-need -->
-
-                  <?php  }//end if
-                  ?>
+                </div>
+            <?php  }//end if

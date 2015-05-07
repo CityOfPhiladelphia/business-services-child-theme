@@ -283,6 +283,7 @@ h3.gdlr-blog-title::before{
   text-align: center;
   font-size: small;
   font-style: italic;
+  padding-right: 24px;
 }
 
 .box-list {

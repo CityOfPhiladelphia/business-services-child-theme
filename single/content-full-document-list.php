@@ -5,7 +5,6 @@
 			<div class="main-content-container container gdlr-item-start-content">
 				<div class="gdlr-item gdlr-main-content">
           <div id="document-section">
-            <div class="container">
               <div class="inner">
 							<?php
 
@@ -73,10 +72,9 @@
 								/* Restore original Post Data */
 								wp_reset_postdata();
 								?>
-              </div>
             </div>
-					</div>
-       </div>
+          </div>
+				</div>
      </div>
    </div>
  </div>

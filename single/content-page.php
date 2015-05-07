@@ -6,8 +6,6 @@
 			<div class="main-content-container container gdlr-item-start-content">
 				<div class="gdlr-item gdlr-main-content">
           <div id="document-section">
-             <div class="container">
-
 							<?php
               echo $content;
 							$menus = get_field('page_menu');
@@ -24,8 +22,6 @@
   								</div>
 	  							<?php endforeach; ?>
 	  						<?php endif; ?>
-	       
-	            </div>
 						</div>
 				 	</div>
 	      </div>
