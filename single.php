@@ -29,17 +29,7 @@
 						<?php get_template_part('single/content'); ?>
 
 						<?php gdlr_get_social_shares(); ?>
-
-						<div class="gdlr-single-blog-tag">
-							<?php echo gdlr_get_blog_info(array('tag'), false); ?>
-						</div>
-
-						<nav class="gdlr-single-nav">
-							<?php previous_post_link('<div class="previous-nav">%link</div>', '<i class="icon-long-arrow-left fa fa-long-arrow-left"></i><span class="single-nav-text" >' . __('Previous Post', 'gdlr_translate') . '</span><div class="single-nav-title">%title</div>', true); ?>
-							<?php next_post_link('<div class="next-nav">%link</div>', '<span class="single-nav-text" >' . __('Next Post', 'gdlr_translate') . '</span><i class="icon-long-arrow-right fa fa-long-arrow-right"></i><div class="single-nav-title">%title</div>', true); ?>
-							<div class="clear"></div>
-						</nav><!-- .nav-single -->
-
+[[]]
 						<!-- related post section -->
 						<?php
 
