@@ -7,7 +7,7 @@
 				<div class="gdlr-item gdlr-main-content">
           <div id="document-section">
              <div class="container">
-               <div class="inner">
+
 							<?php
               echo $content;
 							$menus = get_field('page_menu');
@@ -24,7 +24,7 @@
   								</div>
 	  							<?php endforeach; ?>
 	  						<?php endif; ?>
-	             	</div>
+	       
 	            </div>
 						</div>
 				 	</div>
