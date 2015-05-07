@@ -3,12 +3,55 @@
 -------------------------------------------------------------- */
 /* = Homepage
 -------------------------------------------------------------- */
-#business-status h4, .box-list h3 {
+#business-status h4{
   text-transform:uppercase;
   font-weight:bold;
   color:#3d506d;
   letter-spacing: .2em;
 }
+
+.gce-list-event, .gce-tooltip-event {
+  /* background-color: #ddd; */
+  /* padding: 0 5px; */
+}
+
+
+
+/* Calendar format on business type pages */
+#document-section .columns {
+  /* margin-right: 10px; */
+}
+
+/*--------------------------------------------New Edits after mock up---------------------------------- */
+/*Change in font color from yello to grey for announcements and events */
+.gdlr-skin-homepage-project h3,.gdlr-skin-homepage-project .gdlr-skin-title{
+    color: #818181;
+}
+
+/*Change in font size and weight for announcements and events */
+.gdlr-item-title-wrapper.pos-left-bold .gdlr-item-title {
+  font-size: 25px;
+  font-weight: 600;
+}
+/*Change in font color for announcements and events post*/
+.gdlr-skin-homepage-project a {
+  color: #E7E7E7;
+}
+/*Reduces the margine under announcements and events post*/
+.gdlr-item.gdlr-blog-grid {
+  /* margin-bottom: 50px; */
+}
+/*Adds the doulble line under each post title*/
+.gdlr-blog-grid .gdlr-blog-title {
+  font-size: 16px;
+  margin-bottom: 13px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom-width: 3px;
+  border-bottom-style: double;
+}
+
+/*------------------------------------------------------------------------------ */
 
 .home .gdlr-box-with-icon-item {
   cursor:pointer;
@@ -130,6 +173,13 @@
 #document-section .button{
   padding: 10px 0;
 }
+/*
+#document-section .more, #document-section .pdf, #document-section .link, #document-section .list {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+*/
 
 #document-section a[href$='.pdf']::after, #document-section a[href$='.pdf']::before{
   content:'';
@@ -156,37 +206,49 @@
 #must-have a, #might-need a{
   font-weight:bold;
 }
-.document-row a.h3{
-  display:block;
-}
+
 #dom-target {
   display:none;
 }
-.document-row{
+
+.overview-wrapper::before {
+  content:"Overview";
+}
+
+.state-wrapper::before {
+  content:"State and Federal Filings";
+}
+
+.license-wrapper::before {
+  content:"Licenses";
+}
+
+.taxes-wrapper::before {
+  content:"Taxes";
+}
+
+.zoning-wrapper::before {
+  content:"Zoning";
+}
+
+.permit-wrapper::before {
+  content:"Permits";
+}
+
+.permit,
+.zoning,
+.taxes,
+.license,
+.state,
+.overview,
+.overview-wrapper,
+.state-wrapper,
+.license-wrapper,
+.taxes-wrapper,
+.zoning-wrapper,
+.permit-wrapper {
   clear:both;
   position:relative;
-}
-.business-flag{
-  padding:0 10px;
-  position:relative;
-  top:-12px;
-  left:-10px;
-  background:#4a72b2;
-  color:white;
-  font-style:italic;
-  font-size:12px;
-  display:inline-block;
-}
-.business-flag::before {
-  content: "\f024";
-  font-family:"FontAwesome";
-  margin-right:10px;
-}
-.business-flag span::after {
-  content: ", ";
-}
-.business-flag span:last-child::after {
-  content:" Only";
 }
 
 .may-also-need{
