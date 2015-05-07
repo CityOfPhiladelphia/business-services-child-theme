@@ -13,6 +13,7 @@
         <h2>Required</h2>
             <div class="inner">
               <div class="right one columns label">Download PDF</div>
+              <div class="clear"></div>
           <?php
                 foreach( $required_docs as $required_doc ){
 

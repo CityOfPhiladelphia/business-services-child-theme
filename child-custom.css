@@ -329,6 +329,9 @@ h3.gdlr-blog-title::before{
 }
 /* = Theme overrides
 -------------------------------------------------------------- */
+.column, .columns{
+  display:block;
+}
 .gdlr-item.gdlr-main-content {
   margin-bottom: 40px;
 }
@@ -368,6 +371,9 @@ a{
 }
 .marg-top-50{
   margin-top:50px;
+}
+.header-block-area .header-block-content {
+  font-size: 13px;
 }
 /* = Media Queries
 -------------------------------------------------------------- */
