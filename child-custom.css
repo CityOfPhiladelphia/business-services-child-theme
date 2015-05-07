@@ -4,6 +4,11 @@
 /* = Homepage
 -------------------------------------------------------------- */
 
+.gce-list-event, .gce-tooltip-event {
+  /* background-color: #ddd; */
+  /* padding: 0 5px; */
+}
+
 
 
 /* Calendar format on business type pages */
