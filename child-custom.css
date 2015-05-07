@@ -49,10 +49,7 @@
 }
 h3.gdlr-blog-title::before{
   content:" »";
-}
-
-.gdlr-blog-grid .gdlr-blog-title:last-of-type, .gec-event-day > .gce-feed:last-of-type{
-  border-bottom:none;
+  padding:0 5px 0;
 }
 /*------------------------------------------------------------------------------ */
 
@@ -335,7 +332,7 @@ h3.gdlr-blog-title::before{
   margin-bottom: 40px;
 }
 .gdlr-item-start-content {
-  padding-top:40px;
+  padding-top:0px;
 }
 a[href$='.pdf']::before{
   padding:0 6px 0 0;
