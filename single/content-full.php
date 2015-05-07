@@ -38,7 +38,6 @@
 				if( is_single() || $gdlr_post_settings['excerpt'] < 0 ){
 
           echo  get_the_excerpt();
-          echo "things!";
 
 					echo '<div class="gdlr-blog-content">';
 					echo gdlr_content_filter($gdlr_post_settings['content'], true);
