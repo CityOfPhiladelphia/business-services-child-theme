@@ -222,7 +222,7 @@
 }
 
 .full {
-  width:100%;
+  width:98%;
 }
 .inactive {
   opacity: 0.3;
@@ -289,6 +289,11 @@ a[href$='.pdf']::before{
 }
 a[href$='.pdf']::after{
   content:" (PDF)";
+}
+
+a.button[href$='.pdf']::before {
+  content: "";
+  padding:0;
 }
 
 a{

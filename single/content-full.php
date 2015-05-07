@@ -26,9 +26,22 @@
 					}
 				?>
 
-				<?php if( is_single() ){ ?>
+				<?php
+				$pdf =  rwmb_meta( 'business_pdf');
+				if ( !$pdf == '' && is_single() ){
+					echo '<div class="nine columns">'; ?>
 					<h1 class="gdlr-blog-title"><?php the_title(); ?></h1>
-				<?php }else{ ?>
+				<?php
+					echo '</div>';
+							echo '<div class="pdf three columns">';
+					      echo '<a href="' . $pdf . '" class="button red full right">
+								<i class="fa fa-download fa-inverse"></i><span>Apply Now</span></a>';
+								echo '</div>';
+					  }else if ( is_single() ){
+							?><h1 class="gdlr-blog-title"><?php the_title(); ?></h1><?php
+
+						echo '<div class="clear"></div>';
+					} else { ?>
 					<h3 class="gdlr-blog-title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
 				<?php } ?>
 				<div class="clear"></div>
@@ -36,9 +49,6 @@
 
 			<?php
 				if( is_single() || $gdlr_post_settings['excerpt'] < 0 ){
-
-          echo  get_the_excerpt();
-
 					echo '<div class="gdlr-blog-content">';
 					echo gdlr_content_filter($gdlr_post_settings['content'], true);
 					wp_link_pages( array(
