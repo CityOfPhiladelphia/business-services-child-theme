@@ -300,6 +300,12 @@ a{
 .excerpt-read-more {
   display:none;
 }
+.marg-top-20{
+  margin-top:20px;
+}
+.marg-top-50{
+  margin-top:50px;
+}
 /* = Media Queries
 -------------------------------------------------------------- */
 @media only screen and (max-width: 64em) {
