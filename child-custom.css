@@ -39,19 +39,21 @@
 .gdlr-skin-homepage-project a {
   color: #E7E7E7;
 }
-/*Adds the doulble line under each post title*/
-.gdlr-blog-grid .gdlr-blog-title {
-  font-size: 14px;
+/*Adds line under each post title*/
+.gdlr-blog-grid .gdlr-blog-title, .gce-feed {
+  font-size: 13px;
   margin-bottom: 13px;
   font-weight: 600;
   padding-bottom: 10px;
-  border-bottom-width: 3px;
-  border-bottom-style: double;
+  border-bottom:1px solid #fff;
 }
 h3.gdlr-blog-title::before{
   content:" »";
 }
 
+.gdlr-blog-grid:last-of-type, .gce-feed:last-of-type{
+  border-bottom:none;
+}
 /*------------------------------------------------------------------------------ */
 
 .home .gdlr-box-with-icon-item {
