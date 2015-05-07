@@ -15,7 +15,7 @@
   padding: 0;
 }
 .gce-list-link::after{
-  content:" &raquo;";
+  content:" »";
 }
 
 
@@ -49,7 +49,7 @@
   border-bottom-style: double;
 }
 h3.gdlr-blog-title::before{
-  content:" &raquo;";
+  content:" »";
 }
 
 /*------------------------------------------------------------------------------ */
