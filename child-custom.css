@@ -270,6 +270,11 @@ h3.gdlr-blog-title::before{
 .inactive {
   opacity: 0.3;
 }
+.group::after {
+  content:'';
+  display:table;
+  clear:both;
+}
 .right {
   float:right;
 }
