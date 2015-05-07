@@ -1,5 +1,5 @@
-<div class="main-content-container container gdlr-item-start-content">
-  <div id="must-have">
+<div id="must-have">
+  <div class="container">
     <?php
       $business_page_category = get_the_category();
       $business_page_cat_id = $business_page_category[0]->cat_ID;
@@ -103,5 +103,5 @@
               }//end for each child
             ?>
         </div>
+      </div><!--.container-->
     </div><!--#must-have-->
-  </div>

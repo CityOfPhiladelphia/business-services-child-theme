@@ -29,7 +29,6 @@
 						<?php get_template_part('single/content'); ?>
 
 						<?php gdlr_get_social_shares(); ?>
-
 						<!-- related post section -->
 						<?php
 

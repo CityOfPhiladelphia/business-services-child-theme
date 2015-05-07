@@ -41,18 +41,18 @@
                     $postid = get_the_ID();
 
                     ?><div class="document-row group">
-                       <div class="list nine columns group">
+                       <div class="list nine columns">
                          <a href="<?php the_permalink(); ?>" class="h3 title" title="<?php echo get_the_title() ?>">
                            <?php echo get_the_title() ?>
                        </a>
                          <p> <?php the_excerpt(); ?></p>
                        </div>
 
-                    <div class="more one columns group">
+                    <div class="more one columns">
                       <a href="<?php the_permalink(); ?>" class="button full"><i class="fa fa-arrow-circle-right">
                           </i>Read More</a>
                     </div>
-                  <div class="pdf one columns group">
+                  <div class="pdf one columns">
                     <?php
                       if ( !$pdf == '' ){
                         echo '<a href="' . $pdf . '" class="button red">
