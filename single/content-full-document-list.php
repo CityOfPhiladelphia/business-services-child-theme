@@ -7,6 +7,19 @@
           <div id="document-section">
             <div class="container">
               <div class="inner">
+
+							 	<input type="checkbox" name="games" value="games" class="get-endpoint" />Games
+								<input type="checkbox" name="books" value="books" class="get-endpoint" />Books
+								<input type="checkbox" name="comics" value="comics" class="get-endpoint" />Comics
+
+								<div class="from-endpoint">Coming soon...</div>
+								<?php echo $sJson; ?>
+
+<p><b>Start typing a name in the input field below:</b></p>
+<form>
+First name: <input type="text" onkeyup="showHint(this.value)">
+</form>
+<p>Suggestions: <span id="txtHint"></span></p>
 							<?php
 
 							if(!empty($content)){

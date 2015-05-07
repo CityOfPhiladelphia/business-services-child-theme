@@ -52,6 +52,29 @@ jQuery(document).ready(function($) {
     return false;
   });
 
+  function callEndpoint( call_url, payload ){
+    return $.ajax({
+      url: call_url,
+      type: 'GET',
+      data: payload
+    });
+  }
+  $( '.get-endpoint' ).click( function() {
+
+    sSelected = $( this ).attr("value");
+    //console.log( sSelected );
+    oRequest = callEndpoint( '../wp-content/themes/business-services-child-theme/', { 'type': sSelected } );
+
+    oRequest.done(function( sJson ) {
+      console.log(sJson);
+      aData = JSON.parse( sJson );
+
+      $( '.from-endpoint' ).text( aData.text );
+        var result = $( '.from-endpoint' ).text( aData.text );
+
+        console.log( result );
+    });
+  });
 });
 
 var options = {

@@ -270,3 +270,9 @@ function businessType(){
 }
 
 add_shortcode( 'list-businesses', 'businessType' );
+
+/*-----------------------------------------------------------------------------------*/
+/*	add json endpoint ????!!
+/*-----------------------------------------------------------------------------------*/
+
+add_rewrite_endpoint( 'json', EP_PERMALINK | EP_PAGES );
