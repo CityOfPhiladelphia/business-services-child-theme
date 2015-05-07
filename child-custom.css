@@ -300,6 +300,11 @@ a{
 .excerpt-read-more {
   display:none;
 }
+.xtra-small{
+  font-size:12px;
+  color:#808080;
+  width:80%;
+}
 .marg-top-20{
   margin-top:20px;
 }
