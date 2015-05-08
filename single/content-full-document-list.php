@@ -3,7 +3,7 @@
 	   $content = gdlr_content_filter(get_the_content(), true);
 			?>
 			<div class="main-content-container container gdlr-item-start-content">
-				<div class="gdlr-item gdlr-main-content">
+				<div class="gdlr-item gdlr-main-content repo">
 					<?php
 					if(!empty($content)){
 							echo $content;

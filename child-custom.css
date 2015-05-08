@@ -123,7 +123,7 @@ h3.gdlr-blog-title::before{
   height:100%;
 }
 
-.with-sidebar-content #document-section .list.columns{
+.with-sidebar-content #document-section .list.columns, .with-sidebar-content .filter-content {
   width: 71%;
 }
 #document-section .list.columns p {
@@ -311,10 +311,6 @@ h3.gdlr-blog-title::before{
   margin: 10px 0;
 }
 
-.with-sidebar-content .filter-content {
-  width: 100%;
-}
-
 .launch .inner h3, .launch .inner p {
   margin:0;
 }
@@ -335,6 +331,9 @@ h3.gdlr-blog-title::before{
 .steps span{
   padding-top: 45px;
   display: inline-block;
+}
+.repo .inner{
+  padding:0;
 }
 /* = Theme overrides
 -------------------------------------------------------------- */
