@@ -383,6 +383,9 @@ a{
 .marg-top-50{
   margin-top:50px;
 }
+.marg-bottom-20{
+	margin-bottom:20px;
+}
 .header-block-area .header-block-content {
   font-size: 13px;
 }

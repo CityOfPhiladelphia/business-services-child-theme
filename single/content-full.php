@@ -27,21 +27,10 @@
 				?>
 
 				<?php
-				$pdf =  rwmb_meta( 'business_pdf');
-				if ( !$pdf == '' && is_single() ){
-					echo '<div class="nine columns">'; ?>
-					<h1 class="gdlr-blog-title"><?php the_title(); ?></h1>
-				<?php
-					echo '</div>';
-							echo '<div class="pdf three columns">';
-					      echo '<a href="' . $pdf . '" class="button red full right">
-								<i class="fa fa-download fa-inverse"></i><span>Apply Now</span></a>';
-								echo '</div>';
-					  }else if ( is_single() ){
-							?><h1 class="gdlr-blog-title"><?php the_title(); ?></h1><?php
 
-						echo '<div class="clear"></div>';
-					} else { ?>
+				if (is_single() ){?>
+					<h1 class="gdlr-blog-title"><?php the_title(); ?></h1>
+					<?php } else { ?>
 					<h3 class="gdlr-blog-title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
 				<?php } ?>
 				<div class="clear"></div>
@@ -50,6 +39,15 @@
 			<?php
 				if( is_single() || $gdlr_post_settings['excerpt'] < 0 ){
 					echo '<div class="gdlr-blog-content">';
+					$pdf =  rwmb_meta( 'business_pdf');
+					if ($pdf){
+							echo '<div class="pdf three columns marg-bottom-20">';
+								echo '<a href="' . $pdf . '" class="button red full">
+								<i class="fa fa-download fa-inverse"></i><span>Apply Now</span></a>';
+							echo '</div>';
+						echo '<div class="clear"></div>';
+					}
+
 					echo gdlr_content_filter($gdlr_post_settings['content'], true);
 					wp_link_pages( array(
 						'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'gdlr_translate' ) . '</span>',
