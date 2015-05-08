@@ -1,6 +1,9 @@
 
 /* = Child Theme Custom CSS File
 -------------------------------------------------------------- */
+body {
+	letter-spacing: inherit;
+}
 /* = Homepage
 -------------------------------------------------------------- */
 #business-status h4{
