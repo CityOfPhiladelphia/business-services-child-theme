@@ -4,6 +4,11 @@ Template Name: Plan
 */
 
 get_header(); ?>
+<a class="red" href="/launching-a-business">
+	<div class="steps">
+			<span><i class="fa fa-chevron-circle-right fa-3x"></i><br></i>Ready to launch</span>
+	</div>
+</a>
 
 	<div class="gdlr-content">
 

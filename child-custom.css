@@ -318,6 +318,24 @@ h3.gdlr-blog-title::before{
 .launch .inner h3, .launch .inner p {
   margin:0;
 }
+.steps{
+  text-align: center;
+  position: absolute;
+  top: -111px;
+  right: 200px;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+  background:#e46c53;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 200px;
+  font-size: 12px;
+}
+.steps span{
+  padding-top: 45px;
+  display: inline-block;
+}
 /* = Theme overrides
 -------------------------------------------------------------- */
 .column, .columns{
@@ -369,7 +387,7 @@ a{
 /* = Media Queries
 -------------------------------------------------------------- */
 @media only screen and (max-width: 64em) {
-  #document-section .label{
+  #document-section .label, #document-section .more .button, .steps{
     display:none;
   }
   #document-section .list {
@@ -377,5 +395,11 @@ a{
     top: 0;
     /*transform: translateY(0);*/
     width:95%;
+  }
+  .inner {
+    padding:0;
+  }
+  #document-section .list.columns {
+    width:100%;
   }
 }

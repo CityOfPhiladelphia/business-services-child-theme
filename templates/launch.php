@@ -4,6 +4,11 @@ Template Name: Launch
 */
 
 get_header(); ?>
+<a href="/planning-a-business" class="red">
+	<div class="steps">
+	<span><i class="fa fa-chevron-circle-left fa-3x"></i><br></i>Back to planning</span>
+	</div>
+</a>
 
 	<div class="gdlr-content launch">
 
