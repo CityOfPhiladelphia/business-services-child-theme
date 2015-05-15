@@ -42,8 +42,6 @@
                 $pdf =  rwmb_meta( 'business_pdf', $args = array(), $required_doc->ID );
                 $link =  rwmb_meta( 'business_link', $args = array(), $required_doc->ID );
 
-                  foreach ( $content_types as $content_type ){
-
                 ?><div class="document-row group">
                           <div class="list nine columns"><?php
 
@@ -66,7 +64,6 @@
                         }
                       echo '</div>';//nine
                     echo '</div>';//document-row
-                      }
                     }//end foreach
 
 
