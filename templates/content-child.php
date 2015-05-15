@@ -17,35 +17,35 @@
           <?php
                 foreach( $required_docs as $required_doc ){
 
-                    $content_types =  wp_get_post_terms( $required_doc->ID, 'content_type' );
-                    $pdf =  rwmb_meta( 'business_pdf', $args = array(), $required_doc->ID );
-                    $link =  rwmb_meta( 'business_link', $args = array(), $required_doc->ID );
+                  $content_types =  wp_get_post_terms( $required_doc->ID, 'content_type' );
+                  $pdf =  rwmb_meta( 'business_pdf', $args = array(), $required_doc->ID );
+                  $link =  rwmb_meta( 'business_link', $args = array(), $required_doc->ID );
 
-                      echo '<div class="document-row group">
-                              <div class="list ten columns">';
+                    echo '<div class="document-row group">
+                            <div class="list ten columns">';
 
-                        echo '<a class="h3" href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a>';
+                      echo '<a class="h3" href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a>';
 
-                          //pass the post ID to get_post, then extract the excerpt. BOOYAH
-                        echo  '<p>' . get_post($required_doc->ID)->post_excerpt . '</p>';
+                        //pass the post ID to get_post, then extract the excerpt. BOOYAH
+                      echo  '<p>' . get_post($required_doc->ID)->post_excerpt . '</p>';
 
-                        echo '</div>';// ten
+                      echo '</div>';// ten
 
-                        echo '<div class="more one columns">' . '<a href="' . $required_doc->guid .'" class="button full"><i class="fa fa-arrow-circle-right"></i>' . 'Read More' . '</a></div>';
+                      echo '<div class="more one columns">' . '<a href="' . $required_doc->guid .'" class="button full"><i class="fa fa-arrow-circle-right"></i>' . 'Read More' . '</a></div>';
 
-                     echo '<div class="pdf one columns">';
-                        if ( !$pdf == '' ){
-                            echo '<a href="' . $pdf . '" class="button red">
-                            <i class="fa fa-file-pdf-o fa-inverse"></i>
-                            </a>';
-                        }else {
-                            echo '<span class="button red inactive"><i class="fa fa-file-pdf-o fa-inverse"></i></span>';
-                        }
-                      echo '</div>';//one
-                    echo '</div>';
-                    }//end foreach
-                }//end required docs
-                echo '</div>';
+                   echo '<div class="pdf one columns">';
+                      if ( !$pdf == '' ){
+                          echo '<a href="' . $pdf . '" class="button red">
+                          <i class="fa fa-file-pdf-o fa-inverse"></i>
+                          </a>';
+                      }else {
+                          echo '<span class="button red inactive"><i class="fa fa-file-pdf-o fa-inverse"></i></span>';
+                      }
+                    echo '</div>';//one
+                  echo '</div>';
+                  }//end foreach
+              }//end required docs
+              echo '</div>';
 
           ?>
         </div>
