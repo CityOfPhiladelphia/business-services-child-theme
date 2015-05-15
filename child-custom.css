@@ -47,6 +47,13 @@ h3.gdlr-blog-title::before{
   content:" »";
   padding:0 5px 0;
 }
+.home .button.red {
+	padding: 10px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
 /*------------------------------------------------------------------------------ */
 
 .home .gdlr-box-with-icon-item {
