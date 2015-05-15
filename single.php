@@ -1,7 +1,16 @@
 <?php get_header(); ?>
 <div class="gdlr-content">
 
-	<?php
+<?php
+	$pdf =  rwmb_meta( 'business_pdf' );
+	if ($pdf){
+			echo '<div class="pdf-download two">';
+				echo '<a href="' . $pdf . '" class="button red full">
+				<i class="fa fa-download fa-inverse"></i><span>Apply Now</span></a>';
+			echo '</div>';
+		echo '<div class="clear"></div>';
+	}
+
 		global $gdlr_sidebar, $theme_option;
 		if( empty($gdlr_post_option['sidebar']) || $gdlr_post_option['sidebar'] == 'default-sidebar' ){
 			$gdlr_sidebar = array(

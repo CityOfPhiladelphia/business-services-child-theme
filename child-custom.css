@@ -151,7 +151,14 @@ h3.gdlr-blog-title::before{
 #document-section .pdf .button, #document-section .link .button{
     width:100%;
 }
-
+.pdf-download {
+	margin: 0 auto;
+	position: relative;
+	top: -23px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+}
 #document-section .fa-stack {
   color:#e46c53;
 }

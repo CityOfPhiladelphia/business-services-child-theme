@@ -9,7 +9,9 @@
 	}else{
 		global $gdlr_post_settings, $theme_option;
 	}
+
 ?>
+
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="gdlr-standard-style">
@@ -39,14 +41,6 @@
 			<?php
 				if( is_single() || $gdlr_post_settings['excerpt'] < 0 ){
 					echo '<div class="gdlr-blog-content">';
-					$pdf =  rwmb_meta( 'business_pdf');
-					if ($pdf){
-							echo '<div class="pdf three columns marg-bottom-20">';
-								echo '<a href="' . $pdf . '" class="button red full">
-								<i class="fa fa-download fa-inverse"></i><span>Apply Now</span></a>';
-							echo '</div>';
-						echo '<div class="clear"></div>';
-					}
 
 					echo gdlr_content_filter($gdlr_post_settings['content'], true);
 					wp_link_pages( array(
