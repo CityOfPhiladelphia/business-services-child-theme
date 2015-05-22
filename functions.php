@@ -323,3 +323,67 @@ function doc_filter_customize_output($results , $arg, $id, $getdata ){
 		$results = ob_get_clean();
 			return $results;
 }
+// Ultimate WP Query Search Filter heirarchy in drop downs
+
+
+add_filter('uwpqsf_taxonomy_arg', 'custom_term_output','',1);
+function custom_term_output($args){
+  $args['parent'] = '0';
+  return $args;
+}
+//MODIFY TAXFIELD DROPDOWN OUTPUT TO IDENTIFY AND STYLE CHILD CATEGORIES
+add_filter('uwpqsf_tax_field_dropdown','custom_dropdown_output','',12);
+function custom_dropdown_output($html,$type,$exc,$hide,$taxname,$taxlabel,$taxall,$opt,$c,$defaultclass,$formid,$divclass){
+
+  $args = array('hide_empty'=>$hide,'exclude'=>$eid );
+  $taxoargs = apply_filters('uwpqsf_taxonomy_arg',$args,$taxname,$formid);
+  $terms = get_terms($taxname,$taxoargs); $count = count($terms);
+
+  if($type == 'checkbox'){
+   			if ( $count > 0 ){
+  				$html  = '<div class="'.$defaultclass.' '.$divclass.' togglecheck" id="tax-check-'.$c.'"><span  class="taxolabel-'.$c.'">'.$taxlabel.'</span >';
+  				$html .= '<input  type="hidden" name="taxo['.$c.'][name]" value="'.$taxname.'">';
+  				$html .= '<input  type="hidden" name="taxo['.$c.'][opt]" value="'.$opt.'">';
+  				if(!empty($taxall)){
+  				$checkall = (isset($_GET['taxo'][$c]['call']) && $_GET['taxo'][$c]['call'] == '1'  ) ? 'checked="checked"' : '';
+  				$html .= '<label><input type="checkbox" id="tchkb-'.$c.'-0" class="tchkb-'.$c.' chktaxoall" name="taxo['.$c.'][call]"  value="1" '.$checkall.'>'.$taxall.'</label>';
+  				}
+  				$i = 1;
+  				foreach ( $terms as $term ) {
+  				      $value = $term->slug;
+  				          $checked = (isset($_GET['taxo'][$c]['term']) && in_array($value, $_GET['taxo'][$c]['term'])) ? 'checked="checked"' : '';
+  			      $html .= '<label><input type="checkbox" id="tchkb-'.$c.'-'.$i.'" class="tchkb-'.$c.'" name="taxo['.$c.'][term][]" value="'.$value.'" '.$checked.'>'.$term->name.'</label>';
+  				$i++;
+  				}
+  				$html .= '</div>';
+  			return  apply_filters( 'uwpqsf_tax_field_checkbox', $html ,$type,$exc,$hide,$taxname,$taxlabel,$taxall,$opt,$c,$defaultclass,$formid,$divclass);
+  			}
+				if ( $count > 0 ){
+						foreach ( $terms as $term ) {
+            $term_obj = get_term( $term->term_id, $taxname );
+					 $selected = $terms[0]->term_id;
+$html .= '<a class="button"" '.$term->slug.'">'.$term->name.' ('.$term_obj->count.' resources)></label>';
+
+    $args = array(
+        'hide_empty'    => true,
+        'hierarchical'  => true,
+        'parent'        => $term->term_id
+    );
+    $childterms = get_terms($taxname, $args);
+
+    foreach ( $childterms as $childterm ) {
+            $selected = $childterms[0]->term_id;
+            $term_obj = get_term( $childterm->term_id, $taxname );
+        $html .= '<label><input type="checkbox" ' .$childterm->slug."'".">    -  "  . $childterm->name . ' ('.$term_obj->count.' resources)></label>';
+
+    }}
+			}
+			$html .= '</select>';
+			$html .= '</div>';
+
+
+
+			return  apply_filters( 'custom_dropdown_output', $html,$type,$exc,$hide,$taxname,$taxlabel,$taxall,$opt,$c,$defaultclass,$formid,$divclass);
+		}
+
+}
