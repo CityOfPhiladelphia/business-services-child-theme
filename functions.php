@@ -270,3 +270,56 @@ function businessType(){
 }
 
 add_shortcode( 'list-businesses', 'businessType' );
+
+add_filter('uwpqsf_result_tempt', 'doc_filter_customize_output', '', 4);
+function doc_filter_customize_output($results , $arg, $id, $getdata ){
+	 // The Query
+      $apiclass = new uwpqsfprocess();
+      $query = new WP_Query( $arg );
+		ob_start();	$result = '';
+			// The Loop
+
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+        global $post;
+        $pdf =  rwmb_meta( 'business_pdf');
+        $link =  rwmb_meta( 'business_link');
+        $postid = get_the_ID();
+
+        ?><div class="document-row group">
+           <div class="list nine columns">
+             <a href="<?php the_permalink(); ?>" class="h3 title" title="<?php echo get_the_title() ?>">
+               <?php echo get_the_title() ?>
+           </a>
+             <p> <?php the_excerpt(); ?></p>
+           </div>
+
+        <div class="more one columns">
+          <a href="<?php the_permalink(); ?>" class="button full"><i class="fa fa-arrow-circle-right">
+              </i>Read More</a>
+        </div>
+      <div class="pdf one columns">
+        <?php
+          if ( !$pdf == '' ){
+            echo '<a href="' . $pdf . '" class="button red">
+            <i class="fa fa-file-pdf-o fa-inverse"></i>
+            </a>';
+          }else {
+            ?><span class="button red inactive"><i class="fa fa-file-pdf-o fa-inverse"></i></span><?php
+          }
+          ?>
+      </div>
+    </div>
+    <?php
+			}
+          echo  $apiclass->ajax_pagination($arg['paged'],$query->max_num_pages, 4, $id, $getdata);
+		 } else {
+					 echo  'no post found';
+				}
+				/* Restore original Post Data */
+				wp_reset_postdata();
+
+		$results = ob_get_clean();
+			return $results;
+}
