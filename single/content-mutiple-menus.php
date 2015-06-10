@@ -47,8 +47,13 @@
 						?>
 							<div id="might-need">
 								<div class="container">
-									<div class="inner">
-										<h4>You might need</h4>
+									<div class="inner menu-page">
+										<?php
+										$section_title_may_need = get_field('section_title_may_need');
+										if( !$section_title_may_need == false ):
+											echo '<h2>' . $section_title_may_need . '</h2>';
+										endif;
+										?>
 									<?php foreach( $maybe_menus as $maybe_menu ): ?>
 										<div class="document-row group">
 											<div class="list ten columns">

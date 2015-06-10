@@ -150,6 +150,9 @@ h3.gdlr-blog-title::before{
   width: 74%;
   height:100%;
 }
+#document-section .menu-page .list.columns{
+	width:84%;
+}
 
 .with-sidebar-content #document-section .list.columns, .with-sidebar-content .filter-content {
   width: 71%;
@@ -442,7 +445,12 @@ a{
 /* = Media Queries
 -------------------------------------------------------------- */
 @media only screen and (max-width: 64em) {
-  #document-section .label, #document-section .more .button, .steps{
+  #document-section .label,
+	#document-section .more .button,
+	.steps,
+	#document-section .inner .more.one,
+	#document-section .inner .pdf.one
+	{
     display:none;
   }
   #document-section .list {

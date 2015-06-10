@@ -13,7 +13,7 @@
         <div id="document-section">
 					<div class="parent">
 						<div class="container">
-							<div class="inner">
+							<div class="inner menu-page">
 					<?php
 					$section_title = get_field('section_title');
 					if( !$section_title == false ):
