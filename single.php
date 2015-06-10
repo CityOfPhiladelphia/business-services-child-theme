@@ -103,14 +103,18 @@
 				<?php get_sidebar('left'); ?>
 				<div class="clear"></div>
 			</div>
-			<div class="gdlr-sidebar gdlr-right-sidebar three columns">
+			<?php
+				$contact = rwmb_meta( 'business_contact' );
+				if (!$contact == '') :
+				?>
+			<div class="gdlr-sidebar gdlr-right-sidebar three columns gdlr-box-with-icon-item pos-top type-circle">
 				<div class="gdlr-item-start-content sidebar-right-item">
-					<?php
-						$contact = rwmb_meta( 'business_contact' );
-						echo do_shortcode($contact);
- 					?>
+					<div class="box-with-circle-icon" style="background-color: #455773">
+						<i class="fa fa-comments" style="color:#ffffff;"></i><br></div>
+						<?php	echo do_shortcode($contact);	?>
+					</div>
 				</div>
-			</div>
+			<?php endif; ?>
 			<div class="clear"></div>
 		</div>
 	</div>
