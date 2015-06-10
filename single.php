@@ -107,7 +107,7 @@
 				$contact = rwmb_meta( 'business_contact' );
 				if (!$contact == '') :
 				?>
-			<div class="gdlr-sidebar gdlr-right-sidebar three columns gdlr-box-with-icon-item pos-top type-circle">
+			<div class="gdlr-sidebar gdlr-right-sidebar four columns gdlr-box-with-icon-item pos-top type-circle">
 				<div class="gdlr-item-start-content sidebar-right-item">
 					<div class="box-with-circle-icon" style="background-color: #455773">
 						<i class="fa fa-comments" style="color:#ffffff;"></i><br></div>

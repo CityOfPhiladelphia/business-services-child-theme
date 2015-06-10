@@ -17,7 +17,8 @@
 	<div class="gdlr-standard-style">
 		<?php get_template_part('single/thumbnail', get_post_format()); ?>
 
-		<div class="blog-content-wrapper" >
+
+		<div class="blog-content-wrapper">
 			<header class="post-header">
 				<?php
 					// print blog information

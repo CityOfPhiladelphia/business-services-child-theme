@@ -12,6 +12,12 @@ body {
   color:#3d506d;
   letter-spacing: .2em;
 }
+.gdlr-item-title-wrapper.gdlr-item {
+  margin-bottom: 20px;
+}
+.gdlr-item-title-wrapper.pos-left .gdlr-item-title {
+	font-size:25px;
+}
 
 .gce-list-event, .gce-tooltip-event {
   background-color: transparent;
@@ -21,12 +27,9 @@ body {
   content:" »";
 }
 
-/*--------------------------------------------New Edits after mock up---------------------------------- */
-
-/*Change in font size and weight for announcements and events */
-.gdlr-item-title-wrapper.pos-left-bold .gdlr-item-title {
-  font-size: 25px;
-  font-weight: 600;
+/*shrink page title bg */
+.gdlr-page-title-wrapper {
+	padding:40px 0px 40px;
 }
 /*Change in font color for announcements and events post*/
 .gdlr-skin-homepage-project a {
@@ -49,7 +52,7 @@ h3.gdlr-blog-title::before{
 }
 .home .button.red {
 	padding: 10px;
-  font-size: 1.5em;
+  font-size: 1em;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
@@ -383,6 +386,7 @@ h3.gdlr-blog-title::before{
 }
 .gdlr-sidebar.gdlr-box-with-icon-item{
 	padding: 40px 0px 20px;
+	font-size:90%;
 }
 /* = Theme overrides
 -------------------------------------------------------------- */
