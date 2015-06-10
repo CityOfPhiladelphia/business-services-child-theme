@@ -126,12 +126,16 @@ h3.gdlr-blog-title::before{
 #document-section h3 {
   float:left;
 }
-
+.document-row {
+	margin-bottom:20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 #document-section .list.columns{
   background:#f2f2f2;
   padding:10px;
   width: 74%;
-  margin-bottom:20px;
   height:100%;
 }
 
@@ -275,12 +279,21 @@ h3.gdlr-blog-title::before{
 .button {
   display:inline-block;
   padding:10px;
-  background:#4079AB;
+  background:#3D506D;
   color:#fff;
+}
+.button:hover{
+	color:#aec0dc;
 }
 .red {
   background:#E46C53;
   color:#fff;
+}
+.red.inactive:hover{
+	background:#E46C53;
+}
+.red:hover{
+	background:#3D506D;
 }
 
 .full {
