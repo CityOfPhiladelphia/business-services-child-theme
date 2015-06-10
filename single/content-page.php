@@ -15,6 +15,10 @@
 						<div class="container">
 							<div class="inner">
 					<?php
+					$section_title = get_field('section_title');
+					if( !$section_title == false ):
+						echo '<h2>' . $section_title . '</h2>';
+					endif;
 							$menus = get_field('page_menu');
 							if( $menus ):
 								foreach( $menus as $menu ):
