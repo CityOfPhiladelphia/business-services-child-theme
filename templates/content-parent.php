@@ -1,12 +1,11 @@
-<div id="must-have">
   <div class="container">
     <?php
       $business_page_category = get_the_category();
       $business_page_cat_id = $business_page_category[0]->cat_ID;
 
       // Set up the objects needed
-      $my_wp_query = new WP_Query();
-      $all_wp_pages = $my_wp_query->query(array(
+      $all_pages_query = new WP_Query();
+      $all_wp_pages = $all_pages_query->query(array(
         'post_type' => 'business_page',
         'posts_per_page' => -1,
         'order' => 'asc',
@@ -18,23 +17,18 @@
       // Filter through all pages and find this pages's children
       $children = get_page_children( $current_id, $all_wp_pages );
 
-
       foreach($children as $child) {
-
-        ?>
-        <div class="inner">
-      <?php
 
       $current_child_ID = $child->ID;
       $required_docs = get_field('required', $current_child_ID);
 
-      if( $required_docs )  {
-          ?>
-
-
-            <h3><?php echo $child->post_title; ?> </h3>
+      if( $required_docs )  {?>
+        <div class="inner">
+          <h3><?php echo $child->post_title; ?> </h3>
           <div class="right one columns label">Download PDF</div>
           <div class="clear"></div>
+
+
           <?php
               foreach( $required_docs as $required_doc ){
 
@@ -47,7 +41,7 @@
 
                         echo '<a class="h3" href="' . $required_doc->guid .'">'  . $required_doc->post_title . '</a>';
 
-                          //pass the post ID to get_post, then extract the excerpt. BOOYAH
+                          //pass the post ID to get_post, then extract the excerpt
                           echo  '<p>' . get_post($required_doc->ID)->post_excerpt . '</p>';
 
                         echo '</div>';// ten
@@ -67,38 +61,31 @@
                     }//end foreach
 
 
-              $maybe_docs = get_field('might_need', $current_child_ID);
 
-                if( !$maybe_docs == '' ) {
-                  ?>
-                  <div class="may-also-need">
+              $maybe_docs = get_field('might_need', $current_child_ID);
+              if( !$maybe_docs == '' ): ?>
+                <div class="may-also-need">
                   <h6>You may also need:</h6>
 
-                  <?php
-
-                  foreach( $maybe_docs as $maybe_doc ){
+                <?php foreach( $maybe_docs as $maybe_doc ){
 
                     $content_types =  wp_get_post_terms( $maybe_doc->ID, 'content_type' );
-
                       //  $list = rtrim($list, ', ');
-                        echo '<span class="pipe"><a href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a></span>';
+
+                      echo '<span class="pipe"><a href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a></span>';
                           //pass the post ID to get_post, then extract the excerpt. BOOYAH
-
                     }
-                    ?></div>
-                  </div>
-                    <?php
+                    ?>
+                    </div>
 
-                  }else {
-                  ?>
+
+                    <?php endif; ?>
 
                 </div><!--end inner -->
-              <?php
-                  }
 
-                }//end req.
+              <?php
               }//end for each child
+            }//end req.
             ?>
         </div>
       </div><!--.container-->
-    </div><!--#must-have-->

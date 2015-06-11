@@ -1,4 +1,6 @@
 <?php
+/* launching-a-business loop */
+
 	while ( have_posts() ){ the_post();
 		$content = gdlr_content_filter(get_the_content(), true);
 			?>
@@ -14,7 +16,9 @@
 									'post_type' => 'business_page',
 									'nopaging'	=> 'true',
 									'order'	=> 'asc',
+									'orderby'=> 'title',
 									'post_parent' => 0
+
 								);
 								$category_query = new WP_Query( $category_args );
 

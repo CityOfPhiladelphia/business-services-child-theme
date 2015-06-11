@@ -1,4 +1,6 @@
 <?php
+/*business type page display */
+
 	while ( have_posts() ){ the_post();
 		$content = gdlr_content_filter(get_the_content(), true);
 		if(!empty($content)){
