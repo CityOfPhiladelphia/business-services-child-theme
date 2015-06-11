@@ -106,7 +106,7 @@
 	?>
 		<div class="gdlr-page-title-wrapper" <?php echo $header_background; ?> >
 			<div class="gdlr-page-title-overlay"></div>
-			<div class="gdlr-page-title-container container" >
+			<div class="gdlr-page-title-container container">
 				<span class="gdlr-page-title"><?php echo gdlr_text_filter($title); ?></span>
 				<?php if( !empty($caption) ){ ?>
 				<h1 class="gdlr-page-caption"><?php echo gdlr_text_filter($caption); ?></h1>
@@ -115,3 +115,15 @@
 		</div>
 	<?php } ?>
 	<!-- is search -->
+	<div class="content-wrapper breadcrumbs">
+		<div class="main-content-container container">
+			<div class="gdlr-content">
+				<div class="twelve">
+			    <?php
+					if(function_exists('bcn_display')) :
+			      bcn_display();
+			    endif; ?>
+			</div>
+		</div>
+	</div>
+</div>
