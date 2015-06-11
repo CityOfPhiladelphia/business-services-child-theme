@@ -4,7 +4,6 @@
 */
 
 get_header();
-get_template_part('template-parts/banner');
 ?>
 <?php get_header(); ?>
 <a href="/planning-a-business" class="red">
@@ -18,19 +17,58 @@ get_template_part('template-parts/banner');
         <div class="with-sidebar-left eight columns">
           <div class="with-sidebar-content twelve columns">
             <div class="gdlr-item gdlr-blog-full gdlr-item-start-content">
-              <?php
-              //  get_template_part('templates/content', 'sidebar');
-                ?>
+							<?php
+								while ( have_posts() ){ the_post();
+									$content = gdlr_content_filter(get_the_content(), true);
+									echo $content;
+								}
+								?>
               </div>
             </div>
           </div>
-				<?php	//if ( is_active_sidebar( 'sidebar-announcements' ) ) : ?>
+					<?php
+					/*  displays annoucment sidebars */
+						global $post;
+						$category = get_the_category();
+						$get_all_annoucements_query = new WP_Query();
+						$all_annoucements = $get_all_annoucements_query->query(array(
+							'post_type' => 'post',
+							'posts_per_page' => -1,
+							'order' => 'asc',
+							'orderby' => 'title',
+							'tax_query' => array(
+								'relation' => 'AND',
+									array(
+										'taxonomy' => 'content_type',
+										'field'    => 'slug',
+										'terms'    => 'annoucements',
+									),
+									array(
+										'taxonomy' => 'category',
+										'field'    => 'slug',
+										'terms'    => $category[0]->slug,
+									),
+								),
+							)
+						);
+						if ( $get_all_annoucements_query->have_posts() ) : ?>
             <div class="gdlr-sidebar gdlr-right-sidebar four columns">
               <div class="gdlr-item-start-content sidebar-right-item">
-              	<?php get_sidebar('announcements'); ?>
+									<?php
+								    echo'<h2>' .  __('Related Annoucements', 'gdlr_translate') . '</h2>';
+								  	echo '<ul>';
+
+								  	while ( $get_all_annoucements_query->have_posts() ) {
+								      $get_all_annoucements_query->the_post();
+								  		echo '<li><a href="' . get_permalink() .'">'. get_the_title() . '</a></li>';
+								  	}
+								  	echo '</ul>';
+								endif;
+								  /* Restore original Post Data */
+								  wp_reset_postdata();  ?>
+
               </div>
             </div>
-				<?php //endif;?>
           </div>
       <div class="clear"></div>
       <div id="document-section">

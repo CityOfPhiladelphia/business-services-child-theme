@@ -400,7 +400,10 @@ h3.gdlr-blog-title::before{
   margin-bottom: 40px;
 }
 .gdlr-item-start-content {
-  padding-top:20px;
+	 padding-top:20px;
+}
+.single .gdlr-item-start-content {
+	 padding-top:0;
 }
 a[href$='.pdf']::before{
   padding:0 6px 0 0;
@@ -441,6 +444,9 @@ a{
 }
 .header-block-area .header-block-content {
   font-size: 13px;
+}
+.hidden{
+	visibility: hidden;
 }
 /* = Media Queries
 -------------------------------------------------------------- */

@@ -2,14 +2,19 @@
 <div class="gdlr-content">
 
 <?php
+//this lets us use the space provided by the button, without actually rendering it. 
 	$pdf =  rwmb_meta( 'business_pdf' );
 	if ($pdf){
+		$show = 'show';
+	}else{
+		$show = 'hidden';
+	}
 			echo '<div class="pdf-download two">';
-				echo '<a href="' . $pdf . '" class="button red full">
-				<i class="fa fa-download fa-inverse"></i><span>Apply Now</span></a>';
+				echo '<a href="' . $pdf . '" class="button red full ' . $show  .'">';
+			 	echo '<i class="fa fa-download fa-inverse"></i><span>Apply Now</span></a>';
 			echo '</div>';
 		echo '<div class="clear"></div>';
-	}
+
 
 		global $gdlr_sidebar, $theme_option;
 		if( empty($gdlr_post_option['sidebar']) || $gdlr_post_option['sidebar'] == 'default-sidebar' ){
