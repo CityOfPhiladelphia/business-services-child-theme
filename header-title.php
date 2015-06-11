@@ -73,6 +73,8 @@
 		if( is_search() ){
 			$title = __('Search Results', 'gdlr_translate');
 			$caption = get_search_query();
+		}else if( is_post_type_archive('business_page') ){
+			$title = __('Businesses', 'gdlr_translate');
 		}else if( is_category() || is_tax('portfolio_category') || is_tax('product_cat') ){
 			$title = __('Category','gdlr_translate');
 			$caption = single_cat_title('', false);
