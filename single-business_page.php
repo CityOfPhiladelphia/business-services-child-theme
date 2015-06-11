@@ -1,4 +1,7 @@
 <?php
+/* single business type page
+* Gets child pages and displays all child content
+*/
 
 get_header();
 get_template_part('template-parts/banner');
@@ -21,13 +24,13 @@ get_template_part('template-parts/banner');
               </div>
             </div>
           </div>
-				<?php	if ( is_active_sidebar( 'sidebarbusiness' ) ) : ?>
+				<?php	//if ( is_active_sidebar( 'sidebar-announcements' ) ) : ?>
             <div class="gdlr-sidebar gdlr-right-sidebar four columns">
               <div class="gdlr-item-start-content sidebar-right-item">
-              	<?php dynamic_sidebar('sidebarbusiness'); ?>
+              	<?php get_sidebar('announcements'); ?>
               </div>
-            </div>	
-				<?php endif;?>
+            </div>
+				<?php //endif;?>
           </div>
       <div class="clear"></div>
       <div id="document-section">
