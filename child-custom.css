@@ -280,16 +280,6 @@ body {
   font-weight:bold;
   margin:0;
 }
-/*
-.permit,
-.zoning,
-.taxes,
-.license,
-.state,
-.overview{
-  top:50px;
-}
-*/
 /* = General
 -------------------------------------------------------------- */
 .breadcrumbs {
@@ -359,8 +349,7 @@ body {
 
 .filter-content {
   width: 64%;
-  border: 1px solid #3d506d;
-  padding: 10px;
+	padding: 10px;
   margin: 10px 0;
 }
 
@@ -385,10 +374,6 @@ body {
   padding-top: 45px;
   display: inline-block;
 }
-.repo .inner{
-  padding:0;
-}
-
 .sidebar-right-item{
 	background: #f5f5f5;
 	padding:20px;
@@ -396,6 +381,24 @@ body {
 
 .hidden{
 	visibility: hidden;
+}
+
+.gray-bg {
+	background:#F5F5F5;
+}
+#filter .eight {
+	width:74.667%
+}
+#filter .four {
+	width:25.333%
+}
+#filter .inner {
+	border:1px solid #bcbcbc;
+}
+.search.filter-content{
+	width:100%;
+	padding:10px;
+	border:1px solid #bcbcbc;
 }
 /* = Theme overrides
 -------------------------------------------------------------- */
@@ -409,7 +412,7 @@ body {
 .gdlr-item.gdlr-main-content {
   margin-bottom: 40px;
 }
-.gdlr-item-start-content, #business-page .gdlr-item-start-content {
+.gdlr-item-start-content, #business-page .gdlr-item-start-content, .section-container {
 	 padding-top:20px;
 }
 .single .gdlr-item-start-content {
@@ -469,6 +472,9 @@ a{
 }
 .gdlr-navigation-wrapper .gdlr-navigation {
 	margin:0;
+}
+#uwpqsf_id {
+	border:none;
 }
 /* = Media Queries
 -------------------------------------------------------------- */

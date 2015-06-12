@@ -24,7 +24,7 @@ get_header(); ?>
 				);
 				$gdlr_sidebar = gdlr_get_sidebar_class($gdlr_sidebar);
 		?>
-			<div class="with-sidebar-wrapper">
+			<div id="filter" class="with-sidebar-wrapper gray-bg">
 				<div class="with-sidebar-container container">
 					<div class="with-sidebar-left <?php echo esc_attr($gdlr_sidebar['outer']); ?> columns">
 						<div class="with-sidebar-content <?php echo esc_attr($gdlr_sidebar['center']); ?> columns">
@@ -34,7 +34,6 @@ get_header(); ?>
 								}
 								if( !empty($gdlr_post_option['show-content']) && $gdlr_post_option['show-content'] != 'disable' ){
 									get_template_part('single/content', 'full-document-list');
-
 								}
 							?>
 						</div>

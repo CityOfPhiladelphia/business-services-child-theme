@@ -9,7 +9,11 @@
 							echo $content;
 						}
 						?>
+
           <div id="document-section">
+						<div id="document-sort">
+							<input class="search filter-content" placeholder="Filter list..." />
+							
               <div class="inner">
 							<?php
 
@@ -28,10 +32,7 @@
 								);
 								$full_list_query = new WP_Query( $full_list_args );
 
-								if ( $full_list_query->have_posts()) {
-                  ?>
-                  <div id="document-sort">
-                    <input class="search filter-content" placeholder="Filter list..." />
+								if ( $full_list_query->have_posts()) { ?>
                     <div class="list">
                     <?php
 									while ( $full_list_query->have_posts() ) {
