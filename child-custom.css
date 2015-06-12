@@ -29,7 +29,7 @@ body {
 
 /*shrink page title bg */
 .gdlr-page-title-wrapper {
-	padding:20px 0px 20px;
+	padding:30px 0px 30px;
 }
 /*Change in font color for announcements and events post*/
 .gdlr-skin-homepage-project a {
@@ -38,15 +38,13 @@ body {
 /*Adds line under each post title*/
 .home .gdlr-blog-title, .home .gce-feed {
   font-size: 13px;
-  margin-bottom: 13px;
+  margin-bottom: 0;
   font-weight: 600;
-  padding-bottom: 10px;
-  border-bottom:1px solid #fff;
 }
 .home .gdlr-blog-title a {
   color: #3D506D;
 }
-h3.gdlr-blog-title::before{
+.home h3.gdlr-blog-title::before{
   content:" »";
   padding:0 5px 0;
 }
@@ -391,14 +389,18 @@ h3.gdlr-blog-title::before{
 	background: #f5f5f5;
 	padding:20px;
 }
-.gdlr-sidebar.gdlr-box-with-icon-item{
-	padding: 40px 0px 20px;
-	font-size:90%;
+
+.hidden{
+	visibility: hidden;
 }
 /* = Theme overrides
 -------------------------------------------------------------- */
 .column, .columns{
   display:block;
+}
+.gdlr-sidebar.gdlr-box-with-icon-item{
+	padding: 40px 0px 20px;
+	font-size:90%;
 }
 .gdlr-item.gdlr-main-content {
   margin-bottom: 40px;
@@ -449,14 +451,17 @@ a{
 .header-block-area .header-block-content {
   font-size: 13px;
 }
-.hidden{
-	visibility: hidden;
-}
 .gdlr-item.gdlr-blog-grid{
 	background:#f5f5f5;
 	padding:20px;
 	font-size:95%;
 	margin-bottom: 20px;
+}
+.gdlr-navigation-wrapper .gdlr-main-menu > li {
+  padding: 15px 0px;
+}
+#gdlr-menu-search-button{
+	padding: 10px 20px 10px 25px;
 }
 /* = Media Queries
 -------------------------------------------------------------- */
