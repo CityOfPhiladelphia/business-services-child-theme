@@ -6,11 +6,6 @@
 get_header();
 ?>
 <?php get_header(); ?>
-<a href="/planning-a-business" class="red">
-	<div class="steps">
-	<span><i class="fa fa-chevron-circle-left fa-3x"></i><br></i>Back to planning</span>
-	</div>
-</a>
 
   <div id="business-page" class="gdlr-content">
     <div class="with-sidebar-container container">
@@ -69,11 +64,13 @@ get_header();
 							)
 						);
 						if ( $get_all_annoucements_query->have_posts() ) : ?>
-            <div class="gdlr-sidebar gdlr-right-sidebar four columns">
+            <div class="gdlr-sidebar gdlr-right-sidebar four columns gdlr-box-with-icon-item pos-top type-circle">
               <div class="gdlr-item-start-content sidebar-right-item">
+								<div class="box-with-circle-icon" style="background-color: #455773">
+									<i class="fa fa-bullhorn" style="color:#ffffff;"></i><br></div>
 									<?php
 								    echo'<h2>' .  __('Related Annoucements', 'gdlr_translate') . '</h2>';
-								  	echo '<ul>';
+								  	echo '<ul class="left-align">';
 
 								  	while ( $get_all_annoucements_query->have_posts() ) {
 								      $get_all_annoucements_query->the_post();

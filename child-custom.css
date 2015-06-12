@@ -382,15 +382,14 @@ body {
 .hidden{
 	visibility: hidden;
 }
-
 .gray-bg {
 	background:#F5F5F5;
 }
 #filter .eight {
-	width:74.667%
+	width:74.667%;
 }
 #filter .four {
-	width:25.333%
+	width:25.333%;
 }
 #filter .inner {
 	border:1px solid #bcbcbc;
@@ -399,6 +398,9 @@ body {
 	width:100%;
 	padding:10px;
 	border:1px solid #bcbcbc;
+}
+.left-align {
+	text-align:left;
 }
 /* = Theme overrides
 -------------------------------------------------------------- */
@@ -412,7 +414,10 @@ body {
 .gdlr-item.gdlr-main-content {
   margin-bottom: 40px;
 }
-.gdlr-item-start-content, #business-page .gdlr-item-start-content, .section-container {
+#business-page {
+	margin-top:40px;
+}
+.gdlr-item-start-content, .section-container {
 	 padding-top:20px;
 }
 .single .gdlr-item-start-content {
@@ -499,4 +504,10 @@ a{
   #document-section .list.columns {
     width:100%;
   }
+	#filter .eight {
+		width:100%;
+	}
+	#filter .four {
+		width:100%;
+	}
 }
