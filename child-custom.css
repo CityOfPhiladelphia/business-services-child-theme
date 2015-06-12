@@ -55,6 +55,9 @@ body {
   font-weight: bold;
   text-align: center;
 }
+.home .breadcrumbs{
+	display:none;
+}
 /*------------------------------------------------------------------------------ */
 
 .home .gdlr-box-with-icon-item {
@@ -292,6 +295,7 @@ body {
 .breadcrumbs {
 	font-size:80%;
 	background:#f5f5f5;
+	padding:5px 0;
 }
 .button {
   display:inline-block;
@@ -405,7 +409,7 @@ body {
 .gdlr-item.gdlr-main-content {
   margin-bottom: 40px;
 }
-.gdlr-item-start-content {
+.gdlr-item-start-content, #business-page .gdlr-item-start-content {
 	 padding-top:20px;
 }
 .single .gdlr-item-start-content {
@@ -462,6 +466,9 @@ a{
 }
 #gdlr-menu-search-button{
 	padding: 10px 20px 10px 25px;
+}
+.gdlr-navigation-wrapper .gdlr-navigation {
+	margin:0;
 }
 /* = Media Queries
 -------------------------------------------------------------- */

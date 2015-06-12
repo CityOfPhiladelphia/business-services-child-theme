@@ -1,38 +1,37 @@
 jQuery(document).ready(function($) {
 
-  //$('.business-flag:empty').hide();
+  /**
+   * Check a href for an anchor. If exists, and in document, scroll to it.
+   * If href argument ommited, assumes context (this) is HTML Element,
+   * which will be the case when invoked by jQuery after an event
+   */
+  function scroll_if_anchor(href) {
+      href = typeof(href) == "string" ? href : $(this).attr("href");
 
-  //var seen = {};
- /*hide duplicate elements on our "parent" biz type page */
- /*  $( '.parent #might-need .inner .document-row' ).each(function() {
+      var fromTop = 50;
 
-    var txt = $(this).text();
-    if (seen[txt])
-        $(this).remove();
-    else
-        seen[txt] = true;
-  });
+      // If our Href points to a valid, non-empty anchor, and is on the same page (e.g. #foo)
+      // Legacy jQuery and IE7 may have issues: http://stackoverflow.com/q/1593174
+      if(href.indexOf("#") == 0) {
+          var $target = $(href);
 
-
-
-  if ( $( "#business-page" ).length ) {
-    /*CONTENT TYPE SORTER*/
-    //get the content from the page
-    /*
-    var div = document.getElementById("dom-target");
-    var text_data = div.textContent;
-    var content_types = text_data.split(" ");
-
-                                        //stop at last (empty) space
-    for (i = 0; i < content_types.length - 1; i++) {
-      var content = "." + content_types[i];
-      //wrap similar content type classes together for styling
-        $("#must-have " +  content).wrapAll( "<div class='" + content_types[i] + "-wrapper" + "' />");
-        $("#might-need " + content).wrapAll( "<div class='" + content_types[i] + "-wrapper" + "' />");
-
-    }
+          // Older browser without pushState might flicker here, as they momentarily
+          // jump to the wrong position (IE < 10)
+          if($target.length) {
+              $('html, body').animate({ scrollTop: $target.offset().top - fromTop });
+              if(history && "pushState" in history) {
+                  history.pushState({}, document.title, window.location.pathname + href);
+                  return false;
+              }
+          }
+      }
   }
-  */
+
+  // When our page loads, check to see if it contains and anchor
+  scroll_if_anchor(window.location.hash);
+
+  // Intercept all anchor clicks
+  $("body").on("click", "a", scroll_if_anchor);
 
   // Open in new window
   $(".home #plan").click(function () {

@@ -23,8 +23,8 @@
       $required_docs = get_field('required', $current_child_ID);
 
       if( $required_docs )  {?>
-        <div class="inner">
-          <h3><?php echo $child->post_title; ?> </h3>
+          <?php echo '<div class="inner"' . 'id="' .$child->post_name .'">'; ?>
+         <?php echo '<h3>' . $child->post_title . '</h3>'; ?>
           <div class="right one columns label">Download PDF</div>
           <div class="clear"></div>
 

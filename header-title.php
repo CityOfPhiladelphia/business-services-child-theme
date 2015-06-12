@@ -1,4 +1,18 @@
 <?php
+if(function_exists('bcn_display') && (!is_home())) : ?>
+<div class="content-wrapper breadcrumbs">
+	<div class="main-content-container container">
+		<div class="gdlr-content">
+			<div class="twelve">
+			<?php    bcn_display(); ?>
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php endif; ?>
+
+<?php
 /*
  * The template for displaying a header title section
  */
@@ -115,15 +129,3 @@
 		</div>
 	<?php } ?>
 	<!-- is search -->
-	<div class="content-wrapper breadcrumbs">
-		<div class="main-content-container container">
-			<div class="gdlr-content">
-				<div class="twelve">
-			    <?php
-					if(function_exists('bcn_display')) :
-			      bcn_display();
-			    endif; ?>
-			</div>
-		</div>
-	</div>
-</div>

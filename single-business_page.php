@@ -21,6 +21,23 @@ get_header();
 								while ( have_posts() ){ the_post();
 									$content = gdlr_content_filter(get_the_content(), true);
 									echo $content;
+
+									$all_pages_query = new WP_Query();
+									$all_wp_pages = $all_pages_query->query(array(
+										'post_type' => 'business_page',
+										'posts_per_page' => -1,
+										'order' => 'asc',
+										'orderby' => 'title'
+										)
+									);
+									$current_id = get_the_ID();
+									// Filter through all pages and find this pages's children
+									$children = get_page_children( $current_id, $all_wp_pages );
+									echo '<ul>';
+									foreach($children as $child) {
+										echo '<li><a href="#'. $child->post_name .'">' . $child->post_title ."</a></li>";
+									}
+									echo '</ul>';
 								}
 								?>
               </div>
