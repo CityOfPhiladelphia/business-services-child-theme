@@ -91,7 +91,11 @@
 				<div class="gdlr-logo-overlay"></div>
 				<div class="gdlr-logo-container container">
 					<!-- logo -->
+					<a href="http://alpha.phila.gov">
+						<img src="//cityofphiladelphia.github.io/patterns/images/city-of-philadelphia-logo.png" class="logo-phila" alt="City of Philadelphia">
+					</a>
 					<div class="gdlr-logo">
+
 						<a href="<?php echo home_url(); ?>" >
 							<?php
 								if(empty($theme_option['logo-id'])){
