@@ -4,7 +4,7 @@ if(function_exists('bcn_display') && (!is_home())) : ?>
 	<div class="main-content-container container">
 		<div class="gdlr-content">
 			<div class="twelve">
-			<?php    bcn_display(); ?>
+			<?php bcn_display(); ?>
 			</div>
 		</div>
 	</div>
