@@ -75,7 +75,8 @@ if(function_exists('bcn_display') && (!is_home())) : ?>
 				<?php } ?>
 			</div>
 		</div>
-	<?php }else if( is_404() ){ ?>
+		<?php
+	 }else if( is_404() ){ ?>
 		<div class="gdlr-page-title-wrapper" <?php echo $header_background; ?>  >
 			<div class="gdlr-page-title-overlay"></div>
 			<div class="gdlr-page-title-container container" >
@@ -87,6 +88,9 @@ if(function_exists('bcn_display') && (!is_home())) : ?>
 		if( is_search() ){
 			$title = __('Search Results', 'gdlr_translate');
 			$caption = get_search_query();
+		}else if( is_tax( 'content_type' )){
+		$term =	$wp_query->queried_object;
+		$title = $term->name;
 		}else if( is_post_type_archive('business_page') ){
 			$title = __('Businesses', 'gdlr_translate');
 		}else if( is_category() || is_tax('portfolio_category') || is_tax('product_cat') ){
