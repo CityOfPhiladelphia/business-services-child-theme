@@ -316,6 +316,8 @@ body {
   padding:10px;
   background:#475A77;
   color:#fff;
+}
+.full-width {
 	width:100%;
 }
 .button:hover{
