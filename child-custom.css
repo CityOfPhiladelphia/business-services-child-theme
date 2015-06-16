@@ -375,9 +375,6 @@ body {
 .home .with-sidebar-wrapper{
 	margin-top:0;
 }
-.with-sidebar-wrapper {
-	margin-top:30px;
-}
 
 .hidden{
 	visibility: hidden;
@@ -530,6 +527,8 @@ a{
 /* = Media Queries
 -------------------------------------------------------------- */
 @media only screen and (max-width: 64em) {
+	.feedback,
+	.breadcrumbs,
   #document-section .label,
 	#document-section .more .button,
 	.steps,
@@ -555,5 +554,31 @@ a{
 	}
 	#filter .four {
 		width:100%;
+	}
+		#gdlr-responsive-navigation {
+	  display: block;
+	  height: 0px;
+	  position: absolute;
+	  float: none;
+	  top: 61px;
+	}
+	.logo-phila{
+		width: 50%;
+	}
+	body .gdlr-logo {
+  position: relative;
+  padding-right: 0 !important;
+	float:left !important;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	#gdlr-responsive-navigation .dl-trigger {
+	  right: -37px !important;
+	}
+}
+@media only screen and (max-width: 419px) {
+	body .container {
+	  max-width: 340px;
 	}
 }
