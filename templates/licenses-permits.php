@@ -24,6 +24,8 @@ get_header(); ?>
 				);
 				$gdlr_sidebar = gdlr_get_sidebar_class($gdlr_sidebar);
 		?>
+	</div>
+</div>
 			<div id="filter" class="with-sidebar-wrapper gray-bg">
 				<div class="with-sidebar-container container">
 					<div class="with-sidebar-left <?php echo esc_attr($gdlr_sidebar['outer']); ?> columns">

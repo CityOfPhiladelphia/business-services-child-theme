@@ -100,9 +100,6 @@ body {
 .parent, .child {
   padding-top:20px;
 }
-#document-section {
-  background:#f2f2f2;
-}
 #document-section h2{
   padding:18px 0;
 	width: 88%;
@@ -142,6 +139,9 @@ body {
 					justify-content: center;
 	width: auto;
 	margin-bottom: 20px;
+}
+#filter #document-section{
+	margin-top:30px;
 }
 .document-row a {
 	font-weight:700;
@@ -219,50 +219,11 @@ body {
   font-weight:bold;
 }
 
-#dom-target {
-  display:none;
+.page .gdlr-main-content, .page .above-sidebar-wrapper {
+	text-align: center;
+	width:88%;
+	margin:0 auto;
 }
-
-.overview-wrapper::before {
-  content:"Overview";
-}
-
-.state-wrapper::before {
-  content:"State and Federal Filings";
-}
-
-.license-wrapper::before {
-  content:"Licenses";
-}
-
-.taxes-wrapper::before {
-  content:"Taxes";
-}
-
-.zoning-wrapper::before {
-  content:"Zoning";
-}
-
-.permit-wrapper::before {
-  content:"Permits";
-}
-
-.permit,
-.zoning,
-.taxes,
-.license,
-.state,
-.overview,
-.overview-wrapper,
-.state-wrapper,
-.license-wrapper,
-.taxes-wrapper,
-.zoning-wrapper,
-.permit-wrapper {
-  clear:both;
-  position:relative;
-}
-
 .gray-callout{
   background:#DCDCDC;
   padding:10px;
@@ -383,12 +344,6 @@ body {
   background:#3d506d;
 }
 
-.filter-content {
-  width: 64%;
-	padding: 10px;
-  margin: 10px 0;
-}
-
 .launch .inner h3, .launch .inner p {
   margin:0;
 }
@@ -430,8 +385,12 @@ body {
 #filter .inner {
 	border:1px solid #bcbcbc;
 }
+.filter-content {
+  width: 64%;
+	padding: 10px;
+}
 .search.filter-content{
-	width:100%;
+	width:97%;
 	padding:10px;
 	border:1px solid #bcbcbc;
 }

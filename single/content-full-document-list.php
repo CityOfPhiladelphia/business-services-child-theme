@@ -1,19 +1,14 @@
 <?php
 	while ( have_posts() ){ the_post();
 	   $content = gdlr_content_filter(get_the_content(), true);
-			?>
-			<div class="main-content-container container gdlr-item-start-content">
-				<div class="gdlr-item gdlr-main-content repo">
-					<?php
-					if(!empty($content)){
-							echo $content;
-						}
-						?>
-
+				if(!empty($content)){
+						echo $content;
+					}
+					?>
           <div id="document-section">
 						<div id="document-sort">
 							<input class="search filter-content" placeholder="Filter list..." />
-							
+
               <div class="inner">
 							<?php
 
@@ -79,8 +74,6 @@
           </div>
 				</div>
      </div>
-   </div>
- </div>
       <?php
 		}//end while
 ?>
