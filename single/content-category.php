@@ -44,6 +44,7 @@
             </div>
 					</div>
        </div>
+		</div><!-- gdlr-content -->
       <?php
 		}//end while
 ?>

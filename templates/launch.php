@@ -11,7 +11,6 @@ get_header(); ?>
 </a>
 
 	<div class="gdlr-content launch">
-
 		<!-- Above Sidebar Section-->
 		<?php global $gdlr_post_option, $above_sidebar_content, $with_sidebar_content, $below_sidebar_content; ?>
 		<?php if(!empty($above_sidebar_content)){ ?>
@@ -63,12 +62,11 @@ get_header(); ?>
 			}
 		?>
 
-
 		<!-- Below Sidebar Section-->
 		<?php if(!empty($below_sidebar_content)){ ?>
 			<div class="below-sidebar-wrapper"><?php gdlr_print_page_builder($below_sidebar_content); ?></div>
 		<?php } ?>
 
 
-	</div><!-- gdlr-content -->
+
 <?php get_footer(); ?>
