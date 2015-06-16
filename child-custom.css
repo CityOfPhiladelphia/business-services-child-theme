@@ -27,19 +27,21 @@ body {
   content:" »";
 }
 
-/*shrink page title bg */
 .gdlr-page-title-wrapper {
-	padding:30px 0px 30px;
+	padding:45px 0px 45px;
 }
-/*Change in font color for announcements and events post*/
 .gdlr-skin-homepage-project a {
   color: #E7E7E7;
 }
-/*Adds line under each post title*/
-.home .gdlr-blog-title, .home .gce-feed {
+.home .gdlr-blog-title {
   font-size: 13px;
   margin-bottom: 0;
   font-weight: 600;
+}
+.home .gce-feed{
+	padding: 10px 0 30px;
+	font-weight: 600;
+	font-size: 13px;
 }
 .home .gdlr-blog-title a {
   color: #3D506D;
@@ -87,21 +89,7 @@ body {
 .home .gdlr-blog-content {
 	display:none;
 }
-/*--------------------------------------------New Edits after mock up---------------------------------- */
-/*Change in font color from yello to grey for announcements and events */
-.gdlr-skin-homepage-project h3,.gdlr-skin-homepage-project .gdlr-skin-title{
-    color: #818181;
-}
 
-/*Change in font size and weight for announcements and events */
-.gdlr-item-title-wrapper.pos-left-bold .gdlr-item-title {
-  font-size: 25px;
-  font-weight: 600;
-}
-/*Change in font color for announcements and events post*/
-.gdlr-skin-homepage-project a {
-  color: #E7E7E7;
-}
 /*Reduces the margine under announcements and events post*/
 .gdlr-item.gdlr-blog-grid {
    margin-bottom: 0;
@@ -112,26 +100,18 @@ body {
 .parent, .child {
   padding-top:20px;
 }
-.pipe::after {
-  content:" | ";
-
-}
-.pipe:last-of-type::after {
-  content:"";
-
-}
 #document-section {
   background:#f2f2f2;
 }
 #document-section h2{
   padding:18px 0;
-  margin:0;
+	width: 88%;
+	margin: 0 auto;
 }
 #document-section h3 {
   float:left;
 }
 .document-row {
-	margin-bottom:20px;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -144,6 +124,24 @@ body {
 	-webkit-justify-content: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
+	width: 88%;
+	margin: 0 auto 20px auto;
+}
+#filter .document-row, .single-business_page .document-row {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+			-ms-flex-align: center;
+					align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+			-ms-flex-pack: center;
+					justify-content: center;
+	width: auto;
+	margin-bottom: 20px;
 }
 .document-row a {
 	font-weight:700;
@@ -156,14 +154,9 @@ body {
   padding:10px;
   width: 74%;
   height:100%;
-}
-#document-section .menu-page .list.columns, .page #document-section .menu-page .list.columns{
 	width:84%;
 }
 
-.with-sidebar-content #document-section .list.columns, .with-sidebar-content .filter-content {
-  width: 71%;
-}
 #document-section .list.columns p {
   margin:0;
   padding:0;
@@ -199,13 +192,6 @@ body {
 #document-section .button{
   padding: 10px 0;
 }
-/*
-#document-section .more, #document-section .pdf, #document-section .link, #document-section .list {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-*/
 
 #document-section a[href$='.pdf']::after, #document-section a[href$='.pdf']::before{
   content:'';
@@ -277,14 +263,31 @@ body {
   position:relative;
 }
 
-.may-also-need{
+.gray-callout{
   background:#DCDCDC;
   padding:10px;
 }
-.may-also-need h6{
+.gray-callout h6{
   text-transform:uppercase;
   font-weight:bold;
   margin:0;
+}
+.gray-callout ul{
+	margin:0;
+	padding:0;
+}
+.gray-callout li{
+	display: inline;
+}
+.gray-callout li::after {
+  content:" | ";
+
+}
+.gray-callout li:last-child::after {
+  content:"";
+}
+.textwidget {
+	font-size:90%;
 }
 /* = General
 -------------------------------------------------------------- */
@@ -390,16 +393,22 @@ body {
   margin:0;
 }
 .steps{
-	text-align: center;
+  text-align: center;
   position: absolute;
+  top: -111px;
+  right: 200px;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+  background:#e46c53;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 200px;
   font-size: 12px;
-  top: -24px;
-  right: 51px;
-	color:#E46C53;
 }
-.steps a{
+.steps span{
+  padding-top: 45px;
   display: inline-block;
-	color:#3D506D;
 }
 .sidebar-right-item{
 	background: #f5f5f5;

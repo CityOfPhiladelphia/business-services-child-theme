@@ -28,7 +28,6 @@
           <div class="right one columns label">Download PDF</div>
           <div class="clear"></div>
 
-
           <?php
               foreach( $required_docs as $required_doc ){
 
@@ -64,20 +63,18 @@
 
               $maybe_docs = get_field('might_need', $current_child_ID);
               if( !$maybe_docs == '' ): ?>
-                <div class="may-also-need">
+                <div class="gray-callout">
                   <h6>You may also need:</h6>
-
+                  <ul>
                 <?php foreach( $maybe_docs as $maybe_doc ){
 
                     $content_types =  wp_get_post_terms( $maybe_doc->ID, 'content_type' );
-                      //  $list = rtrim($list, ', ');
 
-                      echo '<span class="pipe"><a href="' . $maybe_doc->guid .'">'  . $maybe_doc->post_title . '</a></span>';
-                          //pass the post ID to get_post, then extract the excerpt. BOOYAH
-                    }
+                      echo '<li class="pipe"><a href="' . $maybe_doc->guid .'">'  .         $maybe_doc->post_title . '</a></li>';
+                      }
                     ?>
+                  </ul>
                     </div>
-
 
                     <?php endif; ?>
 
