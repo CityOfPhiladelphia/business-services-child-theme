@@ -263,7 +263,7 @@ function business_register_meta_boxes( $meta_boxes )
     return $meta_boxes;
 }
 
-//add_filter('uwpqsf_result_tempt', 'doc_filter_customize_output', '', 4);
+add_filter('uwpqsf_result_tempt', 'doc_filter_customize_output', '', 4);
 function doc_filter_customize_output($results , $arg, $id, $getdata ){
 	 // The Query
       $apiclass = new uwpqsfprocess();

@@ -63,6 +63,7 @@ get_header();
 								),
 							)
 						);
+            var_dump($get_all_annoucements_query);
 						if ( $get_all_annoucements_query->have_posts() ) : ?>
             <div class="gdlr-sidebar gdlr-right-sidebar four columns gdlr-box-with-icon-item pos-top type-circle">
               <div class="gdlr-item-start-content sidebar-right-item">
