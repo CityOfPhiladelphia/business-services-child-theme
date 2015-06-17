@@ -62,32 +62,34 @@ body {
 }
 /*------------------------------------------------------------------------------ */
 
-.home .gdlr-box-with-icon-item {
+#plan, #launch, #maintain, #close{
   cursor:pointer;
 }
 
-.home .gdlr-box-with-icon-item a, .home .gdlr-box-with-icon-item a:visited{
-  color:#929292;
-}
-.home .gdlr-box-with-icon-item a,  .home .gdlr-box-with-icon-item a:link, .home .gdlr-box-with-icon-item a:visited{
+#plan a, #launch a, #maintain a, #close a,
+#plan a:link, #launch a:link, #maintain a:link, #close a:link,
+#plan a:visited, #launch a:visited, #maintain a:visited, #close a:visited{
   color: #929292;
 }
 
-.home .gdlr-box-with-icon-item:hover a{
+#plan:hover a, #launch:hover a, #maintain:hover a, #close:hover a{
   color:#F5F5F5;
 }
 
-.home .gdlr-box-with-icon-item:hover {
+#plan:hover, #launch:hover, #maintain:hover, #close:hover {
   background:#3d506d;
   color:#F5F5F5;
 }
 
-.home #business-status .gdlr-box-with-icon-item:hover h4{
-  color:#F5F5F5;
+#plan h4, #launch h4, #maintain h4, #close h4 {
+	text-transform:uppercase;
+	font-weight:bold;
+	color:#3d506d;
+	letter-spacing: .2em;
 }
 
-.home .gdlr-blog-content {
-	display:none;
+#plan:hover h4, #launch:hover h4, #maintain:hover h4, #close:hover h4 {
+  color:#F5F5F5;
 }
 
 /*Reduces the margine under announcements and events post*/
@@ -411,6 +413,9 @@ body {
 	color:#6b6b6b;
 	font-style: italic;
 }
+.maintain {
+	margin-top:20px;
+}
 /* = Theme overrides
 -------------------------------------------------------------- */
 
@@ -436,6 +441,7 @@ body {
   filter: alpha(opacity=80);
 	position: absolute;
 	background: #232323;
+	height: 43px;
 }
 #menu-search button{
 	background-color: transparent;

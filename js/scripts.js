@@ -49,7 +49,7 @@ jQuery(document).ready(function($) {
     window.location = $(this).find("a:first").attr("href");
     return false;
   });
-  $(".home #close").click(function () {
+  $(".maintain #close").click(function () {
     window.location = $(this).find("a:first").attr("href");
     return false;
   });
