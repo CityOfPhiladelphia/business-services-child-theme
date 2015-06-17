@@ -6,12 +6,6 @@ body {
 }
 /* = Homepage
 -------------------------------------------------------------- */
-#business-status h4{
-  text-transform:uppercase;
-  font-weight:bold;
-  color:#3d506d;
-  letter-spacing: .2em;
-}
 .gdlr-item-title-wrapper.gdlr-item {
   margin-bottom: 20px;
 }
@@ -29,9 +23,6 @@ body {
 
 .gdlr-page-title-wrapper {
 	padding:45px 0px 45px;
-}
-.gdlr-skin-homepage-project a {
-  color: #E7E7E7;
 }
 .home .gdlr-blog-title {
   font-size: 13px;
@@ -347,14 +338,34 @@ body {
 .box-list h3{
   font-size:16px;
   letter-spacing:.1em;
+	margin-bottom:5px;
+	text-transform:uppercase;
+	font-weight:bold;
+	color:#3d506d;
+	letter-spacing: .2em;
 }
 .box-list:hover, .box-list:hover h3 {
   color:#F5F5F5;
   background:#3d506d;
 }
+.box-list p {
+	margin-bottom:0;
+}
 
-.launch .inner h3, .launch .inner p {
+/*launch page */
+.launch-page .gdlr-item-start-content {
+  padding-top: 0;
+
+}
+.launch-page .inner h3, .launch-page .inner p {
   margin:0;
+}
+.page .launch-page .gdlr-main-content {
+	text-align:left;
+}
+/*maintain page */
+.maintain-page {
+	margin-top:20px;
 }
 .steps{
   text-align: center;
@@ -412,9 +423,6 @@ body {
 	font-size:95%;
 	color:#6b6b6b;
 	font-style: italic;
-}
-.maintain {
-	margin-top:20px;
 }
 /* = Theme overrides
 -------------------------------------------------------------- */

@@ -10,7 +10,7 @@ get_header(); ?>
 	</div>
 </a>
 
-	<div class="gdlr-content">
+	<div class="gdlr-content plan-page">
 
 		<!-- Above Sidebar Section-->
 		<?php global $gdlr_post_option, $above_sidebar_content, $with_sidebar_content, $below_sidebar_content; ?>

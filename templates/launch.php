@@ -10,7 +10,7 @@ get_header(); ?>
 	</div>
 </a>
 
-	<div class="gdlr-content launch">
+	<div class="gdlr-content launch-page">
 		<!-- Above Sidebar Section-->
 		<?php global $gdlr_post_option, $above_sidebar_content, $with_sidebar_content, $below_sidebar_content; ?>
 		<?php if(!empty($above_sidebar_content)){ ?>
@@ -38,7 +38,7 @@ get_header(); ?>
 									gdlr_print_page_builder($with_sidebar_content, false);
 								}
 								if( !empty($gdlr_post_option['show-content']) && $gdlr_post_option['show-content'] != 'disable' ){
-									get_template_part('single/content', 'page');
+									get_template_part('single/content', 'category');
 								}
 							?>
 						</div>

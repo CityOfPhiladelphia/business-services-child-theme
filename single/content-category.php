@@ -7,7 +7,6 @@
 			<div class="main-content-container container gdlr-item-start-content">
 				<div class="gdlr-item gdlr-main-content">
           <div class="container">
-            <div class="inner">
 							<?php
 							if(!empty($content)){
 		              echo $content;
@@ -40,7 +39,7 @@
 								/* Restore original Post Data */
 								wp_reset_postdata();
 								?>
-              </div>
+            
             </div>
 					</div>
        </div>

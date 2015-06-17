@@ -5,7 +5,7 @@ Template Name: Maintain
 
 get_header(); ?>
 
-	<div class="gdlr-content maintain">
+	<div class="gdlr-content maintain-page">
 
 		<!-- Above Sidebar Section-->
 		<?php global $gdlr_post_option, $above_sidebar_content, $with_sidebar_content, $below_sidebar_content; ?>
