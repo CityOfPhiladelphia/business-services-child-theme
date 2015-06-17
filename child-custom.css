@@ -280,6 +280,9 @@ body {
 	float: left;
 	margin-top: 19px;
 }
+.logo-phila:hover, .gdlr-logo:hover{
+	opacity: .5;
+}
 .breadcrumbs {
 	font-size:80%;
 	background:#f5f5f5;
@@ -425,7 +428,7 @@ body {
 	position: absolute;
   top: 0;
   right: 53px;
-  width: 200px;
+  width: 240px;
   display: none;
   z-index: 999;
   text-align: left;
@@ -434,11 +437,12 @@ body {
 	position: absolute;
 	background: #232323;
 }
-button{
+#menu-search button{
 	background-color: transparent;
   border: 0;
-  padding: 0;
+	padding: 10px 0 0 0;
   display: inline-block;
+	float: right;
 	}
 .search-text{
 	display: inline-block;
@@ -448,7 +452,7 @@ button{
 }
 #menu-search input[type="text"]{
 	background: transparent;
-	padding: 15px 0 8px 13px;
+	padding: 14px 0 4px 13px;
 }
 .column, .columns{
   display:block;
