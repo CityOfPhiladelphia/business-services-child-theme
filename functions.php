@@ -317,55 +317,9 @@ function doc_filter_customize_output($results , $arg, $id, $getdata ){
 }
 // Ultimate WP Query Search Filter heirarchy in drop downs
 
-
+/*this limits the query to only showing parent items, and will probably need to be modified*/
 add_filter('uwpqsf_taxonomy_arg', 'custom_term_output','',1);
 function custom_term_output($args){
   $args['parent'] = '0';
   return $args;
-}
-
-//add_filter('uwpqsf_tax_field_checkbox','custom_checkbox_output','',12);
-function custom_checkbox_output($html,$type,$exc,$hide,$taxname,$taxlabel,$taxall,$opt,$c,$defaultclass,$formid,$divclass){
-
-$eid = explode(",", $exc);//this is where you forgot to add,this will throw warning when debug mode is on
-
-$args = array('hide_empty'=>$hide,'exclude'=>$eid, 'hierarchical' => true, 'parent' => 0 );//add new parameter to the parent argument.
-
-$taxoargs = apply_filters('uwpqsf_taxonomy_arg',$args,$taxname,$formid);
-$terms = get_terms($taxname,$taxoargs); $count = count($terms);
-
-$html = '';
-
-    if($type == 'checkbox')
-    {
-      $html  = '<div class="'.$defaultclass.' '.$divclass.' togglecheck" id="tax-check-'.$c.'"><span  class="taxolabel-'.$c.'">'.$taxlabel.'</span >';
-		$html .= '<input  type="hidden" name="taxo['.$c.'][name]" value="'.$taxname.'">';
-		$html .= '<input  type="hidden" name="taxo['.$c.'][opt]" value="'.$opt.'">';
-				if(!empty($taxall)){
-				$checkall = (isset($_GET['taxo'][$c]['call']) && $_GET['taxo'][$c]['call'] == '1'  ) ? 'checked="checked"' : '';
-				$html .= '<label><input type="checkbox" id="tchkb-'.$c.'" name="taxo['.$c.'][call]" class="chktaxoall" value="1" '.$checkall.'>'.$taxall.'</label>';
-				}
-                if ( $count > 0 ){
-                    foreach ( $terms as $term ) {
-                        $selected = $terms[0]->term_id;
-                        $html .= '<label><input type="checkbox" id="tchkb-'.$c.'" name="taxo['.$c.'][term]" value="'.$term->slug.'">'.$term->name.'</label>';
-
-                        $args = array(
-                            'hide_empty'    => false,
-                            'hierarchical'  => true,
-                            'parent'        => $term->term_id
-                        );
-                        $childterms = get_terms($taxname, $args);
-
-                        foreach ( $childterms as $childterm ) {
-                                $selected = $childterms[0]->term_id;
-
-                            $html .= "<label class='child'><input type='checkbox' id='tchkb-".$c."' name='taxo[".$c."][term]' value='".$childterm->slug."'".">" . $childterm->name . '</label>';
-
-                        }}
-                     }
-                     $html .= '</div>';
-				return  $html;
-    }
-
 }

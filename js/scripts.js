@@ -1,5 +1,8 @@
 jQuery(document).ready(function($) {
 
+  //make all businesses the default
+//  $("input[value='all-businesses']").attr('checked', 'checked');
+
   /**
    * Check a href for an anchor. If exists, and in document, scroll to it.
    * If href argument ommited, assumes context (this) is HTML Element,
