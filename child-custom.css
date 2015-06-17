@@ -262,11 +262,15 @@ body {
 	font-weight: bold;
 	text-transform: uppercase;
 }
-.feedback .button {
+.feedback .button{
 	float:right;
+	font-size: 13px;
 }
 .feedback a{
 	color:#aec0dc;
+}
+.feedback a:hover{
+	color:#fff;
 }
 .logo-phila {
 	width: 13%;
@@ -284,8 +288,10 @@ body {
 .button {
   display:inline-block;
   padding:10px;
-  background:#475A77;
+  background:#3d506d;
   color:#fff;
+	font-weight: 700;
+	text-transform: uppercase;
 }
 .full-width {
 	width:100%;
