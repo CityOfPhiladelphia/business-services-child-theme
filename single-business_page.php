@@ -28,12 +28,14 @@ get_header();
 									$current_id = get_the_ID();
 									// Filter through all pages and find this pages's children
 									$children = get_page_children( $current_id, $all_wp_pages );
-									echo '<div class="gray-callout"><ul>';
-									foreach($children as $child) {
-										echo '<li><a href="#'. $child->post_name .'">' . $child->post_title ."</a></li>";
-									}
-									echo '</ul></div>';
-								}
+                  if (!$children == 0) {
+  									echo '<div class="gray-callout"><ul>';
+  									foreach($children as $child) {
+  										echo '<li><a href="#'. $child->post_name .'">' . $child->post_title ."</a></li>";
+  									}
+  									echo '</ul></div>';
+								  }
+                }
 								?>
               </div>
             </div>
