@@ -40,13 +40,13 @@
 									<?php echo '<div class="more one columns">' . '<a href="' . 	get_post($current_ID)->guid .'" class="button full"><i class="fa fa-arrow-circle-right"></i>' . 'Read More' . '</a></div>'; ?>
 								</div>
 									<?php endforeach; ?>
-	  						<?php endif; ?>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-			 	</div>
-	    </div>
+	  			<?php endif; ?>
+
+
       <?php
 		}
 	}

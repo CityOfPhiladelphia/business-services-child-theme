@@ -120,6 +120,9 @@ body {
 	width: 88%;
 	margin: 0 auto 20px auto;
 }
+.document-row .button{
+		text-transform: none;
+}
 #filter .document-row, .single-business_page .document-row {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -393,7 +396,9 @@ body {
   padding-top: 45px;
   display: inline-block;
 }
-.sidebar-right-item{
+
+/*licenses-permits page */
+.licenses-permits-page .sidebar-right-item{
 	background: #f5f5f5;
 	padding:20px;
 }
