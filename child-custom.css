@@ -338,7 +338,6 @@ body {
 
 .box-list {
   background: #F5F5F5;
-  padding: 20px;
   overflow:hidden;
   margin-bottom:20px;
 }
@@ -433,6 +432,10 @@ body {
 	font-size:95%;
 	color:#6b6b6b;
 	font-style: italic;
+}
+
+.pad-20{
+	padding: 20px;
 }
 /* = Theme overrides
 -------------------------------------------------------------- */

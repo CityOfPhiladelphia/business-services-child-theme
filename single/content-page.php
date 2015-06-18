@@ -12,6 +12,9 @@
 					</div>
 				</div>
 
+				<?php	$menus = get_field('page_menu');
+					if( $menus ):
+						?>
         <div id="document-section">
 					<div class="parent">
 						<div class="container">
@@ -21,8 +24,7 @@
 					if( !$section_title == false ):
 						echo '<h2>' . $section_title . '</h2>';
 					endif;
-							$menus = get_field('page_menu');
-							if( $menus ):
+
 								foreach( $menus as $menu ):
 									$current_ID = $menu->ID;
 									 ?>
@@ -39,8 +41,8 @@
 								</div>
 									<?php endforeach; ?>
 	  						<?php endif; ?>
+								</div>
 							</div>
-						</div>
 						</div>
 					</div>
 			 	</div>
