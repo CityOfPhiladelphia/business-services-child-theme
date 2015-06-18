@@ -277,8 +277,12 @@ body {
 	float: left;
 	margin-top: 19px;
 }
-.logo-phila:hover, .gdlr-logo:hover{
+.logo-phila:hover, .gdlr-logo img:hover{
 	opacity: .5;
+}
+#gdlr-responsive-navigation.dl-menuwrapper ul{
+	position: absolute;
+  right: -36px;
 }
 .breadcrumbs {
 	font-size:80%;
@@ -564,11 +568,9 @@ a{
   #document-section .list {
     position: relative;
     top: 0;
-    /*transform: translateY(0);*/
-    width:95%;
   }
   .inner {
-    padding:0;
+    padding:20px;
   }
   #document-section .list.columns {
     width:100%;
@@ -588,11 +590,15 @@ a{
 	}
 	.logo-phila{
 		width: 50%;
+		margin: 22px 6px 0 0;
 	}
 	body .gdlr-logo {
   position: relative;
   padding-right: 0 !important;
 	float:left !important;
+	}
+	.document-row, #document-section h2 {
+		width: 100%;
 	}
 }
 
@@ -603,6 +609,6 @@ a{
 }
 @media only screen and (max-width: 419px) {
 	body .container {
-	  max-width: 340px;
+	  max-width: 340px !important;
 	}
 }
