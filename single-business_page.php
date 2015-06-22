@@ -29,9 +29,9 @@ get_header();
 									// Filter through all pages and find this pages's children
 									$children = get_page_children( $current_id, $all_wp_pages );
                   if (!$children == 0) {
-  									echo '<div class="gray-callout"><ul>';
+  									echo '<ul>';
   									foreach($children as $child) {
-  										echo '<li><a href="#'. $child->post_name .'">' . $child->post_title ."</a></li>";
+  										echo '<li><a href="'. $child->post_name .'">' . $child->post_title ."</a></li>";
   									}
   									echo '</ul></div>';
 								  }
