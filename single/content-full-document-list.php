@@ -14,7 +14,7 @@
 
 								$full_list_args = array(
 									'post_type' => 'post',
-									'nopaging'	=> 'true',
+									'nopaging'	=> 'false',
                   'orderby'   => 'title',
                   'order'     => 'asc',
                   'tax_query' => array(

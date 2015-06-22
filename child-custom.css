@@ -101,9 +101,6 @@ body {
 	width: 88%;
 	margin: 0 auto;
 }
-#document-section h3 {
-  float:left;
-}
 .document-row {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -444,7 +441,6 @@ body {
 }
 /* = Theme overrides
 -------------------------------------------------------------- */
-
 .menu-search-button {
 	color:#fff;
 	margin-right: 0px;

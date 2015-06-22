@@ -263,58 +263,99 @@ function business_register_meta_boxes( $meta_boxes )
     return $meta_boxes;
 }
 
+add_filter('uwpqsf_deftemp_query', 'reorder_taxo','',3);
+function reorder_taxo($args,$taxname,$formid){
+  if($query->is_search()){
+     if($query->query_vars['s'] == 'uwpsfsearchtrg' && isset($_GET['uformid'])){
+   $getdata = $_GET;
+   $taxo = (isset($_GET['taxo']) && !empty($_GET['taxo'])) ? $_GET['taxo'] : null;
+   $cmf = (isset($_GET['cmf']) && !empty($_GET['cmf'])) ? $_GET['cmf'] : null;
+   $id = absint($_GET['uformid']);
+   $options = get_post_meta($id, 'uwpqsf-option', true);
+   $cpts = get_post_meta($id, 'uwpqsf-cpt', true);
+   $default_number = get_option('posts_per_page');
+   $paged = ( get_query_var( 'paged') ) ? get_query_var( 'paged' ) : 1;
+   $cpt        = !empty($cpts) ? $cpts : 'any';
+   $ordermeta  = !empty($options[0]['smetekey']) ? $options[0]['smetekey'] : null;
+   $ordertype = !empty($options[0]['otype']) ? $options[0]['otype'] : null;
+   $order      = !empty($options[0]['sorder']) ? $options[0]['sorder'] : null;
+   $number      = !empty($options[0]['resultc']) ? $options[0]['resultc'] : $default_number;
+   $keyword = !empty($_GET['skeyword']) ?	 sanitize_text_field($_GET['skeyword']) : null;
+   $get_tax = $this->get_uwqsf_taxo($id, $taxo);
+   $get_meta = $this->get_uwqsf_cmf($id, $cmf);
+   if($options[0]['snf'] != '1' && !empty($keyword)){
+    $get_tax = $get_meta = null;
+   }
+
+   $ordermeta  = apply_filters('uwpqsf_dmeta_query',$ordermeta,$getdata,$id);
+   $ordervalue = apply_filters('uwpqsf_dmeta_type',$ordertype,$getdata,$id);
+   $order 	    = apply_filters('uwpqsf_dorder_query',$order,$getdata,$id);
+   $number     = apply_filters('uwpqsf_dnum_query',$number,$getdata,$id);
+
+
+   $args = array(
+     'post_type' => $cpt,
+     'post_status' => 'publish',
+     'meta_key'=> $ordermeta,
+     'orderby' => $ordertype,
+     'order' => $order,
+     'paged'=> $paged,
+     'posts_per_page' => 10,
+     'meta_query' => $get_meta,
+     'tax_query' => $get_tax,
+     's' => esc_html($keyword),
+     'cache_results' => false,
+     );
+      return $args;
+}
+}
+}
+
+
 add_filter('uwpqsf_result_tempt', 'doc_filter_customize_output', '', 4);
-function doc_filter_customize_output($results , $arg, $id, $getdata ){
+function doc_filter_customize_output($results, $arg, $id, $getdata ){
+
 	 // The Query
       $apiclass = new uwpqsfprocess();
       $query = new WP_Query( $arg );
-		ob_start();	$result = '';
+
+      ob_start();
+      $result = '';
 			// The Loop
 
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
-				$query->the_post();
-        global $post;
-        $pdf =  rwmb_meta( 'business_pdf');
-        $link =  rwmb_meta( 'business_link');
-        $postid = get_the_ID();
-
-        ?><div class="document-row group">
-           <div class="list nine columns">
-             <a href="<?php the_permalink(); ?>" class="h3 title" title="<?php echo get_the_title() ?>">
-               <?php echo get_the_title() ?>
-           </a>
-             <p> <?php the_excerpt(); ?></p>
-           </div>
-
-        <div class="more one columns">
-          <a href="<?php the_permalink(); ?>" class="button full"><i class="fa fa-arrow-circle-right">
-              </i>Read More</a>
-        </div>
-      <div class="pdf one columns">
-        <?php
-          if ( !$pdf == '' ){
-            echo '<a href="' . $pdf . '" class="button red">
-            <i class="fa fa-file-pdf-o fa-inverse"></i>
-            </a>';
-          }else {
-            ?><span class="button red inactive"><i class="fa fa-file-pdf-o fa-inverse"></i></span><?php
+				$query->the_post();global $post;$pdf =  rwmb_meta( 'business_pdf');$link =  rwmb_meta( 'business_link');?><div class="document-row group">
+           <div class="list nine columns"> <a href="<?php the_permalink(); ?>" class="h3 title" title="<?php echo get_the_title() ?>"><?php echo get_the_title() ?></a><p> <?php echo get_the_excerpt(); ?></p></div><div class="more one columns">
+          <a href="<?php the_permalink(); ?>" class="button full"><i class="fa fa-arrow-circle-right"></i>Read More</a></div><div class="pdf one columns"><?php
+          if ( !$pdf == '' ){echo '<a href="' . $pdf . '" class="button red"><i class="fa fa-file-pdf-o fa-inverse"></i></a>';}else {?><span class="button red inactive"><i class="fa fa-file-pdf-o fa-inverse"></i></span><?php
           }
           ?>
       </div>
     </div>
     <?php
 			}
-          echo  $apiclass->ajax_pagination($arg['paged'],$query->max_num_pages, 4, $id, $getdata);
-		 } else {
-					 echo  'no post found';
-				}
-				/* Restore original Post Data */
-				wp_reset_postdata();
+
+/*    var_dump($query->max_num_pages);
+
+    echo $apiclass->ajax_pagination($arg['paged'], $query->max_num_pages, 4, $id, $getdata);
+
+    gdlr_get_ajax_pagination($arg['paged'], $query->max_num_pages);
+
+    $paged = (get_query_var('paged'))? get_query_var('paged') : 1;
+
+    echo gdlr_get_pagination($query->max_num_pages, $arg['paged']);
+    var_dump(get_query_var('paged'));*/
+    echo $apiclass->ajax_pagination($arg['paged'],$query->max_num_pages, 4, $id, $getdata);
+
+		} else { echo  'Sorry, there is nothing matching your search.'; }
+		/* Restore original Post Data */
+		wp_reset_postdata();
 
 		$results = ob_get_clean();
 			return $results;
 }
+
 // Ultimate WP Query Search Filter heirarchy in drop downs
 
 /*this limits the query to only showing parent items, and will probably need to be modified*/
@@ -323,3 +364,55 @@ function custom_term_output($args){
   $args['parent'] = '0';
   return $args;
 }
+
+
+if( is_admin() ){ remove_action('init', 'gdlr_create_post_options'); }
+/*
+function uwpqsf_ajax_pagination($pagenumber, $pages = '', $range = 4, $id,$getdata){
+	$showitems = ($range * 2)+1;
+
+	$paged = $pagenumber;
+	if(empty($paged)) $paged = 1;
+
+	if($pages == '')
+	 {
+
+	   global $wp_query;
+	   $pages = $query->max_num_pages;
+
+	    if(!$pages)
+		 {
+				 $pages = 1;
+		 }
+	}
+
+	if(1 != $pages)
+	 {
+	  $html = "<div class=\"uwpqsfpagi\">  ";
+	  $html .= '<input type="hidden" id="curuform" value="#uwpqsffrom_'.$id.'">';
+
+	 if($paged > 2 && $paged > $range+1 && $showitems < $pages)
+	 $html .= '<a id="1" class="upagievent" href="#">« '.__("First","UWPQSF").'</a>';
+	 $previous = $paged - 1;
+	 if($paged > 1 && $showitems < $pages) $html .= '<a id="'.$previous.'" class="upagievent" href="#">‹ '.__("Previous","UWPQSF").'</a>';
+
+	 for ($i=1; $i <= $pages; $i++)
+	  {
+		 if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
+		 {
+		 $html .= ($paged == $i)? '<span class="upagicurrent">'.$i.'</span>': '<a id="'.$i.'" href="#" class="upagievent inactive">'.$i.'</a>';
+		 }
+	 }
+
+	 if ($paged < $pages && $showitems < $pages){
+		 $next = $paged + 1;
+		 $html .= '<a id="'.$next.'" class="upagievent"  href="#">'.__("Next","UWPQSF").' ›</a>';}
+		 if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) {
+		 $html .= '<a id="'.$pages.'" class="upagievent"  href="#">'.__("Last","UWPQSF").' »</a>';}
+		 $html .= "</div>\n";$max_num_pages = $pages;
+		 return apply_filters('uwpqsf_pagination',$html,$max_num_pages,$pagenumber,$id);
+	 }
+
+
+}// pagination
+*/

@@ -11,7 +11,7 @@
 
       if( $required_docs )  {
       ?>
-        <h2>Required</h2>
+        <h3>Required</h3>
             <div class="inner">
               <div class="right one columns label">Download PDF</div>
               <div class="clear"></div>
@@ -59,7 +59,7 @@
             if( !$maybe_docs == '') {?>
               <div id="might-need">
                 <div class="container">
-                  <h2>Documents You May Need</h2>
+                  <h3>Documents You May Need</h3pos>
                   <div class="inner">
                     <div class="right one columns label">Download PDF</div>
                     <div class="clearfix"></div>
