@@ -59,7 +59,7 @@
             if( !$maybe_docs == '') {?>
               <div id="might-need">
                 <div class="container">
-                  <h3>Documents You May Need</h3pos>
+                  <h3>Documents You May Need</h3>
                   <div class="inner">
                     <div class="right one columns label">Download PDF</div>
                     <div class="clearfix"></div>

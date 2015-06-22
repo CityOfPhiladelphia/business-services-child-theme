@@ -7,23 +7,22 @@
 					?>
           <div id="document-section">
 						<div id="document-sort">
-							<input class="search filter-content" placeholder="Filter list..." />
 
               <div class="inner">
 							<?php
 
 								$full_list_args = array(
 									'post_type' => 'post',
-									'nopaging'	=> 'false',
+									'nopaging'	=> 'true',
                   'orderby'   => 'title',
                   'order'     => 'asc',
-                  'tax_query' => array(
+                /*  'tax_query' => array(
                 		array(
-                			'taxonomy' => 'content_type',
+                			'taxonomy' => 'category',
                 			'field'    => 'slug',
-                			'terms'    => 'license', 'permit',
+                			'terms'    => 'all-businesses',
                 		),
-                	),
+                	), */
 								);
 								$full_list_query = new WP_Query( $full_list_args );
 
