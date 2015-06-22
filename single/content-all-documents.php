@@ -9,6 +9,7 @@
 						<div id="document-sort">
 
               <div class="inner">
+
 							<?php
 
 								$full_list_args = array(
@@ -28,6 +29,7 @@
 
 								if ( $full_list_query->have_posts()) { ?>
                     <div class="list">
+											<h3>Applicable to All Businesses</h3>
                     <?php
 									while ( $full_list_query->have_posts() ) {
 
