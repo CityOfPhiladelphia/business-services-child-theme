@@ -27,9 +27,12 @@ get_header(); ?>
 	</div>
 </div>
 			<div id="filter" class="with-sidebar-wrapper gray-bg">
+				<div class="with-sidebar-left <?php echo esc_attr($gdlr_sidebar['outer']); ?> columns">
 				<div class="with-sidebar-container container">
-					<div class="with-sidebar-left <?php echo esc_attr($gdlr_sidebar['outer']); ?> columns">
-						<div class="with-sidebar-content <?php echo esc_attr($gdlr_sidebar['center']); ?> columns">
+					<?php get_sidebar('left'); ?>
+
+					<?php get_sidebar('right'); ?>
+					<div class="with-sidebar-content <?php echo esc_attr($gdlr_sidebar['center']); ?> columns">
 							<?php
 								if( !empty($with_sidebar_content) ){
 									gdlr_print_page_builder($with_sidebar_content, false);
@@ -38,14 +41,7 @@ get_header(); ?>
 									get_template_part('single/content', 'full-document-list');
 								}
 							?>
-						</div>
-						<?php get_sidebar('left'); ?>
-						<div class="clear"></div>
-					</div>
-					<?php get_sidebar('right'); ?>
-					<div class="clear"></div>
-				</div>
-			</div>
+
 		<?php
 			}else{
 				if( !empty($with_sidebar_content) ){
@@ -64,7 +60,9 @@ get_header(); ?>
 		<?php if(!empty($below_sidebar_content)){ ?>
 			<div class="below-sidebar-wrapper"><?php gdlr_print_page_builder($below_sidebar_content); ?></div>
 		<?php } ?>
+	</div>
 
+</div>
 
 	</div><!-- gdlr-content -->
 <?php get_footer(); ?>

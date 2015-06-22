@@ -35,7 +35,7 @@
 								$children_array = get_children( $args );
 						?>
 							<div class="accordion-tab">
-								<h4 class="accordion-title" id="page-<?php echo $postid; ?>">
+								<h4 class="accordion-title link-style" id="page-<?php echo $postid; ?>">
 									<i class="icon-plus"></i><span><?php echo get_the_title() ?></span></h4>
 									<div class="accordion-content">
 								<ul>
