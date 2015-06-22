@@ -62,7 +62,8 @@
                   <h3>Documents You May Need</h3>
                   <div class="inner">
                     <div class="right one columns label">Download PDF</div>
-                    <div class="clearfix"></div>
+                    <br>
+                    <div class="clear"></div>
                     <?php
                     foreach( $maybe_docs as $maybe_doc ){
 
