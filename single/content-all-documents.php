@@ -17,13 +17,13 @@
 									'nopaging'	=> 'true',
                   'orderby'   => 'title',
                   'order'     => 'asc',
-                /*  'tax_query' => array(
+                 'tax_query' => array(
                 		array(
                 			'taxonomy' => 'category',
                 			'field'    => 'slug',
                 			'terms'    => 'all-businesses',
                 		),
-                	), */
+                	),
 								);
 								$full_list_query = new WP_Query( $full_list_args );
 
