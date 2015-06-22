@@ -7,16 +7,14 @@
 					?>
           <div id="document-section">
 						<div id="document-sort">
-
               <div class="inner">
-
 							<?php
-
 								$full_list_args = array(
 									'post_type' => 'post',
-									'nopaging'	=> 'true',
                   'orderby'   => 'title',
                   'order'     => 'asc',
+									'posts_per_page'=> 10,
+									'paged'			=> $paged,
                  'tax_query' => array(
                 		array(
                 			'taxonomy' => 'category',
@@ -26,6 +24,8 @@
                 	),
 								);
 								$full_list_query = new WP_Query( $full_list_args );
+								global $wp_query;
+								global $paged;
 
 								if ( $full_list_query->have_posts()) { ?>
                     <div class="list">
@@ -65,11 +65,14 @@
                 </div>
 
                 <?php
-                  }//end if
-                }
+							}//end while
+						$paged = (get_query_var('paged'))? get_query_var('paged') : 1;
+						echo gdlr_get_pagination($full_list_query->max_num_pages, $paged);
+				  }
 
-								/* Restore original Post Data */
 								wp_reset_postdata();
+
+									/* Restore original Post Data */
 								?>
             </div>
           </div>
