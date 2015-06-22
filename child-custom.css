@@ -317,6 +317,11 @@ body {
 .full {
   width:98%;
 }
+.half {
+	width: 75%;
+	margin: 0 auto;
+	display: block;
+}
 .inactive {
   opacity: 0.3;
 }

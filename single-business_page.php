@@ -5,7 +5,6 @@
 
 get_header();
 ?>
-<?php get_header(); ?>
 
   <div id="business-page" class="gdlr-content">
     <div class="with-sidebar-container container">
