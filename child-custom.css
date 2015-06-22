@@ -279,10 +279,6 @@ body {
 .feedback a:hover{
 	color:#fff;
 }
-#gdlr-responsive-navigation.dl-menuwrapper ul{
-	position: absolute;
-  right: -36px;
-}
 .breadcrumbs {
 	font-size:80%;
 	background:#f5f5f5;
@@ -473,7 +469,6 @@ footer .copyright-right ul{
 	display: block !important;
 	position: absolute;
   top: 0;
-  right: 53px;
   width: 240px;
   display: none;
   z-index: 999;
@@ -606,7 +601,8 @@ a[href^=tel]{
 	#document-section .more .button,
 	.steps,
 	#document-section .inner .more.one,
-	#document-section .inner .pdf.one
+	#document-section .inner .pdf.one,
+	#menu-search
 	{
     display:none;
   }
@@ -626,21 +622,14 @@ a[href^=tel]{
 	#filter .four {
 		width:100%;
 	}
-		#gdlr-responsive-navigation {
-	  display: block;
-	  height: 0px;
-	  position: absolute;
-	  float: none;
-	  top: 61px;
-	}
 	.document-row, #document-section h2 {
 		width: 100%;
 	}
 }
 
-@media only screen and (max-width: 767px) {
-	#gdlr-responsive-navigation .dl-trigger {
-	  right: -37px !important;
+@media only screen and (max-width: 1100px) {
+	#menu-search{
+		display: none !important;
 	}
 }
 @media only screen and (max-width: 419px) {
