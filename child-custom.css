@@ -469,6 +469,7 @@ footer .copyright-right ul{
 	display: block !important;
 	position: absolute;
   top: 0;
+	right:0;
   width: 240px;
   display: none;
   z-index: 999;
@@ -586,6 +587,9 @@ a[href^=tel]{
 .gdlr-accordion-item.style-1 span{
 	display: inline-block !important;
 	margin-top:4px;
+}
+.fa-frown-o {
+	display: none !important;
 }
 /* = Media Queries
 -------------------------------------------------------------- */
