@@ -43,8 +43,8 @@ get_header();
 					/*  displays annoucment sidebars */
 						global $post;
 						$category = get_the_category();
-						$get_all_annoucements_query = new WP_Query();
-						$all_annoucements = $get_all_annoucements_query->query(array(
+						$get_all_announcements_query = new WP_Query();
+						$all_annoucements = $get_all_announcements_query->query(array(
 							'post_type' => 'post',
 							'posts_per_page' => -1,
 							'order' => 'asc',
@@ -54,7 +54,7 @@ get_header();
 									array(
 										'taxonomy' => 'content_type',
 										'field'    => 'slug',
-										'terms'    => 'annoucements',
+										'terms'    => 'announcements',
 									),
 									array(
 										'taxonomy' => 'category',
@@ -64,18 +64,17 @@ get_header();
 								),
 							)
 						);
-
-						if ( $get_all_annoucements_query->have_posts() ) : ?>
+						if ( $get_all_announcements_query->have_posts() ) : ?>
             <div class="gdlr-sidebar gdlr-right-sidebar four columns gdlr-box-with-icon-item pos-top type-circle">
               <div class="gdlr-item-start-content sidebar-right-item">
 								<div class="box-with-circle-icon" style="background-color: #455773">
 									<i class="fa fa-bullhorn" style="color:#ffffff;"></i><br></div>
 									<?php
-								    echo'<h2>' .  __('Related Annoucements', 'gdlr_translate') . '</h2>';
+								    echo'<h3>' .  __('Related Announcements', 'gdlr_translate') . '</h3>';
 								  	echo '<ul class="left-align">';
 
-								  	while ( $get_all_annoucements_query->have_posts() ) {
-								      $get_all_annoucements_query->the_post();
+								  	while ( $get_all_announcements_query->have_posts() ) {
+								      $get_all_announcements_query->the_post();
 								  		echo '<li><a href="' . get_permalink() .'">'. get_the_title() . '</a></li>';
 								  	}
 								  	echo '</ul>';

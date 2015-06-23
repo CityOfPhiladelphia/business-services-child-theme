@@ -374,10 +374,10 @@ body {
 .page .launch-page .gdlr-main-content {
 	text-align:left;
 }
-.accordion-content ul li{
+.accordion-content ul li, .content-wrapper ul li{
 	list-style: none;
 }
-.accordion-content ul li:before{
+.accordion-content ul li:before, .content-wrapper ul li:before{
 	content: "\f105";
 	font-family: FontAwesome;
 	display: inline-block;
@@ -516,6 +516,7 @@ footer .copyright-right ul{
 .gdlr-sidebar.gdlr-box-with-icon-item{
 	padding: 40px 0px 20px;
 	font-size:90%;
+	margin-bottom: 20px;
 }
 .gdlr-item.gdlr-main-content {
   margin-bottom: 40px;
@@ -607,10 +608,12 @@ a[href^=tel]{
 .gdlr-blog-grid-ux{
 	opacity: 1 !important;
 }
-
+.gdlr-pagination{
+	margin-bottom: 0 !important;
+}
 .uwpqsfpagi {
 	margin: 0px 20px !important;
-	text-align: center !important;
+	text-align: left !important;
 	margin-bottom: 0 !important;
 }
 .upagievent{
