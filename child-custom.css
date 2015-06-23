@@ -607,6 +607,32 @@ a[href^=tel]{
 .gdlr-blog-grid-ux{
 	opacity: 1 !important;
 }
+
+.uwpqsfpagi {
+	margin: 0px 20px !important;
+	text-align: center !important;
+	margin-bottom: 0 !important;
+}
+.upagievent{
+	display: inline-block !important;
+  padding: 7px 12px !important;
+  margin-right: 3px !important;
+  -moz-border-radius: 3px !important;
+  -webkit-border-radius: 3px !important;
+  border-radius: 3px !important;
+	}
+.upagicurrent{
+	background-color: #3d506d !important;
+}
+span.upagicurrent {
+	display: inline-block !important;
+  padding: 7px 12px !important;
+  margin-right: 3px !important;
+  -moz-border-radius: 3px !important;
+  -webkit-border-radius: 3px !important;
+  border-radius: 3px !important;
+  color: #fff !important;
+}
 /* = Media Queries
 -------------------------------------------------------------- */
 @media only screen and (max-width: 64em) {
