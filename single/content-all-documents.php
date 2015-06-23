@@ -13,7 +13,7 @@
 									'post_type' => 'post',
                   'orderby'   => 'title',
                   'order'     => 'asc',
-									'posts_per_page'=> 10,
+									'posts_per_page'=> 15,
 									'paged'			=> $paged,
                  'tax_query' => array(
                 		array(
