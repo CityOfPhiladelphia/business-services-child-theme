@@ -323,3 +323,45 @@ function custom_term_output($args){
   $args['parent'] = '0';
   return $args;
 }
+
+//Make "Annoucements section" on homepage only show Annoucements
+add_action('pre_get_posts', 'filter_homepage_annoucemnents_query', 1001);
+
+function filter_homepage_annoucemnents_query( $query ) {
+  if ( $query->is_home() && isset($query->query_vars['posts_per_page']) == '5' )  {
+
+    $sticky_posts = get_option( 'sticky_posts' );
+    $posts_per_page = $query->query_vars['posts_per_page'];
+
+    if (is_array($sticky_posts)) {
+      $sticky_count = count($sticky_posts);
+
+      // and if the number of sticky posts is less than
+      // the number we want to set:
+      if ($sticky_count < $posts_per_page) {
+          $query->set('posts_per_page', $posts_per_page - $sticky_count);
+
+      // if the number of sticky posts is greater than or equal
+      // the number of pages we want to set:
+      } else {
+          $query->set('posts_per_page', 5);
+      }
+
+  // fallback in case we have no sticky posts
+  // and we are not on the first page
+  } else {
+      $query->set('posts_per_page', $posts_per_page);
+  }
+
+    $taxquery = array(
+     array(
+         'taxonomy' => 'content_type',
+         'field' => 'slug',
+         'terms' => array( 'announcements' ),
+         'operator'=> 'IN'
+       )
+   );
+
+   $query->set( 'tax_query', $taxquery );
+    }
+}
