@@ -328,7 +328,7 @@ function custom_term_output($args){
 add_action('pre_get_posts', 'filter_homepage_annoucemnents_query', 1001);
 
 function filter_homepage_annoucemnents_query( $query ) {
-  //need to check if posts_per+page is set first
+  //need to check if posts_per_page is set first
   $posts_per_page = isset($query->query_vars['posts_per_page']) ? $query->query_vars['posts_per_page'] : '';
 
   if ( $query->is_home() && $posts_per_page == '5'){
