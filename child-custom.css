@@ -275,9 +275,10 @@ body {
 .feedback .button{
 	float:right;
 	font-size: 13px;
+	background:#ddd;
 }
 .feedback a{
-	color:#aec0dc;
+	color:#3D506D;
 }
 .feedback a:hover{
 	color:#fff;
@@ -579,6 +580,21 @@ a{
 .gdlr-navigation-wrapper .gdlr-main-menu > li {
   padding: 15px 0px;
 }
+
+.gdlr-navigation-wrapper .gdlr-main-menu > li:first-child {
+	background-color: #E46C53;
+	padding: 15px 10px 15px 29px;
+}
+.gdlr-navigation-wrapper .gdlr-main-menu > li:first-child:hover {
+	background-color:#475A77;
+}
+.gdlr-navigation-wrapper .gdlr-main-menu > li:nth-child(2) > a{
+	border:none;
+}
+.gdlr-navigation-wrapper .gdlr-main-menu > li:first-child > a{
+	color:#fff;
+}
+
 .gdlr-navigation-wrapper .gdlr-navigation {
 	margin:0;
 }
