@@ -120,7 +120,7 @@
 						<div class="logo-right-area">
 							<?php
 								echo '<div class="header-block-area-wrapper" >';
-								for( $i=1; $i<=3; $i++ ){
+								for( $i=1; $i<=2; $i++ ){
 									$icon = empty($theme_option['header-block-' . $i . '-icon'])? '': $theme_option['header-block-' . $i . '-icon'];
 									$title = empty($theme_option['header-block-' . $i . '-title'])? '': $theme_option['header-block-' . $i . '-title'];
 									$caption = empty($theme_option['header-block-' . $i . '-caption'])? '': $theme_option['header-block-' . $i . '-caption'];
@@ -133,6 +133,28 @@
 									echo '</div>'; // header-block-content
 									echo '</div>'; // header-block-area
 								}
+								echo '<div class="header-block-area">';
+									?>
+								<div class="gdlr-menu-search" id="menu-search">
+									<form method="get" id="searchform" action="<?php  echo home_url(); ?>/">
+										<?php
+											$search_val = get_search_query();
+											if( empty($search_val) ){
+												$search_val = __("Type Keywords" , "gdlr_translate");
+											}
+										?>
+										<div class="search-text">
+											<input type="text" value="<?php echo $search_val; ?>" name="s" autocomplete="off" data-default="<?php echo $search_val; ?>" />
+										</div>
+										<button type="submit" class="btn btn-success">
+											<i class="icon-search fa fa-search menu-search-button" id="menu-search-button"></i>
+										</button>
+
+										<div class="clear"></div>
+									</form>
+								</div>
+							</div>
+							<?php
 								echo '<div class="clear"></div>';
 								echo '</div>';
 

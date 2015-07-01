@@ -20,24 +20,6 @@
 			wp_nav_menu( array('theme_location'=>'main_menu') );
 		}
 ?>
-<div class="gdlr-menu-search" id="menu-search">
-	<form method="get" id="searchform" action="<?php  echo home_url(); ?>/">
-		<?php
-			$search_val = get_search_query();
-			if( empty($search_val) ){
-				$search_val = __("Type Keywords" , "gdlr_translate");
-			}
-		?>
-		<div class="search-text">
-			<input type="text" value="<?php echo $search_val; ?>" name="s" autocomplete="off" data-default="<?php echo $search_val; ?>" />
-		</div>
-		<button type="submit" class="btn btn-success">
-			<i class="icon-search fa fa-search menu-search-button" id="menu-search-button"></i>
-    </button>
-
-		<div class="clear"></div>
-	</form>
-</div>
 <?php
 		echo '</nav>'; // gdlr-navigation
 	}
