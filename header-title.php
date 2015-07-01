@@ -35,7 +35,7 @@ if(function_exists('bcn_display') && (!is_home())) : ?>
 			<div class="gdlr-page-title-container container" >
 				<h1 class="gdlr-page-title"><?php the_title(); ?></h1>
 				<?php if( !empty($gdlr_post_option['page-caption']) ){ ?>
-				<span class="gdlr-page-caption"><?php echo gdlr_text_filter($gdlr_post_option['page-caption']); ?></span>
+				<span class="gdlr-page-caption"><?php //echo gdlr_text_filter($gdlr_post_option['page-caption']); ?></span>
 				<?php } ?>
 			</div>
 		</div>
@@ -53,7 +53,7 @@ if(function_exists('bcn_display') && (!is_home())) : ?>
 			<div class="gdlr-page-title-overlay"></div>
 			<div class="gdlr-page-title-container container" >
 				<h3 class="gdlr-page-title"><?php echo the_title(); ?></h3>
-				<span class="gdlr-page-caption"><?php echo the_excerpt(); ?></span>
+				<span class="gdlr-page-caption"><?php //echo the_excerpt(); ?></span>
 
 			</div>
 		</div>
@@ -71,7 +71,7 @@ if(function_exists('bcn_display') && (!is_home())) : ?>
 			<div class="gdlr-page-title-container container" >
 				<h1 class="gdlr-page-title"><?php echo gdlr_text_filter($page_title); ?></h1>
 				<?php if( !empty($page_caption) ){ ?>
-				<span class="gdlr-page-caption"><?php echo gdlr_text_filter($page_caption); ?></span>
+				<span class="gdlr-page-caption"><?php //echo gdlr_text_filter($page_caption); ?></span>
 				<?php } ?>
 			</div>
 		</div>
@@ -95,13 +95,13 @@ if(function_exists('bcn_display') && (!is_home())) : ?>
 			$title = __('Businesses', 'gdlr_translate');
 		}else if( is_category() || is_tax('portfolio_category') || is_tax('product_cat') ){
 			$title = __('Category','gdlr_translate');
-			$caption = single_cat_title('', false);
+			//$caption = single_cat_title('', false);
 		}else if( is_tag() || is_tax('portfolio_tag') || is_tax('product_tag') ){
 			$title = __('Tag','gdlr_translate');
-			$caption = single_cat_title('', false);
+		//	$caption = single_cat_title('', false);
 		}else if( is_day() ){
 			$title = __('Day','gdlr_translate');
-			$caption = get_the_date('F j, Y');
+			//$caption = get_the_date('F j, Y');
 		}else if( is_month() ){
 			$title = __('Month','gdlr_translate');
 			$caption = get_the_date('F Y');
