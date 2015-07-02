@@ -581,13 +581,13 @@ a{
 	margin-bottom: 20px;
 }
 .gdlr-navigation-wrapper .gdlr-main-menu > li {
-  padding: 19px 0 0 0;
+  padding: 15px 0;
 }
 
 .gdlr-navigation-wrapper .gdlr-main-menu > li:last-child {
 	background-color: #71BCD7;
-	padding: 15px 5px 12px 5px;
-	margin:4px 0;
+	padding: 8px 4px 8px 4px;
+	margin:7px 0;
 	float:right;
 }
 .gdlr-navigation-wrapper .gdlr-main-menu > li:last-child:hover {
@@ -677,8 +677,7 @@ span.upagicurrent {
 	#document-section .more .button,
 	.steps,
 	#document-section .inner .more.one,
-	#document-section .inner .pdf.one,
-	#menu-search
+	#document-section .inner .pdf.one
 	{
     display:none;
   }

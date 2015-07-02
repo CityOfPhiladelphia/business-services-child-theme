@@ -367,3 +367,17 @@ function filter_homepage_annoucemnents_query( $query ) {
    $query->set( 'tax_query', $taxquery );
     }
 }
+
+// [bartag foo="foo-value"]
+function feedback_link( $atts ) {
+    $a = shortcode_atts( array(
+        'form' => '',
+    ), $atts );
+    $html = '';
+    $html .= '<a class ="feedback" href="';
+    $html .= $a['form'];
+    $html .= $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+    $html .= '" target="_blank"><i class="fa fa-comments"></i> Provide Feedback <span class="accessible"> Opens in new window</span></a>';
+    return $html;
+}
+add_shortcode( 'feedback-link', 'feedback_link' );

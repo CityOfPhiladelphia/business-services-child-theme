@@ -30,7 +30,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<?php get_template_part( 'templates/content', 'feedback' ); ?>
 <?php
 
 	if($theme_option['enable-boxed-style'] == 'boxed-style'){
