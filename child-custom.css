@@ -470,6 +470,9 @@ footer .copyright-right ul{
 }
 /* = Theme overrides
 -------------------------------------------------------------- */
+.top-navigation-wrapper a:hover{
+	color:#71BCD7 !important;
+}
 .menu-search-button {
 	color:#fff;
 	margin-right: 0px;
@@ -662,6 +665,35 @@ span.upagicurrent {
   -webkit-border-radius: 3px !important;
   border-radius: 3px !important;
   color: #fff !important;
+}
+/* GOOGLE Translate -------------------------------------------------- */
+#google_translate_element {
+	display: inline-block !important;
+	font-size: 12px !important;
+	color:#e5e5e5 !important;
+}
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value,
+#google_translate_element .goog-te-gadget {
+	color:#e5e5e5 !important;
+}
+#google_translate_element .goog-te-gadget:before{
+	content: "\f0ac";
+	display: inline-block;
+	font: normal normal normal 12px/1 FontAwesome;
+}
+#google_translate_element .goog-te-gadget-simple {
+	background-color: transparent !important;
+	border:none !important;
+}
+#google_translate_element .goog-te-gadget-icon,
+#google_translate_element .goog-te-menu-value span {
+	display: none !important;
+}
+#google_translate_element .goog-te-menu-value span:first-of-type{
+	display: inline-block !important;
+}
+#google_translate_element .goog-te-menu-value:hover {
+color:#71BCD7 !important;
 }
 /* = Media Queries
 -------------------------------------------------------------- */
