@@ -160,6 +160,14 @@ body {
 	width:84%;
 }
 
+#document-section .inverse .list.columns {
+  background: #fff;
+  padding: 10px;
+  width: 74%;
+  height: 100%;
+  width: 84%;
+}
+
 #document-section .list.columns p {
   margin:0;
   padding:0;
@@ -226,7 +234,6 @@ body {
 }
 
 .page .gdlr-main-content, .page .above-sidebar-wrapper {
-	text-align: center;
 	width:88%;
 	margin:0 auto;
 }

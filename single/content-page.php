@@ -1,5 +1,5 @@
 <?php
-/*business type page display */
+/* landing page display */
 
 	while ( have_posts() ){ the_post();
 		$content = gdlr_content_filter(get_the_content(), true);
@@ -8,7 +8,8 @@
 			<div class="main-content-container container gdlr-item-start-content">
 				<div class="gdlr-item gdlr-main-content">
 					<?php
-						echo $content;?>
+						echo $content;
+						?>
 					</div>
 				</div>
 
@@ -18,7 +19,7 @@
         <div id="document-section">
 					<div class="parent">
 						<div class="container">
-							<div class="inner menu-page">
+							<div class="menu-page inverse">
 					<?php
 					$section_title = get_field('section_title');
 					if( !$section_title == false ):
@@ -36,12 +37,53 @@
   									</a>
                     <?php echo  '<p>' . get_post(	$current_ID )->post_excerpt . '</p>';?>
   								</div>
-
-									<?php echo '<div class="more one columns">' . '<a href="' . 	get_post($current_ID)->guid .'" class="button full"><i class="fa fa-arrow-circle-right"></i>' . 'Read More' . '</a></div>'; ?>
 								</div>
 									<?php endforeach; ?>
 									</div>
 								</div>
+								<?php
+								/*  displays annoucment sidebars */
+									global $post;
+									$category = get_the_category();
+									$get_all_announcements_query = new WP_Query();
+									$all_annoucements = $get_all_announcements_query->query(array(
+										'post_type' => 'post',
+										'posts_per_page' => 10,
+										'order' => 'asc',
+										'orderby' => 'title',
+										'tax_query' => array(
+											'relation' => 'AND',
+												array(
+													'taxonomy' => 'content_type',
+													'field'    => 'slug',
+													'terms'    => 'announcements',
+												),
+											),
+										)
+									);
+									if ( $get_all_announcements_query->have_posts() ) : ?>
+			            <div class="gdlr-sidebar gdlr-right-sidebar four columns gdlr-box-with-icon-item pos-top type-circle">
+			              <div class="gdlr-item-start-content sidebar-right-item">
+											<div class="box-with-circle-icon" style="background-color: #455773">
+												<i class="fa fa-bullhorn" style="color:#ffffff;"></i><br></div>
+												<?php
+											    echo'<h3>' .  __('Related Announcements', 'gdlr_translate') . '</h3>';
+											  	echo '<ul class="left-align">';
+
+											  	while ( $get_all_announcements_query->have_posts() ) {
+											      $get_all_announcements_query->the_post();
+											  		echo '<li><a href="' . get_permalink() .'">'. get_the_title() . '</a></li>';
+											  	}
+											  	echo '</ul>';
+											endif;
+											  /* Restore original Post Data */
+											  wp_reset_postdata();  ?>
+
+			              </div>
+			            </div>
+			          </div>
+			      <div class="clear"></div>
+
 							</div>
 						</div>
 	  			<?php endif; ?>

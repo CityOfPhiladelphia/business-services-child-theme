@@ -46,7 +46,7 @@ get_header();
 						$get_all_announcements_query = new WP_Query();
 						$all_annoucements = $get_all_announcements_query->query(array(
 							'post_type' => 'post',
-							'posts_per_page' => -1,
+							'posts_per_page' => 5,
 							'order' => 'asc',
 							'orderby' => 'title',
 							'tax_query' => array(
