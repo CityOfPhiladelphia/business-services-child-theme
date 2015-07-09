@@ -64,7 +64,7 @@
 			            <div class="gdlr-sidebar gdlr-right-sidebar five columns white-sidebar">
 			              <div class="gdlr-item-start-content sidebar-right-item pad-30">
 												<?php
-											    echo'<h3>' .  __('Related Announcements', 'gdlr_translate') . '</h3>';
+											    echo'<h3>' .  __('Announcements', 'gdlr_translate') . '</h3>';
 											  	echo '<ul class="left-align">';
 
 											  	while ( $get_all_announcements_query->have_posts() ) {

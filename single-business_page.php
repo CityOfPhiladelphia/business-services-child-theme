@@ -35,6 +35,8 @@ get_header();
   									echo '</ul></div>';
 								  }
                 }
+                /* Restore original Post Data */
+                wp_reset_postdata();
 								?>
               </div>
             </div>
@@ -42,13 +44,16 @@ get_header();
 					<?php
 					/*  displays annoucment sidebars */
 						global $post;
-						$category = get_the_category();
-						$get_all_announcements_query = new WP_Query();
-						$all_annoucements = $get_all_announcements_query->query(array(
+            $current_id = get_the_ID();
+						$category = get_the_category($current_id);
+            $parent_category = $category[0]->category_parent;
+						$get_related_announcements_query = new WP_Query();
+						$all_annoucements = $get_related_announcements_query->query(array(
 							'post_type' => 'post',
 							'posts_per_page' => 5,
 							'order' => 'asc',
 							'orderby' => 'title',
+              'ignore_sticky_posts' => true,
 							'tax_query' => array(
 								'relation' => 'AND',
 									array(
@@ -58,27 +63,31 @@ get_header();
 									),
 									array(
 										'taxonomy' => 'category',
-										'field'    => 'slug',
-										'terms'    => $category[0]->slug,
+										'field'    => 'id',
+										'terms'    => $parent_category,
 									),
 								),
 							)
 						);
-						if ( $get_all_announcements_query->have_posts() ) : ?>
+						if ( $get_related_announcements_query->have_posts() ) { ?>
             <div class="gdlr-sidebar gdlr-right-sidebar four columns gdlr-box-with-icon-item pos-top type-circle">
               <div class="gdlr-item-start-content sidebar-right-item">
 								<div class="box-with-circle-icon" style="background-color: #455773">
 									<i class="fa fa-bullhorn" style="color:#ffffff;"></i><br></div>
 									<?php
-								    echo'<h3>' .  __('Related Announcements', 'gdlr_translate') . '</h3>';
+								    echo'<h3>' .  __('Announcements', 'gdlr_translate') . '</h3>';
 								  	echo '<ul class="left-align">';
 
-								  	while ( $get_all_announcements_query->have_posts() ) {
-								      $get_all_announcements_query->the_post();
+								  	while ( $get_related_announcements_query->have_posts() ) {
+								      $get_related_announcements_query->the_post();
 								  		echo '<li><a href="' . get_permalink() .'">'. get_the_title() . '</a></li>';
 								  	}
 								  	echo '</ul>';
-								endif;
+                  }else{
+
+
+                  }
+
 								  /* Restore original Post Data */
 								  wp_reset_postdata();  ?>
 
