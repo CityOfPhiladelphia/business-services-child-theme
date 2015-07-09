@@ -694,6 +694,8 @@ a[href^=tel]{
 }
 .gdlr-blog-grid-ux{
 	opacity: 1 !important;
+	padding-top: 0px !important;
+  margin-bottom: 0px !important;
 }
 .gdlr-pagination{
 	margin-bottom: 0 !important;
