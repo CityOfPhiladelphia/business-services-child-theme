@@ -41,12 +41,20 @@ get_header();
               </div>
             </div>
           </div>
-					<?php
+
+          <?php
+        global $parentcategory;
+        foreach((get_the_category()) as $category) {
+          if ($category->category_parent == 0) {
+            $parentcategory = $category->term_id;
+          }
+        }
+        if ( $parentcategory == null)  {
+          echo 'Select a parent for this business type.';
+        }else{
 					/*  displays annoucment sidebars */
 						global $post;
             $current_id = get_the_ID();
-						$category = get_the_category($current_id);
-            $parent_category = $category[0]->category_parent;
 						$get_related_announcements_query = new WP_Query();
 						$all_annoucements = $get_related_announcements_query->query(array(
 							'post_type' => 'post',
@@ -64,12 +72,12 @@ get_header();
 									array(
 										'taxonomy' => 'category',
 										'field'    => 'id',
-										'terms'    => $parent_category,
+										'terms'    => $parentcategory,
 									),
 								),
 							)
 						);
-						if ( $get_related_announcements_query->have_posts() ) { ?>
+						if ( $get_related_announcements_query->have_posts() ) : ?>
             <div class="gdlr-sidebar gdlr-right-sidebar four columns gdlr-box-with-icon-item pos-top type-circle">
               <div class="gdlr-item-start-content sidebar-right-item">
 								<div class="box-with-circle-icon" style="background-color: #455773">
@@ -83,13 +91,12 @@ get_header();
 								  		echo '<li><a href="' . get_permalink() .'">'. get_the_title() . '</a></li>';
 								  	}
 								  	echo '</ul>';
-                  }else{
-
-
-                  }
+                  endif;
 
 								  /* Restore original Post Data */
-								  wp_reset_postdata();  ?>
+								  wp_reset_postdata();
+                }
+                ?>
 
               </div>
             </div>
