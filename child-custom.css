@@ -299,7 +299,7 @@ body {
 .breadcrumbs {
 	font-size:80%;
 	background:#f5f5f5;
-	padding:5px 0;
+	padding: 5px 0 5px 35px;
 }
 .button {
   display:inline-block;
@@ -489,8 +489,18 @@ footer .copyright-right ul{
 }
 /* = Theme overrides
 -------------------------------------------------------------- */
+
+#feature-icon {
+	background:transparent;
+}
+.gdlr-content-item {
+	padding:40px;
+}
 .top-navigation-wrapper a:hover{
 	color:#71BCD7 !important;
+}
+#gdlr-main-navigation{
+	padding-left:20px;
 }
 .menu-search-button {
 	color:#fff;
