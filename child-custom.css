@@ -496,6 +496,9 @@ footer .copyright-right ul{
 .gdlr-content-item {
 	padding:40px;
 }
+.home .gdlr-content-item {
+	padding:0;
+}
 .top-navigation-wrapper a:hover{
 	color:#71BCD7 !important;
 }
