@@ -465,10 +465,15 @@ body {
 .gdlr-content.search {
 	margin-bottom:30px;
 }
+
 .gdlr-content.search .gdlr-blog-title{
 	font-size:14px;
 	font-weight:bold;
 	margin-bottom:2px;
+}
+/*404*/
+.page-not-found-caption a{
+		color:#71BCD7;
 }
 .left-align {
 	text-align:left;
