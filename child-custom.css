@@ -98,7 +98,7 @@ body {
 /* = Business Type
 -------------------------------------------------------------- */
 .parent, .child {
-  padding-top:20px;
+  padding-top:40px;
 }
 #document-section {
 	background:#F5F5F5;
@@ -166,6 +166,7 @@ body {
   width: 74%;
   height: 100%;
   width: 100%;
+	border: 1px solid #EAEAEA;
 }
 .white-sidebar{
 	background:white;
@@ -173,6 +174,9 @@ body {
 }
 .white-sidebar h3{
 	font-size:20px;
+}
+.white-sidebar .sidebar-right-item{
+		border: 1px solid #EAEAEA;
 }
 #document-section .list.columns p {
   margin:0;
@@ -218,7 +222,6 @@ body {
 .inner {
   background:#fff;
   padding: 20px;
-  margin: 30px 0;
 }
 .inner:last-of-type{
   margin-bottom:0;
@@ -266,6 +269,10 @@ body {
 }
 .gray-callout li:last-child::after {
   content:"";
+}
+.content-wrapper .gray-callout ul li::before {
+	content:"";
+	width:0;
 }
 .textwidget {
 	font-size:90%;
@@ -453,6 +460,16 @@ body {
 	padding:10px;
 	border:1px solid #bcbcbc;
 }
+
+/*search page */
+.gdlr-content.search {
+	margin-bottom:30px;
+}
+.gdlr-content.search .gdlr-blog-title{
+	font-size:14px;
+	font-weight:bold;
+	margin-bottom:2px;
+}
 .left-align {
 	text-align:left;
 }
@@ -614,6 +631,9 @@ a{
 	padding:20px;
 	font-size:95%;
 	margin-bottom: 20px;
+}
+.gdlr-blog-grid{
+	border: 1px solid #EAEAEA;
 }
 .gdlr-navigation-wrapper .gdlr-main-menu > li {
   padding: 15px 0;

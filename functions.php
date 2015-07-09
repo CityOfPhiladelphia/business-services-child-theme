@@ -210,7 +210,6 @@ function filter_site_upload_size_limit( $size ) {
 
 add_filter( 'upload_size_limit', 'filter_site_upload_size_limit', 20 );
 
-
 add_filter( 'rwmb_meta_boxes', 'business_register_meta_boxes' );
 
 function business_register_meta_boxes( $meta_boxes )
