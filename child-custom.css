@@ -692,7 +692,7 @@ a[href^=tel]{
 .fa-frown-o {
 	display: none !important;
 }
-.gdlr-blog-grid-ux{
+.gdlr-blog-grid-ux, .gdlr-ux{
 	opacity: 1 !important;
 	padding-top: 0px !important;
   margin-bottom: 0px !important;
