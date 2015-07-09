@@ -19,7 +19,7 @@
         <div id="document-section">
 					<div class="parent">
 						<div class="container">
-							<div class="menu-page inverse">
+							<div class="menu-page inverse seven columns">
 					<?php
 					$section_title = get_field('section_title');
 					if( !$section_title == false ):
@@ -40,7 +40,6 @@
 								</div>
 									<?php endforeach; ?>
 									</div>
-								</div>
 								<?php
 								/*  displays annoucment sidebars */
 									global $post;
@@ -62,10 +61,8 @@
 										)
 									);
 									if ( $get_all_announcements_query->have_posts() ) : ?>
-			            <div class="gdlr-sidebar gdlr-right-sidebar four columns gdlr-box-with-icon-item pos-top type-circle">
-			              <div class="gdlr-item-start-content sidebar-right-item">
-											<div class="box-with-circle-icon" style="background-color: #455773">
-												<i class="fa fa-bullhorn" style="color:#ffffff;"></i><br></div>
+			            <div class="gdlr-sidebar gdlr-right-sidebar five columns white-sidebar">
+			              <div class="gdlr-item-start-content sidebar-right-item pad-30">
 												<?php
 											    echo'<h3>' .  __('Related Announcements', 'gdlr_translate') . '</h3>';
 											  	echo '<ul class="left-align">';
@@ -82,14 +79,11 @@
 			              </div>
 			            </div>
 			          </div>
-			      <div class="clear"></div>
-
 							</div>
-						</div>
-	  			<?php endif; ?>
-
-
-      <?php
+		      	<div class="clear"></div>
+					</div>
+				</div>
+	  <?php endif;
 		}
 	}
 ?>
