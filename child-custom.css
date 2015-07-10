@@ -575,7 +575,7 @@ footer .copyright-right ul{
 	font-size:13px;
 	margin-bottom: 20px;
 }
-#feature-icon .gdlr-box-with-icon-item > i {
+#feature-icon.gdlr-box-with-icon-item > i {
 	font-size:60px;
 }
 .gdlr-box-with-icon-item.type-circle.pos-top .box-with-circle-icon {
