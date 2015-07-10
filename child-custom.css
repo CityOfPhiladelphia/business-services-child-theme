@@ -793,7 +793,11 @@ color:#71BCD7 !important;
 	#document-section .more .button,
 	.steps,
 	#document-section .inner .more.one,
-	#document-section .inner .pdf.one
+	#document-section .inner .pdf.one,
+	.master-slider,
+	.gdlr-master-slider-item,
+	#feature-icon,
+	.top-navigation-right
 	{
     display:none;
   }
@@ -819,8 +823,22 @@ color:#71BCD7 !important;
 	.tab-content{
 		width:100%;
 	}
+	.marg-top-50 {
+		margin-top:0;
+	}
+	.gdlr-tab-item.vertical > .tab-title-wrapper .tab-title {
+		width:100%;
+	}
+	.gdlr-content-item{
+		padding:0;
+	}
+	.gdlr-blog-content,
+	.top-navigation-left,
+	.top-navigation-left-text {
+		padding:0;
+		margin:0;
+	}
 }
-
 @media only screen and (max-width: 1100px) {
 	#menu-search{
 		display: none !important;
