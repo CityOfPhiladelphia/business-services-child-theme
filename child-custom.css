@@ -397,6 +397,14 @@ body {
 	height: 20px;
 	width: 15px;
 }
+.accordion-content ul ul li, .content-wrapper ul ul li{
+	list-style: circle;
+}
+.accordion-content ul ul li:before,
+.content-wrapper ul ul li:before{
+	width:0;
+	content:"";
+}
 /*maintain page */
 .maintain-page {
 	margin-top:20px;
