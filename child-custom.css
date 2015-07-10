@@ -107,6 +107,7 @@ body {
   padding:18px 0;
 	width: 88%;
 	margin: 0 auto;
+	font-size:16px;
 }
 #document-section h3 {
 	font-size:16px;
@@ -586,6 +587,9 @@ footer .copyright-right ul{
 	font-size:90%;
 	margin-bottom: 20px;
 }
+#feature-icon .gdlr-box-with-icon-item > i {
+	font-size:60px;
+}
 .gdlr-box-with-icon-item.type-circle.pos-top .box-with-circle-icon {
 	top: -20px;
 }
@@ -594,6 +598,7 @@ footer .copyright-right ul{
 }
 .gdlr-item.gdlr-main-content {
   margin-bottom: 40px;
+	font-size:13px;
 }
 #business-page {
 	margin-top:40px;
@@ -699,7 +704,10 @@ a[href^=tel]{
 	cursor: default;
 	pointer-events: none;
 }
-/* = Contact form */
+.tab-content{
+	width:75%;
+}
+/* Contact form */
 .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 input[type="password"], .wpcf7 textarea, .wpcf7 input[type="tel"]{
 	padding: 10px;
   width: 100%;
@@ -707,8 +715,13 @@ a[href^=tel]{
 	background: #f5f5f5;
 	border:1px solid #CACACA;
 }
+/* end Contact form */
 .gdlr-content-item{
 	font-size:13px;
+}
+.gdlr-blog-content {
+	margin-bottom: 50px;
+	padding-right: 40px;
 }
 .gdlr-accordion-item.style-1 span{
 	display: inline-block !important;
@@ -815,6 +828,9 @@ color:#71BCD7 !important;
 	}
 	.document-row, #document-section h2 {
 		width: 100%;
+	}
+	.tab-content{
+		width:100%;
 	}
 }
 
