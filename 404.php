@@ -9,7 +9,7 @@ get_header(); ?>
 		<div class="gdlr-item page-not-found-item">
 			<div class="page-not-found-block">
 				<div class="page-not-found-caption">
-					<?php echo 'The page you were looking for may have been moved. <br> Try a keyword search or <a href="/index.php">go to the homepage</a>.' ?>
+					<?php echo 'The page you were looking for may have been moved or renamed. <br> Try a keyword search or <a href="/index.php">go to the homepage</a> to find what you need.' ?>
 				</div>
 				<div class="page-not-found-search">
 					<?php get_search_form(); ?>
