@@ -108,6 +108,9 @@ body {
 	width: 88%;
 	margin: 0 auto;
 }
+#document-section h3 {
+	font-size:16px;
+}
 .document-row {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -574,10 +577,20 @@ footer .copyright-right ul{
 .column, .columns{
   display:block;
 }
+.gdlr-sidebar h3{
+	font-size:16px;
+	color:#929292;
+}
 .gdlr-sidebar.gdlr-box-with-icon-item{
 	padding: 40px 0px 20px;
 	font-size:90%;
 	margin-bottom: 20px;
+}
+.gdlr-box-with-icon-item.type-circle.pos-top .box-with-circle-icon {
+	top: -20px;
+}
+.gdlr-box-with-icon-item.type-circle .box-with-circle-icon {
+	padding: 15px;
 }
 .gdlr-item.gdlr-main-content {
   margin-bottom: 40px;
@@ -587,6 +600,15 @@ footer .copyright-right ul{
 }
 .gdlr-item-start-content, .section-container {
 	 padding-top:30px;
+}
+#business-page .gdlr-item-start-content{
+	font-size:13px;
+	margin-bottom: 20px;
+	margin-top: 40px;
+	margin-right: 50px;
+}
+#business-page .gdlr-item-start-content.sidebar-right-item {
+	margin:0;
 }
 .single .gdlr-item-start-content {
 	 padding-top:0;
@@ -684,6 +706,9 @@ a[href^=tel]{
   font-size: 13px;
 	background: #f5f5f5;
 	border:1px solid #CACACA;
+}
+.gdlr-content-item{
+	font-size:13px;
 }
 .gdlr-accordion-item.style-1 span{
 	display: inline-block !important;
