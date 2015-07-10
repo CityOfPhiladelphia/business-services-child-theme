@@ -13,7 +13,7 @@
 					</div>
 				</div>
 			<?php endif; ?>
-			
+
 				<?php	$menus = get_field('page_menu');
 					if( $menus ):
 						?>
@@ -62,7 +62,7 @@
 										)
 									);
 									if ( $get_all_announcements_query->have_posts() ) : ?>
-			            <div class="gdlr-sidebar gdlr-right-sidebar five columns white-sidebar">
+			            <div class="gdlr-sidebar gdlr-right-sidebar four columns white-sidebar">
 			              <div class="gdlr-item-start-content sidebar-right-item pad-30">
 												<?php
 											    echo'<h3>' .  __('Announcements', 'gdlr_translate') . '</h3>';

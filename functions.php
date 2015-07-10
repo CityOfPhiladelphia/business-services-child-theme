@@ -167,9 +167,10 @@ function business_scripts() {
       get_stylesheet_directory_uri() . '/child-custom.css',
       array('parent-style')
   );
+  wp_enqueue_style( 'style-custom-override', get_stylesheet_directory_uri() . '/style-custom-override.css', array('child-style' ));
 }
 
-add_action( 'wp_enqueue_scripts', 'business_scripts' );
+add_action( 'wp_enqueue_scripts', 'business_scripts', 15 );
 
 /*-----------------------------------------------------------------------------------*/
 /*	add business page sidebar

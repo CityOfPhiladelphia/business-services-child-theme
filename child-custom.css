@@ -179,6 +179,9 @@ body {
 .white-sidebar .sidebar-right-item{
 		border: 1px solid #EAEAEA;
 }
+.white-sidebar ul{
+	margin-left:0;
+}
 #document-section .list.columns p {
   margin:0;
   padding:0;
