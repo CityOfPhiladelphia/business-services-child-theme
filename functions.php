@@ -4,6 +4,8 @@
  * Contains :
  * custom post types
     * Business Type - business_page
+ * customizations of the WPSQF plugin
+ * turns off xml-rpc
 
  *
  * @link https://github.com/kdemi/business-services-child-theme
@@ -130,8 +132,6 @@ function remove_parent_features() {
 
 add_action( 'after_setup_theme', 'remove_parent_features', 11 );
 
-
-
 /*-----------------------------------------------------------------------------------*/
 /*	Remove tags
 /*-----------------------------------------------------------------------------------*/
@@ -140,20 +140,6 @@ function unregister_taxonomy(){
     register_taxonomy('post_tag', array());
 }
 add_action('init', 'unregister_taxonomy');
-
-
-/*-----------------------------------------------------------------------------------*/
-/*	Register Taxonomy for Media
-/*-----------------------------------------------------------------------------------*/
-function business_register_taxonomy_for_images() {
-    register_taxonomy_for_object_type( 'category', 'attachment' );
-	register_taxonomy_for_object_type( 'content_type', 'attachment' );
-}
-add_action( 'init', 'business_register_taxonomy_for_images' );
-
-
-
-
 
 /*-----------------------------------------------------------------------------------*/
 /*	enqueue styles/scripts
@@ -189,17 +175,6 @@ function business_widgets_init() {
         )
     );
 }
-/*-----------------------------------------------------------------------------------*/
-/*	content type checkboses to radios (only allow one)
-
-
-add_action( 'admin_footer', 'content_type_radios' );
-function content_type_radios(){
-	echo '<script type="text/javascript">';
-	echo 'jQuery("#taxonomy-content_type input[type=checkbox]")';
-	echo '.each(function(){this.type="radio"});</script>';
-}
-/*-----------------------------------------------------------------------------------*/
 
 /*-----------------------------------------------------------------------------------*/
 /*	Filter upload size limit
@@ -211,6 +186,9 @@ function filter_site_upload_size_limit( $size ) {
 
 add_filter( 'upload_size_limit', 'filter_site_upload_size_limit', 20 );
 
+/*-----------------------------------------------------------------------------------*/
+/*	Add metaboxes to posts to allow for PDFs and eclipse links
+/*-----------------------------------------------------------------------------------*/
 add_filter( 'rwmb_meta_boxes', 'business_register_meta_boxes' );
 
 function business_register_meta_boxes( $meta_boxes )
@@ -262,7 +240,9 @@ function business_register_meta_boxes( $meta_boxes )
 
     return $meta_boxes;
 }
-
+/*-----------------------------------------------------------------------------------*/
+/*	Filter ajax plugin results
+/*-----------------------------------------------------------------------------------*/
 add_filter('uwpqsf_result_tempt', 'doc_filter_customize_output', '', 4);
 function doc_filter_customize_output($results , $arg, $id, $getdata ){
 	 // The Query
@@ -316,14 +296,18 @@ function doc_filter_customize_output($results , $arg, $id, $getdata ){
 		$results = ob_get_clean();
 			return $results;
 }
-
+/*-----------------------------------------------------------------------------------*/
+/*	Modify output of ajax plugin to only show parent items in the filter
+/*-----------------------------------------------------------------------------------*/
 /*this limits the query to only showing parent items, and will probably need to be modified*/
 add_filter('uwpqsf_taxonomy_arg', 'custom_term_output','',1);
 function custom_term_output($args){
   $args['parent'] = '0';
   return $args;
 }
-
+/*-----------------------------------------------------------------------------------*/
+/*	Filter homepage query to only show posts tagged as 'annoucements'
+/*-----------------------------------------------------------------------------------*/
 //Make "Annoucements section" on homepage only show Annoucements
 add_action('pre_get_posts', 'filter_homepage_annoucemnents_query', 1001);
 
@@ -367,8 +351,10 @@ function filter_homepage_annoucemnents_query( $query ) {
    $query->set( 'tax_query', $taxquery );
     }
 }
-
-// [bartag foo="foo-value"]
+/*-----------------------------------------------------------------------------------*/
+/*	Shortcode to generate a Feedback link
+/*-----------------------------------------------------------------------------------*/
+// [feedback-link form="URL"]
 function feedback_link( $atts ) {
     $a = shortcode_atts( array(
         'form' => '',
@@ -381,3 +367,8 @@ function feedback_link( $atts ) {
     return $html;
 }
 add_shortcode( 'feedback-link', 'feedback_link' );
+
+/*-----------------------------------------------------------------------------------*/
+/*	Remove bogus xml-rpc from header
+/*-----------------------------------------------------------------------------------*/
+add_filter('xmlrpc_enabled', '__return_false');
