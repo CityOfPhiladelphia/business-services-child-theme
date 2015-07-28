@@ -38,6 +38,10 @@ body {
 	font-weight: 600;
 	font-size: 13px;
 }
+.gce-list-event, .gce-tooltip-event {
+  background-color: transparent;
+  padding: 0;
+}
 .gdlr-blog-title a {
   color: #5076af !important;
 }
@@ -758,6 +762,13 @@ span.upagicurrent {
   border-radius: 3px !important;
   color: #fff !important;
 }
+.uwpqsfpagi::before {
+  content: "Page: ";
+  padding-right: 10px;
+}
+.upagievent.inactive {
+  opacity: 1;
+}
 /* GOOGLE Translate -------------------------------------------------- */
 #google_translate_element {
 	display: inline-block !important;
@@ -786,13 +797,6 @@ span.upagicurrent {
 }
 #google_translate_element .goog-te-menu-value:hover {
 color:#71BCD7 !important;
-}
-.uwpqsfpagi::before {
-  content: "Page: ";
-  padding-right: 10px;
-}
-.upagievent.inactive {
-  opacity: 1;
 }
 
 /* = Media Queries
