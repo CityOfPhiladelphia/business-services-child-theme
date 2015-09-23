@@ -393,8 +393,12 @@ body {
 }
 
 .accordion-content ul, .content-wrapper ul{
-  margin-left: 50px;
+  margin-left: 20px;
   margin-right: 15px;
+}
+
+#business-page .content-wrapper ul{
+  margin-left: 50px;
 }
 .accordion-content ul li, .content-wrapper ul li{
 	list-style: none;
@@ -745,7 +749,6 @@ a[href^=tel]{
 	padding-right: 40px;
 }
 .gdlr-accordion-item.style-1 span{
-	display: inline-block !important;
 	margin-top:4px;
 }
 .fa-frown-o {
@@ -824,12 +827,15 @@ color:#71BCD7 !important;
 /* = Media Queries
 -------------------------------------------------------------- */
 @media only screen and (max-width: 64em) {
+
+  .top-navigation-right {
+    padding-bottom: 0;
+  }
 	a[href^=tel]{
 		color:#5076af;
 		cursor: pointer;
 		pointer-events: auto;
 	}
-	.feedback,
 	.breadcrumbs,
   #document-section .label,
 	#document-section .more .button,
@@ -838,9 +844,7 @@ color:#71BCD7 !important;
 	#document-section .inner .pdf.one,
 	.master-slider,
 	.gdlr-master-slider-item,
-	#feature-icon,
-	.top-navigation-right
-	{
+	#feature-icon {
     display:none;
   }
   #document-section .list {

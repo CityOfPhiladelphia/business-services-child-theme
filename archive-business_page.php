@@ -1,6 +1,6 @@
 <?php
 /*
-Displda Business Type page archives
+Display Business Type page archives
 
 
 /* launching-a-business loop */
