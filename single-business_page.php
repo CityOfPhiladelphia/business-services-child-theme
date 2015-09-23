@@ -59,8 +59,8 @@ get_header();
 						$all_annoucements = $get_related_announcements_query->query(array(
 							'post_type' => 'post',
 							'posts_per_page' => 5,
-							'order' => 'asc',
-							'orderby' => 'title',
+							'order' => 'DESC',
+							'orderby' => 'date',
               'ignore_sticky_posts' => true,
 							'tax_query' => array(
 								'relation' => 'AND',

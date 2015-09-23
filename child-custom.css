@@ -393,12 +393,11 @@ body {
 }
 
 .accordion-content ul, .content-wrapper ul{
-  margin-left: 20px;
+  margin-left: 25px;
   margin-right: 15px;
 }
-
-#business-page .content-wrapper ul{
-  margin-left: 50px;
+#business-page .gdlr-right-sidebar ul{
+  margin-left: 50px !important;
 }
 .accordion-content ul li, .content-wrapper ul li{
 	list-style: none;
