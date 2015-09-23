@@ -557,7 +557,7 @@ footer .copyright-right ul{
 #menu-search button{
 	background-color: transparent;
   border: 0;
-	padding: 10px 0 0 0;
+	padding: 4px 0 0 0;
   display: inline-block;
 	float: right;
 	}
@@ -688,6 +688,9 @@ a{
 }
 .logo-right-area {
   margin: 0;
+}
+.logo-right-area .header-block-area {
+  border:none;
 }
 nav.gdlr-navigation ul.sf-menu {
 	width:100%;
