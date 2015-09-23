@@ -391,8 +391,17 @@ body {
 .page .launch-page .gdlr-main-content {
 	text-align:left;
 }
+
+.accordion-content ul, .content-wrapper ul{
+  margin-left: 50px;
+  margin-right: 15px;
+}
 .accordion-content ul li, .content-wrapper ul li{
 	list-style: none;
+  list-style-position: inside;
+  text-indent: -1em;
+  padding-left: 1em;
+  padding-bottom: 5px;
 }
 .accordion-content ul li:before, .content-wrapper ul li:before{
 	content: "\f105";
@@ -528,6 +537,12 @@ footer .copyright-right ul{
 .top-navigation-wrapper a:hover{
 	color:#71BCD7 !important;
 }
+.top-navigation-right-text {
+  margin-right: 0;
+}
+.top-navigation-right{
+  margin: 0 0 0 15px;
+}
 #gdlr-main-navigation{
 	padding-left:20px;
 }
@@ -654,6 +669,10 @@ a{
 }
 .marg-bottom-20{
 	margin-bottom:20px;
+}
+.header-block-area {
+  float:none;
+  display:inline-block;
 }
 .header-block-area .header-block-content {
   font-size: 13px;

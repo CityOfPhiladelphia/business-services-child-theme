@@ -72,7 +72,7 @@ get_header();
 									array(
 										'taxonomy' => 'category',
 										'field'    => 'id',
-										'terms'    => $parentcategory,
+										'terms'    => $parentcategory, 'all-businesses'
 									),
 								),
 							)

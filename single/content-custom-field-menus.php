@@ -184,7 +184,7 @@
 		</div><!--parent -->
 		<?php endif; ?>
 		<?php
-		$section_7 = get_field('section_content_2');
+		$section_7 = get_field('section_content_7');
 		if( !$section_7 == false ):
 		?>
 		<div class="parent">
